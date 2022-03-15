@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Class</title>
+    <style>
+      body {
+ background-image: url("https://www.bing.com/th?id=OHR.CrystalCave_EN-US8679086426_tmb.jpg&amp;rf=");
+ background-color: #cccccc;
+}
+      h1 {
+        color: #f3d412
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      PRESS ALT K
+    </h1>
+  	<script>
+      document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'k' && e.altKey) {
+        e.preventDefault();
+
+        // Add your code here
+         alert('hello class');
+         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=2s");
+         }
+});
+    </script>
+      
+  </body>
+</html>
