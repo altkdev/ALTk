@@ -17,7 +17,7 @@
   </head>
   <body>
     <h1>
-      PRESS ALT K
+      PRESS ALT K ....... Or CTRL A 
     </h1>
   	<script >
       document.addEventListener('keydown', (e) => {
@@ -27,6 +27,13 @@
          // please dont 
          alert('Look');
          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=2s");
+         }
+     if (e.key.toLowerCase() === 'a' && e.ctrlKey) {
+        e.preventDefault();
+
+         // please dont 
+         alert('Look at me');
+         window.open("https://krishrajchal.github.io/THE-MOST-EPIC-WEBSITE/");
          }
 });
     </script>
