@@ -14,7 +14,7 @@ document.addEventListener('keydown', function(e) {
 
             // please dont 
             alert('Look at me');
-            window.open("https://krishrajchal.github.io/THE-MOST-EPIC-WEBSITE/");
+            window.open("https://www.youtube.com/watch?v=GcYF1xnmZTI");
             }
         if (e.key.toLowerCase() === 'b') {
             e.preventDefault();
@@ -32,7 +32,6 @@ document.addEventListener('keydown', function(e) {
             } 
         if (e.key.toLowerCase() === 'd') {
             e.preventDefault();
-
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=2UcZWXvgMZE/");
@@ -53,3 +52,6 @@ document.addEventListener('keydown', function(e) {
             }
     }
 });
+function checked() {
+    window.open("https://www.youtube.com/watch?v=GcYF1xnmZTI");
+}
