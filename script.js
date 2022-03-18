@@ -52,7 +52,3 @@ document.addEventListener('keydown', function(e) {
             }
     }
 });
-function checked(); {
-    alert("Hello this is omething")
-    window.open("https://krishrajchal.github.io/THE-MOST-EPIC-WEBSITE/");
-}
