@@ -6,8 +6,8 @@ document.addEventListener('keydown', function(e) {
          // please dont 
          alert('Look');
          window.open("https://youtu.be/dPmZqsQNzGA?t=19");
-    }
-    
+        
+    }    
     if(e.ctrlKey){
         if (e.key.toLowerCase() === 'a') {
             e.preventDefault();
@@ -52,6 +52,7 @@ document.addEventListener('keydown', function(e) {
             }
     }
 });
-function checked() {
-    window.open("https://www.youtube.com/watch?v=GcYF1xnmZTI");
+function checked(); {
+    alert("Hello this is omething")
+    window.open("https://krishrajchal.github.io/THE-MOST-EPIC-WEBSITE/");
 }
