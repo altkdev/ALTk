@@ -8,6 +8,15 @@ function secretChecked(){
     }
 }
 
+function secretText() {
+    if (document.getElementById("secretText").value == "secretchococookie") {
+        window.open("https://www.youtube.com/watch?v=sZg71o9NtRU");
+    }
+    if (document.getElementById("secretText").value == "waithowaremiismade?") {
+        window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
+    }
+}
+
 document.addEventListener('keydown', function(e) {
     if (e.key.toLowerCase() === 'k' && e.altKey) {
         e.preventDefault();
