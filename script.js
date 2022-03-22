@@ -1,4 +1,13 @@
 $.backstretch("hhhhh.jpg")
+
+function secretChecked(){
+    if(document.getElementById('secret').checked){
+        console.log("checked");
+        alert("YoU haVe fOUnD A scErEt");
+        window.open("https://youtu.be/dPmZqsQNzGA");
+    }
+}
+
 document.addEventListener('keydown', function(e) {
     if (e.key.toLowerCase() === 'k' && e.altKey) {
         e.preventDefault();
