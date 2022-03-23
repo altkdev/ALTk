@@ -15,6 +15,9 @@ function secretText() {
     if (document.getElementById("secretText").value == "waithowaremiismade?") {
         window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
     }
+    if(document.getElementById("secretText").value == "blueyellowpig"){
+        window.open("https://www.youtube.com/watch?v=456oB9Ea32w");
+    }
 }
 
 document.addEventListener('keydown', function(e) {
