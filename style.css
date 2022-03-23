@@ -42,3 +42,8 @@
     opacity: 100;
 }
 
+body {
+    -moz-transform: scale(1.3);
+    zoom: 130%; 
+}
+
