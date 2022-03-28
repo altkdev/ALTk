@@ -9,13 +9,13 @@ function secretChecked(){
 }
 
 function secretText() {
-    if (document.getElementById("secretText").value == "secretchococookie") {
+    if (document.getElementById("secretText").value == "text") {
         window.open("https://www.youtube.com/watch?v=sZg71o9NtRU");
     }
-    if (document.getElementById("secretText").value == "waithowaremiismade?") {
+    if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
         window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
     }
-    if(document.getElementById("secretText").value == "blueyellowpig"){
+    if(document.getElementById("secretText").value == "something random"){
         window.open("https://www.youtube.com/watch?v=456oB9Ea32w");
     }
 }
