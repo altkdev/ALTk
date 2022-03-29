@@ -1,13 +1,13 @@
 var secrets = true;
 
 $.backstretch("hhhhh.jpg")
-document.getElementById("skip-nav").addEventListener("click", function() {
+function skipnav() {
     if(secrets)
-        document.getElementById("skip-nav").innerHTML = "PRESS ALT K !!"
+        document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
     else
-        document.getElementById("skip-nav").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
+        document.getElementById("main-text").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
     secrets = !secrets;
-});
+}
 
 function secretChecked(){
     if(document.getElementById('secret').checked && secrets){
