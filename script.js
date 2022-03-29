@@ -1,10 +1,8 @@
-var secrets = true;
 
 $.backstretch("hhhhh.jpg")
 function skipnav() {
     if(secrets)
         document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
-        var secrets = false
         var secrets = !secrets
 }
 
