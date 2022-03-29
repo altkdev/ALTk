@@ -2,11 +2,15 @@ var secrets = true;
 
 $.backstretch("hhhhh.jpg")
 $(document).on("click", "skip-nav", function() {
+    if(secrets)
+        $("main-text").innerHTML = "PRESS ALT K !!"
+    else
+        $("main-text").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
     secrets = !secrets;
 });
 
 function secretChecked(){
-    if(document.getElementById('secret').checked){
+    if(document.getElementById('secret').checked && secrets){
         console.log("checked");
         alert("YoU haVe fOUnD A scErEt");
         window.open("https://youtu.be/dPmZqsQNzGA");
@@ -14,14 +18,16 @@ function secretChecked(){
 }
 
 function secretText() {
-    if (document.getElementById("secretText").value == "text") {
-        window.open("https://www.youtube.com/watch?v=sZg71o9NtRU");
-    }
-    if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
-        window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
-    }
-    if(document.getElementById("secretText").value == "something random"){
-        window.open("https://www.youtube.com/watch?v=456oB9Ea32w");
+    if(secrets){
+        if (document.getElementById("secretText").value == "text") {
+            window.open("https://www.youtube.com/watch?v=sZg71o9NtRU");
+        }
+        if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
+            window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
+        }
+        if(document.getElementById("secretText").value == "something random"){
+            window.open("https://www.youtube.com/watch?v=456oB9Ea32w");
+        }
     }
 }
 
