@@ -3,9 +3,9 @@ var secrets = true;
 $.backstretch("hhhhh.jpg")
 function skipnav() {
     if(secrets)
-        document.getElementById("main-text").innerHTML = "<a href=''>PRESS ALT K !!"
+        document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
     else
-        document.getElementById("main-text").innerHTML = "<a href=''>PRESS ALT K !! There are also hiden ester eggs"
+        document.getElementById("main-text").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
     secrets = !secrets;
 }
 
