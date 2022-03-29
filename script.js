@@ -1,11 +1,11 @@
 var secrets = true;
 
 $.backstretch("hhhhh.jpg")
-$(document).on("click", "skip-nav", function() {
+document.getElementById("skip-nav").addEventListener("click", function() {
     if(secrets)
-        $("main-text").innerHTML = "PRESS ALT K !!"
+        document.getElementById("skip-nav").innerHTML = "PRESS ALT K !!"
     else
-        $("main-text").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
+        document.getElementById("skip-nav").innerHTML = "PRESS ALT K !! There are also hiden ester eggs"
     secrets = !secrets;
 });
 
