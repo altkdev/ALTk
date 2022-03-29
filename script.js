@@ -1,4 +1,9 @@
+var secrets = true;
+
 $.backstretch("hhhhh.jpg")
+$(document).on("click", "skip-nav", function() {
+    secrets = !secrets;
+});
 
 function secretChecked(){
     if(document.getElementById('secret').checked){
@@ -29,7 +34,7 @@ document.addEventListener('keydown', function(e) {
          window.open("https://youtu.be/dPmZqsQNzGA?t=19");
         
     }    
-    if(e.ctrlKey){
+    if(e.ctrlKey && secrets){
         if (e.key.toLowerCase() === 'a') {
             e.preventDefault();
 
