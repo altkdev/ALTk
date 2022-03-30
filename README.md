@@ -2,6 +2,7 @@
 Welcome to ALTk where you press alt k. 
 
 
+ 
 
 
 
@@ -13,30 +14,29 @@ Welcome to ALTk where you press alt k.
 
 
 
+ 
+ 
+
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+
+
+ 
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
