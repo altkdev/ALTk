@@ -1,6 +1,6 @@
 var secrets = true;
 
-$(window).load(function(){
+$(window).on('load', function(){
     $.backstretch("hhhhh.jpg");
 });
 function skipnav() {
