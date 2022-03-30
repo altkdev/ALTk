@@ -1,9 +1,14 @@
 var secrets = true;
 $.backstretch([
-      "ALTK/background/hhhhh.jpg"
-    , "images/garfield-interior.jpg"
-    , "images/cheers.jpg"
-  ], {duration: 3000, fade: 750});
+      "ALTk/background/h.jpg"
+    , "ALTk/background/hh.jpg"
+    , "ALTk/background/hhh.jpg"
+    , "ALTk/background/hhhh.jpg"
+    , "ALTk/background/hhhhh.jpg"
+    , "ALTk/background/hhhhhh.jpg"
+    , "ALTk/background/hhhhhhh.jpg"
+    , "ALTk/background/hhhhhhhh.jpg"
+  ], {duration: 30000, fade: 750});
 
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
