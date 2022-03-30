@@ -1,6 +1,6 @@
 var secrets = true;
 
-$.backstretch("ALTk/hhhhh.jpg");
+$.backstretch("ALTk/hhhhh (1).jpg");
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
     document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
