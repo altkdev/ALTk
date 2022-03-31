@@ -1,4 +1,0 @@
-User-Agent: bingbot
-Sitemap: https://dr-comeemeememem.github.io/ALTk/sitemap_location.xml
-Allow: /
-
