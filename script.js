@@ -1,14 +1,16 @@
 var secrets = true;
-$.backstretch([
-      "https://dr-comeemeememem.github.io/ALTk/background/h.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpeg"
-  ], {duration: 10000, fade: 750});
+for(let i = 1; i > 0; i++) {
+    $.backstretch([
+          "https://dr-comeemeememem.github.io/ALTk/background/h.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhhh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhhhh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpeg"
+        , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpeg"
+    ], {duration: 10000, fade: 750});
+}
 
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
