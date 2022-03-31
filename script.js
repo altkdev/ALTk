@@ -8,7 +8,7 @@ $.backstretch([
     , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpeg"
     , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpeg"
     , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpeg"
-  ], {duration: 30000, fade: 750});
+  ], {duration: 10000, fade: 750});
 
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
