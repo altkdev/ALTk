@@ -1,5 +1,4 @@
 var secrets = true;
-for(let i = 1; i > 0; i++) {
 $.backstretch([
       "https://dr-comeemeememem.github.io/ALTk/background/h.jpeg"
     , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpeg"
