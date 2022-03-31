@@ -1,13 +1,13 @@
 var secrets = true;
 $.backstretch([
-      "https://dr-comeemeememem.github.io/ALTk/background/h.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpg"
+      "https://dr-comeemeememem.github.io/ALTk/background/h.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhhh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpeg"
+    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpeg"
   ], {duration: 30000, fade: 750});
 
 function skipnav() {
