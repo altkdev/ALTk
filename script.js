@@ -17,7 +17,7 @@ function skipnav() {
     secrets = false;
 }
 
-function secretChecked(){
+function secretChecked() {
     if(document.getElementById('secret').checked && secrets){
         console.log("checked");
         alert("YoU haVe fOUnD A scErEt");
