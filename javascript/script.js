@@ -13,6 +13,8 @@ function rand(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+$.backstretch(pics[rand(0, 9)], {duration: 0, fade: 750})
+
 setInterval(() => {
 	$.backstretch(pics[rand(0, 9)], {duration: 0, fade: 750});
 }, 30000);
