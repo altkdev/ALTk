@@ -1,16 +1,21 @@
 var secrets = true;
-for(let i = 1; i > 0; i++) {
-$.backstretch([
-      "https://dr-comeemeememem.github.io/ALTk/background/h.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhh.jpeg"
-    , "https://dr-comeemeememem.github.io/ALTk/background/hhhhhhhh.jpeg"],
-{duration: 10000, fade: 750});
+const pics = [
+      "background/h.jpeg"
+    , "background/hh.jpeg"
+    , "background/hhh.jpeg"
+    , "background/hhhh.jpeg"
+    , "background/hhhhh.jpeg"
+    , "background/hhhhhh.jpeg"
+    , "background/hhhhhhh.jpeg"
+    , "background/hhhhhhhh.jpeg"];
 
+function rand(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+setInterval(() => {
+	$.backstretch(pics[rand(0, 9)], {duration: 0, fade: 750});
+}, 30000);
 
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
@@ -40,56 +45,58 @@ function secretText() {
     }
 }
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function(e){a(e);});
+
+function a(e) {
     if (e.key.toLowerCase() === 'k' && e.altKey) {
         e.preventDefault();
 
-         // please dont 
-         alert('Look');
-         window.open("https://youtu.be/dPmZqsQNzGA?t=19");
-        
-    }    
-    if(e.ctrlKey && secrets){
+        // please dont 
+        alert('Look');
+        window.open("https://youtu.be/dPmZqsQNzGA?t=19");
+
+    }
+    if (e.ctrlKey && secrets) {
         if (e.key.toLowerCase() === 'a') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=GcYF1xnmZTI");
-            }
+        }
         if (e.key.toLowerCase() === 'b') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=lDK9QqIzhwk/");
-            }
+        }
         if (e.key.toLowerCase() === 'c') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=bvWRMAU6V-c/");
-            } 
+        }
         if (e.key.toLowerCase() === 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=2UcZWXvgMZE/");
-            }
+        }
         if (e.key.toLowerCase() === 'e') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=E3YmLs7XqIo");
-            }
+        }
         if (e.key.toLowerCase() === 'f') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             window.open("https://www.youtube.com/watch?v=hHB1Ikzfpmc");
-            }
+        }
     }
-});
+}
