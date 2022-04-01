@@ -48,6 +48,14 @@ document.addEventListener('keydown', function(e) {
          window.open("https://youtu.be/dPmZqsQNzGA?t=19");
         
     }    
+    if (e.key.toLowerCase() === 'd' && e.altKey) {
+        e.preventDefault();
+
+         // please dont 
+         alert('Look');
+         window.open("pages/site2.html");
+        
+    }
     if(e.ctrlKey && secrets){
         if (e.key.toLowerCase() === 'a') {
             e.preventDefault();
