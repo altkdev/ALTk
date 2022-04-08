@@ -31,7 +31,7 @@ document.onkeydown = function (e){
         }
         else{
             document.getElementById("main-text").style.mixBlendMode = "difference";
-	    document.getElementById("main-text").style.color = "#FFFFFF"
+	    document.getElementById("main-text").style.color = "white"
         }
     }
 };
