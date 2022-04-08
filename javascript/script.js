@@ -34,6 +34,7 @@ document.onkeydown = function (e){
 	    document.getElementById("main-text").style.color = "white"
         }
     }
+    a(e);
 };
 
 function skipnav() {
@@ -66,8 +67,6 @@ function secretText() {
         }
     }
 }
-
-document.addEventListener('keydown', function(e){a(e);});
 
 function a(e) {
     if (e.key.toLowerCase() === 'k' && e.altKey) {
