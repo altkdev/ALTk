@@ -39,6 +39,9 @@ document.onkeydown = function (e){
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
     document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
+    document.getElementById("main-text").style.mixBlendMode = "difference";
+    document.getElementById("main-text").style.color = "white"
+    didcolors = false;
     secrets = false;
 }
 
