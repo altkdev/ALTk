@@ -1,5 +1,9 @@
-﻿h1 {
- color: #f3d412
+﻿a {
+ color: #ffffff;
+ font-family: 'Arial' sans-serif;
+ text-decoration: none;
+ font-size: 2rem;
+ mix-blend-mode: difference;
 }
 
 #secret{

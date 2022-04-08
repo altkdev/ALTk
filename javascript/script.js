@@ -1,4 +1,6 @@
 var secrets = true;
+var keylog = "";
+var didcolors = false;
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
@@ -9,6 +11,29 @@ $.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 
 setInterval(() => {
 	$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750});
 }, 30000);
+
+document.onkeydown = function (e){
+    if(secrets){
+        keylog += e.key;
+        if(keylog.includes("awesome")){
+            didcolors = !didcolors;
+            keylog = "";
+        }
+        if(didcolors){
+            document.getElementById("main-text").style.mixBlendMode = "normal";
+            setInterval(() => 
+            {
+                if(!didcolors){
+                    return;
+                }
+                document.getElementById("main-text").style.color = "#" + Math.floor(Math.random()*16777215).toString(16);
+            }, 1);
+        }
+        else{
+            document.getElementById("main-text").style.mixBlendMode = "difference";
+        }
+    }
+};
 
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
