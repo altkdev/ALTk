@@ -1,23 +1,13 @@
 var secrets = true;
 
-const pics = [
-      "background/h.jpeg"
-    , "background/hh.jpeg"
-    , "background/hhh.jpeg"
-    , "background/hhhh.jpeg"
-    , "background/hhhhh.jpeg"
-    , "background/hhhhhh.jpeg"
-    , "background/hhhhhhh.jpeg"
-    , "background/hhhhhhhh.jpeg"];
-
 function rand(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * max) + min;
 }
 
-$.backstretch(pics[rand(0, 9)], {duration: 0, fade: 750})
+$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750})
 
 setInterval(() => {
-	$.backstretch(pics[rand(0, 9)], {duration: 0, fade: 750});
+	$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750});
 }, 30000);
 
 function skipnav() {
