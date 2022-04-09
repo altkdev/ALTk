@@ -63,7 +63,7 @@ function secretText() {
             window.open("https://www.youtube.com/watch?v=bij5nqHOzvk");
         }
         if(document.getElementById("secretText").value == "something random"){
-            window.open("https://www.youtube.com/watch?v=456oB9Ea32w");
+            window.open("https://www.youtube.com/watch?v=jE7LnfD9eno");
         }
     }
 }
