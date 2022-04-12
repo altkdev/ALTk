@@ -14,12 +14,11 @@ setInterval(() => {
 	$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750});
 }, 30000);
 
-document.getElementById("vid").addEventListener("pause", function(){
-    $("#vid").fadeToggle("slow", "linear");
-});
 
 document.getElementById("vid").addEventListener("ended", function(){
-    $("#vid").fadeToggle("slow", "linear");
+    if($("#vid").is(":visible")){
+        $("#vid").fadeToggle("slow", "linear");
+    }
 });
 
 document.onkeydown = function (e){
@@ -47,6 +46,8 @@ document.onkeydown = function (e){
     a(e);
 };
 
+document.getElementById("secretText").addEventListener("input", () => {secretText();})
+
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
     document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
@@ -56,7 +57,7 @@ function skipnav() {
     didcolors = false;
     secrets = false;
 
-    $("#vid").get(0).pause();
+    $("#vid").pause();
 }
 
 function secretChecked(){
@@ -85,11 +86,10 @@ function secretText() {
 function play(file){
     var vid = document.getElementById("vid");
 
-    if(!(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)){
+    if(!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)){
         $("#vid").fadeToggle("slow", "linear");
     }
 
-    vid.style.visibility = "visible";
     vid.src = "videos/" + file.toString() + ".mp4";
 
     vid.play();
