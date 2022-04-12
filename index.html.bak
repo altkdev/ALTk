@@ -9,20 +9,13 @@ ur welcome -->
     <title>ALTk</title>
     <!--<base href="https://dr-comeemeememem.github.io/ALTk/" target="_blank">-->
     <link rel="shortcut icon" href="alt-key.ico">
-	<link rel="preload" href="background/1.jpeg" id="preloadBg">
-	<link rel="preload" href="background/2.jpeg" id="preloadBg">
-	<link rel="preload" href="background/3.jpeg" id="preloadBg">
-	<link rel="preload" href="background/4.jpeg" id="preloadBg">
-	<link rel="preload" href="background/5.jpeg" id="preloadBg">
-	<link rel="preload" href="background/6.jpeg" id="preloadBg">
-	<link rel="preload" href="background/7.jpeg" id="preloadBg">
-	<link rel="preload" href="background/8.jpeg" id="preloadBg">
     <script src="javascript/jQuery.min.js"></script>
     <script src="javascript/backstretch.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <!-- Clarity tracking code for https://dr-comeemeememem.github.io/ALTk/ -->
     <script>
         (function(c,l,a,r,i,t,y){
+		return;
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
@@ -53,13 +46,11 @@ ur welcome -->
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <script src="javascript/script.js"></script>
-    <h1>
-      <a href="#" style="text-decoration:none" id="main-text">PRESS ALT K !! There are also hiden ester eggs</a>
-    </h1>
+    <a href="#" id="main-text">PRESS ALT K !! There are also hiden ester eggs</a>
     <div id="main">
       <button id="skip-nav" tabindex="6" class="skip-nav" onclick="skipnav()">Skip-Nav?!?</button>
       <input id="secret" tabindex="-1" type="checkbox" onclick="secretChecked()">
-      <input id="secretText" tabindex="10" placeholder="type something random!" class="🍪🍪🍪🍪🍪" onchange="secretText()">
+      <input id="secretText" tabindex="10" placeholder="type something random" class="🍪🍪🍪🍪🍪" onchange="secretText()">
     </div>
     
   </body>

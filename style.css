@@ -2,10 +2,20 @@
  color: #ffffff;
  font-family: 'Brush Script MT' Cursive;
  text-decoration: none;
- font-size: 3rem;
+ font-size: 2rem;
  mix-blend-mode: difference;
 }
 
+#vid{
+    position: absolute;
+    bottom: 40%;
+    left: 45%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+}
 #secret{
     position:absolute;
     bottom: 0;
@@ -16,16 +26,16 @@
     position: absolute;
     background: #039CC6;
     text-decoration: none;
-    color: #ffffff;
+    color:white;
     padding: .5rem 1.5rem;
     border-radius: 0 0 0.25rem 0.25rem;
     border: none;
-    transform: translate (-120%);
+    transform: translate(-120%);
     transition: transform 325ms ease-in;
 }
 
 .skip-nav:focus{
-    transform: translate (0%);
+    transform: translate(0%);
 }
 
 .🍪🍪🍪🍪🍪 {
@@ -34,7 +44,7 @@
     text-decoration: none;
     bottom: 69%;
     left: 69%;
-    color: #ffffff;
+    color: white;
     padding: .5rem 1.5rem;
     border-radius: 0 0 0.25rem 0.25rem;
     border: none;
