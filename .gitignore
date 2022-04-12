@@ -1,0 +1,2 @@
+# Ignore .BAK files that are created by Notepad++
+*.bak
