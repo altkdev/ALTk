@@ -1,6 +1,6 @@
 @echo off
 Title what
-Color D4
+Color D2
 Prompt what-
 Pause
 @echo on
