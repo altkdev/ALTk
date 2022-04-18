@@ -1,4 +1,10 @@
-User-Agent: bingbot
-User-agent: Datayze SpiderBot
-Allow: /
+User-Agent:*
+Disallow:/
+
+User-Agent: Googlebot
+User-Agent: Googlebot-Mobile
+User-Agent: Googlebot-Image
+User-Agent: Bingbot
+User-Agent: Datayze SpiderBot
+Allow:/
 Sitemap: https://dr-comeemeememem.github.io/ALTk/tracking/sitemap.xml
