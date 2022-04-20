@@ -1,10 +1,16 @@
 var secrets = true;
 var keylog = "";
 var didcolors = false;
+var mobile = false;
 var temp = document.getElementById("vid");
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
+}
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    document.getElementById("mobile").style.visibility = "visible";
+    mobile = true;
 }
 
 $.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750})
@@ -20,6 +26,12 @@ document.getElementById("vid").addEventListener("ended", function(){
         $("#vid").fadeToggle("slow", "linear");
     }
 });
+
+document.getElementById("vid").onpause = function(){
+    if($("#vid").is(":visible")){
+        $("#vid").fadeToggle("slow", "linear");
+    }
+};
 
 document.onkeydown = function (e){
     if(secrets){
@@ -47,7 +59,14 @@ document.onkeydown = function (e){
 };
 
 document.getElementById("secretText").addEventListener("input", () => {secretText();})
-
+document.getElementById("mobile-only").addEventListener("input", () => {
+    c=document.getElementById("mobile-only");
+    if(c.value.includes('c ')){
+        a_mobile(c.value[2], "c");
+    }else if(c.value.includes('a ')){
+        a_mobile(c.value[2], "a")
+    }
+});
 function skipnav() {
     document.getElementById("main").style.visibility = "hidden";
     document.getElementById("main-text").innerHTML = "PRESS ALT K !!"
@@ -57,7 +76,11 @@ function skipnav() {
     didcolors = false;
     secrets = false;
 
-    $("#vid").pause();
+    try{
+        $("#vid").pause();
+    }catch(Exception){
+        return;
+    }
 }
 
 function secretChecked(){
@@ -95,8 +118,50 @@ function play(file){
     vid.play();
 }
 
+function a_mobile(e, d) {
+    if (e == 'k' && d == "a") {
+
+        // please dont 
+        alert('Look');
+        play(69);
+
+    }
+    if (d == "c" && secrets) {
+        if (e == 'a') {
+            // please dont 
+            alert('Look at me');
+            play(9);
+        }
+        if (e == 'b') {
+            // please dont 
+            alert('Look at me');
+            play(4);
+        }
+        if (e == 'c') {
+            // please dont 
+            alert('Look at me');
+            play(10);
+        }
+        if (e == 'd') {
+            // please dont 
+            alert('Look at me');
+            play(6);
+        }
+        if (e == 'e') {
+            // please dont 
+            alert('Look at me');
+            play(8);
+        }
+        if (e == 'f') {
+            // please dont 
+            alert('Look at me');
+            play(7);
+        }
+    }
+}
+
 function a(e) {
-    if (e.key.toLowerCase() === 'k' && e.altKey) {
+    if (e == 'k' && e.altKey) {
         e.preventDefault();
 
         // please dont 
@@ -105,41 +170,41 @@ function a(e) {
 
     }
     if (e.ctrlKey && secrets) {
-        if (e.key.toLowerCase() === 'a') {
+        if (e == 'a') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(9);
         }
-        if (e.key.toLowerCase() === 'b') {
+        if (e == 'b') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(4);
         }
-        if (e.key.toLowerCase() === 'c') {
+        if (e == 'c') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(10);
         }
-        if (e.key.toLowerCase() === 'd') {
+        if (e == 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             play(6);
         }
-        if (e.key.toLowerCase() === 'e') {
+        if (e == 'e') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(8);
         }
-        if (e.key.toLowerCase() === 'f') {
+        if (e == 'f') {
             e.preventDefault();
 
             // please dont 

@@ -6,6 +6,24 @@
  mix-blend-mode: difference;
 }
 
+#moblie-only-text{
+    color: #ffffff;
+    font-family: 'Brush Script MT' Cursive;
+    text-decoration: none;
+    mix-blend-mode: difference;
+    font-size: 1rem;
+}
+
+#mobile{
+    margin: auto;
+    visibility: hidden;
+    width: 50%;
+    height: 50%;
+    background: #ffffff;
+    mix-blend-mode: difference;
+    border: 0px;
+}
+
 #vid{
     position: absolute;
     bottom: 40%;
