@@ -124,6 +124,7 @@ function a_mobile(e, d) {
         // please dont 
         alert('Look');
         play(69);
+	document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
 
     }
     if (d == "c" && secrets) {
@@ -131,31 +132,37 @@ function a_mobile(e, d) {
             // please dont 
             alert('Look at me');
             play(9);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'b') {
             // please dont 
             alert('Look at me');
             play(4);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'c') {
             // please dont 
             alert('Look at me');
             play(10);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'd') {
             // please dont 
             alert('Look at me');
             play(6);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'e') {
             // please dont 
             alert('Look at me');
             play(8);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'f') {
             // please dont 
             alert('Look at me');
             play(7);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
     }
 }
@@ -167,7 +174,7 @@ function a(e) {
         // please dont 
         alert('Look');
         play(69);
-
+        document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
     }
     if (e.ctrlKey && secrets) {
         if (e == 'a') {
@@ -176,6 +183,7 @@ function a(e) {
             // please dont 
             alert('Look at me');
             play(9);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'b') {
             e.preventDefault();
@@ -183,6 +191,7 @@ function a(e) {
             // please dont 
             alert('Look at me');
             play(4);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'c') {
             e.preventDefault();
@@ -190,12 +199,14 @@ function a(e) {
             // please dont 
             alert('Look at me');
             play(10);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             play(6);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'e') {
             e.preventDefault();
@@ -203,6 +214,7 @@ function a(e) {
             // please dont 
             alert('Look at me');
             play(8);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'f') {
             e.preventDefault();
@@ -210,6 +222,7 @@ function a(e) {
             // please dont 
             alert('Look at me');
             play(7);
+		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
     }
 }
