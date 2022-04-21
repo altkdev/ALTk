@@ -7,11 +7,10 @@
 }
 
 #moblie-only-text{
-    color: #ffffff;
+    color: #3d3d3d;
     font-family: 'Brush Script MT' Cursive;
     text-decoration: none;
-    mix-blend-mode: difference;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 #mobile{
@@ -19,8 +18,7 @@
     visibility: hidden;
     width: 50%;
     height: 50%;
-    background: #ffffff;
-    mix-blend-mode: difference;
+    background: #c9c9c986;
     border: 0px;
 }
 

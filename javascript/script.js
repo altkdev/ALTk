@@ -1,4 +1,3 @@
-// Yeah I am still alive dont worry!
 var secrets = true;
 var keylog = "";
 var didcolors = false;
@@ -24,13 +23,13 @@ setInterval(() => {
 
 document.getElementById("vid").addEventListener("ended", function(){
     if($("#vid").is(":visible")){
-        $("#vid").fadeToggle("slow", "linear");
+        $("#vid").fadeOut("slow", "linear");
     }
 });
 
 document.getElementById("vid").onpause = function(){
     if($("#vid").is(":visible")){
-        $("#vid").fadeToggle("slow", "linear");
+        $("#vid").fadeOut("slow", "linear");
     }
 };
 
@@ -88,7 +87,7 @@ function secretChecked(){
     if(document.getElementById('secret').checked && secrets){
         console.log("checked");
         alert("YoU haVe fOUnD A scErEt");
-        play(5).style.zIndex = "1";
+        play(5);
     }
 }
 
@@ -125,7 +124,6 @@ function a_mobile(e, d) {
         // please dont 
         alert('Look');
         play(69);
-	document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
 
     }
     if (d == "c" && secrets) {
@@ -133,97 +131,85 @@ function a_mobile(e, d) {
             // please dont 
             alert('Look at me');
             play(9);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'b') {
             // please dont 
             alert('Look at me');
             play(4);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'c') {
             // please dont 
             alert('Look at me');
             play(10);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'd') {
             // please dont 
             alert('Look at me');
             play(6);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'e') {
             // please dont 
             alert('Look at me');
             play(8);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
         if (e == 'f') {
             // please dont 
             alert('Look at me');
             play(7);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
     }
 }
 
 function a(e) {
-    if (e.key == 'k' && e.altKey) {
+    if (e == 'k' && e.altKey) {
         e.preventDefault();
 
         // please dont 
         alert('Look');
         play(69);
-        document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
+
     }
     if (e.ctrlKey && secrets) {
-        if (e.key == 'a') {
+        if (e == 'a') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(9);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e.key == 'b') {
+        if (e == 'b') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(4);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e.key == 'c') {
+        if (e == 'c') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(10);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e.key == 'd') {
+        if (e == 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             play(6);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e.key == 'e') {
+        if (e == 'e') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(8);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e.key == 'f') {
+        if (e == 'f') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(7);
-		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
     }
 }
