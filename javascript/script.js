@@ -1,3 +1,4 @@
+// Yeah I am still alive dont worry!
 var secrets = true;
 var keylog = "";
 var didcolors = false;
@@ -168,7 +169,7 @@ function a_mobile(e, d) {
 }
 
 function a(e) {
-    if (e == 'k' && e.altKey) {
+    if (e.key == 'k' && e.altKey) {
         e.preventDefault();
 
         // please dont 
@@ -177,7 +178,7 @@ function a(e) {
         document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
     }
     if (e.ctrlKey && secrets) {
-        if (e == 'a') {
+        if (e.key == 'a') {
             e.preventDefault();
 
             // please dont 
@@ -185,7 +186,7 @@ function a(e) {
             play(9);
 		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e == 'b') {
+        if (e.key == 'b') {
             e.preventDefault();
 
             // please dont 
@@ -193,7 +194,7 @@ function a(e) {
             play(4);
 		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e == 'c') {
+        if (e.key == 'c') {
             e.preventDefault();
 
             // please dont 
@@ -201,14 +202,14 @@ function a(e) {
             play(10);
 		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e == 'd') {
+        if (e.key == 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             play(6);
 		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e == 'e') {
+        if (e.key == 'e') {
             e.preventDefault();
 
             // please dont 
@@ -216,7 +217,7 @@ function a(e) {
             play(8);
 		document.getElementById("mobile-only-text").innerHTML = "You should alerady know this!"
         }
-        if (e == 'f') {
+        if (e.key == 'f') {
             e.preventDefault();
 
             // please dont 
