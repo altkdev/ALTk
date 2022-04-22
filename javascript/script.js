@@ -161,7 +161,7 @@ function a_mobile(e, d) {
 }
 
 function a(e) {
-    if (e == 'k' && e.altKey) {
+    if (e.key == 'k' && e.altKey) {
         e.preventDefault();
 
         // please dont 
@@ -170,41 +170,41 @@ function a(e) {
 
     }
     if (e.ctrlKey && secrets) {
-        if (e == 'a') {
+        if (e.key == 'a') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(9);
         }
-        if (e == 'b') {
+        if (e.key == 'b') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(4);
         }
-        if (e == 'c') {
+        if (e.key == 'c') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(10);
         }
-        if (e == 'd') {
+        if (e.key == 'd') {
             e.preventDefault();
             // please dont 
             alert('Look at me');
             play(6);
         }
-        if (e == 'e') {
+        if (e.key == 'e') {
             e.preventDefault();
 
             // please dont 
             alert('Look at me');
             play(8);
         }
-        if (e == 'f') {
+        if (e.key == 'f') {
             e.preventDefault();
 
             // please dont 
