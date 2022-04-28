@@ -1,7 +1,10 @@
-.site {
-  visibility: hidden;
+.vid {
+  visibility: Hidden;
 }
-.noscript {
-  color: #cc0000;
+.main-text {
+  visibility: Hidden;
 }
-  
+.secret {
+  visibility: Hidden;
+}
+
