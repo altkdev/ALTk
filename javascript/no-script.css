@@ -1,10 +1,13 @@
 .vid {
   visibility: Hidden;
+  display: none;
 }
 .main-text {
   visibility: Hidden;
+  display: none;
 }
 .secret {
   visibility: Hidden;
+  display: none;
 }
 
