@@ -1,16 +1,16 @@
-.vid {
+#vid {
   visibility: Hidden;
   display: none;
 }
-.main-text {
+#main-text {
   visibility: Hidden;
   display: none;
 }
-.secret {
+#secret {
   visibility: Hidden;
   display: none;
 }
-.🍪🍪🍪🍪🍪 {
+#🍪🍪🍪🍪🍪 {
   visibility: Hidden;
   display: none;
 }
