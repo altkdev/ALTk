@@ -101,6 +101,9 @@ function secretText() {
         }
         if(document.getElementById("secretText").value == "something random"){
             play(3);
+	}
+        if(document.getElementById("secretText").value == "69420"){
+	    play(420);
         }
     }
 }
