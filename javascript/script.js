@@ -1,3 +1,7 @@
+if( i == 0 ) {
+	//sanity check
+	console.log("this page is sane!");
+}
 var secrets = true;
 var keylog = "";
 var didcolors = false;
