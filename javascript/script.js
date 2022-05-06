@@ -126,6 +126,7 @@ function a_mobile(e, d) {
 
         // please dont 
         alert('Look');
+	document.getElementById("vid").style.visibility = "visible";
         play(69);
 
     }
@@ -133,31 +134,37 @@ function a_mobile(e, d) {
         if (e == 'a') {
             // please dont 
             alert('Look at me');
+            document.getElementById("vid").style.visibility = "visible";
             play(9);
         }
         if (e == 'b') {
             // please dont 
             alert('Look at me');
+	    document.getElementById("vid").style.visibility = "visible";
             play(4);
         }
         if (e == 'c') {
             // please dont 
             alert('Look at me');
+	    document.getElementById("vid").style.visibility = "visible";
             play(10);
         }
         if (e == 'd') {
             // please dont 
             alert('Look at me');
+	    document.getElementById("vid").style.visibility = "visible";
             play(6);
         }
         if (e == 'e') {
             // please dont 
             alert('Look at me');
+	    document.getElementById("vid").style.visibility = "visible";
             play(8);
         }
         if (e == 'f') {
             // please dont 
             alert('Look at me');
+	    document.getElementById("vid").style.visibility = "visible";
             play(7);
         }
     }
