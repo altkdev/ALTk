@@ -8,7 +8,7 @@ function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+if(/Android|webOS|iPhone|iPad|MacIntel|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
 }
