@@ -3,6 +3,7 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
+var message = "Do you want to delete the world?";
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
@@ -123,47 +124,38 @@ function play(file){
 
 function a_mobile(e, d) {
     if (e == 'k' && d == "a") {
-
-        // please dont 
         alert('Look');
 	document.getElementById("vid").style.visibility = "visible";
         play(69);
-
     }
     if (d == "c" && secrets) {
         if (e == 'a') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
             document.getElementById("vid").style.visibility = "visible";
             play(9);
         }
         if (e == 'b') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
 	    document.getElementById("vid").style.visibility = "visible";
             play(4);
         }
         if (e == 'c') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
 	    document.getElementById("vid").style.visibility = "visible";
             play(10);
         }
         if (e == 'd') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
 	    document.getElementById("vid").style.visibility = "visible";
             play(6);
         }
         if (e == 'e') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
 	    document.getElementById("vid").style.visibility = "visible";
             play(8);
         }
         if (e == 'f') {
-            // please dont 
-            alert('Look at me');
+            alert(message);
 	    document.getElementById("vid").style.visibility = "visible";
             play(7);
         }
@@ -173,52 +165,38 @@ function a_mobile(e, d) {
 function a(e) {
     if (e.key == 'k' && e.altKey) {
         e.preventDefault();
-
-        // please dont 
         alert('Look');
         play(69);
-
     }
     if (e.ctrlKey && secrets) {
         if (e.key == 'a') {
             e.preventDefault();
-
-            // please dont 
-            alert('Look at me');
+            alert(message);
             play(9);
         }
         if (e.key == 'b') {
             e.preventDefault();
-
-            // please dont 
-            alert('Look at me');
+	    alert(message);
             play(4);
         }
         if (e.key == 'c') {
             e.preventDefault();
-
-            // please dont 
-            alert('Look at me');
+            alert(message);
             play(10);
         }
         if (e.key == 'd') {
             e.preventDefault();
-            // please dont 
-            alert('Look at me');
+            alert(message);
             play(6);
         }
         if (e.key == 'e') {
             e.preventDefault();
-
-            // please dont 
-            alert('Look at me');
+            alert(message);
             play(8);
         }
         if (e.key == 'f') {
             e.preventDefault();
-
-            // please dont 
-            alert('Look at me');
+            alert(message);
             play(7);
         }
     }
