@@ -124,7 +124,7 @@ function play(file){
 
 function a_mobile(e, d) {
     if (e == 'k' && d == "a") {
-        alert('Look');
+        alert(message);
 	document.getElementById("vid").style.visibility = "visible";
         play(69);
     }
@@ -165,7 +165,7 @@ function a_mobile(e, d) {
 function a(e) {
     if (e.key == 'k' && e.altKey) {
         e.preventDefault();
-        alert('Look');
+        alert(message);
         play(69);
     }
     if (e.ctrlKey && secrets) {
