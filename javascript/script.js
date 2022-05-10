@@ -9,7 +9,7 @@ function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 
-if(navigator.userAgentData.mobile) {
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent.data) )  {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
 }
