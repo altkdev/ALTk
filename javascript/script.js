@@ -1,18 +1,3 @@
-const sure = confirm("This site uses cookes do you agree?)
-if(sure == false) {
-     console.log("EnAbLe Cookies!")
-     location.window.replace("https://google.com/");
-}else{
-  let username = getCookie("username");
-  if (username != "") {
-   alert("Welcome again " + username);
-  } else {
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 365);
-    }
-  }
-}
 var secrets = true;
 var keylog = "";
 var didcolors = false;
