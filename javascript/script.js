@@ -9,7 +9,17 @@ function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent.data) )  {
+  let username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )  {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
 }
