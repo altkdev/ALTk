@@ -3,10 +3,15 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-var message = "Do you want to delete the world?";
+var message1 = "Do you want to delete the world?";
+var message2 = "Do you want to delete all the beans in the world?";
+var message3 = "Its a bird, its a plane, its another video";
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
+}
+function randalert() {
+	alert(mesage + rand(1, 3))
 }
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )  {
@@ -127,38 +132,38 @@ function play(file){
 
 function a_mobile(e, d) {
     if (e == 'k' && d == "a") {
-        alert(message);
+        randalert();
 	document.getElementById("vid").style.visibility = "visible";
         play(69);
     }
     if (d == "c" && secrets) {
         if (e == 'a') {
-            alert(message);
+            randalert();
             document.getElementById("vid").style.visibility = "visible";
             play(9);
         }
         if (e == 'b') {
-            alert(message);
+            randalert();
 	    document.getElementById("vid").style.visibility = "visible";
             play(4);
         }
         if (e == 'c') {
-            alert(message);
+            randalert();
 	    document.getElementById("vid").style.visibility = "visible";
             play(10);
         }
         if (e == 'd') {
-            alert(message);
+            randalert();
 	    document.getElementById("vid").style.visibility = "visible";
             play(6);
         }
         if (e == 'e') {
-            alert(message);
+            randalert();
 	    document.getElementById("vid").style.visibility = "visible";
             play(8);
         }
         if (e == 'f') {
-            alert(message);
+            randalert();
 	    document.getElementById("vid").style.visibility = "visible";
             play(7);
         }
@@ -168,38 +173,38 @@ function a_mobile(e, d) {
 function a(e) {
     if (e.key == 'k' && e.altKey) {
         e.preventDefault();
-        alert(message);
+        randalert();
         play(69);
     }
     if (e.ctrlKey && secrets) {
         if (e.key == 'a') {
             e.preventDefault();
-            alert(message);
+            randalert();
             play(9);
         }
         if (e.key == 'b') {
             e.preventDefault();
-	    alert(message);
+	    randalert();
             play(4);
         }
         if (e.key == 'c') {
             e.preventDefault();
-            alert(message);
+            randalert();
             play(10);
         }
         if (e.key == 'd') {
             e.preventDefault();
-            alert(message);
+            randalert();
             play(6);
         }
         if (e.key == 'e') {
             e.preventDefault();
-            alert(message);
+            randalert();
             play(8);
         }
         if (e.key == 'f') {
             e.preventDefault();
-            alert(message);
+            randalert();
             play(7);
         }
     }
