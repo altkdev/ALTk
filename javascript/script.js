@@ -219,3 +219,7 @@ function a(e) {
         }
     }
 }
+
+function destroyPage(message){
+	
+}
