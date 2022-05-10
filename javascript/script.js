@@ -1,9 +1,7 @@
 const sure = confirm("This site uses cookes do you agree?)
-if (sure == true) {
-	return true;
-}else if(sure == false) {
-	console.log("EnAbLe Cookies!")
-	location.window.replace("https://google.com/");
+if(sure == false) {
+     console.log("EnAbLe Cookies!")
+     location.window.replace("https://google.com/");
 }
 var secrets = true;
 var keylog = "";
