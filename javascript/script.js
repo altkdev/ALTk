@@ -14,7 +14,7 @@ function randalert() {
 	alert(mesage + rand(1, 3))
 }
 
-if(WURFL.is_mobile === true && WURFL.form_factor === "Tablet")  {
+if(WURFL.is_mobile === true || WURFL.form_factor === "Tablet")  {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
 }
