@@ -2,6 +2,16 @@ const sure = confirm("This site uses cookes do you agree?)
 if(sure == false) {
      console.log("EnAbLe Cookies!")
      location.window.replace("https://google.com/");
+}else{
+  let username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
 }
 var secrets = true;
 var keylog = "";
@@ -13,16 +23,6 @@ var message = "Do you want to delete the world?";
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
-
-  let username = getCookie("username");
-  if (username != "") {
-   alert("Welcome again " + username);
-  } else {
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 365);
-    }
-  }
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )  {
     document.getElementById("mobile").style.visibility = "visible";
