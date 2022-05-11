@@ -16,7 +16,7 @@ function randalert() {
 	alert(mesage + rand(1, 3))
 } 
 //detects if not one of thiese browsers! 
-if(ua.browser.family !== "Google Chrome" || "Firefox" || "Apple Safari" || "Mozilla Firefox" || "Opera" || "Chronium" || "Vivaldi" || "Brave" || "Epic" || includes("IE") || "Microsoft Edge" || "DuckDuckGo" ) {
+if(ua.browser.family !== "Chrome" || "Firefox" || "Apple Safari" || "Mozilla Firefox" || "Opera" || "Chronium" || "Vivaldi" || "Brave" || "Epic" || includes("IE") || "Microsoft Edge" || "DuckDuckGo" ) {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
     console.log("You are using a mobile browser");
