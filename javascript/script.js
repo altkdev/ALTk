@@ -4,7 +4,7 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-const messages = {"Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video"};
+const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video"];
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
