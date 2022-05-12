@@ -1,5 +1,4 @@
 console.log("Welcome to ALTk!");
-var ua = detect.parse(navigator.userAgent);
 var secrets = true;
 var keylog = "";
 var didcolors = false;
@@ -16,7 +15,7 @@ function randalert() {
 	alert(mesage + rand(1, 3))
 } 
 //detects if not one of thiese browsers! 
-if(ua.browser.family !== "Chrome" || "Firefox" || "Apple Safari" || "Mozilla Firefox" || "Opera" || "Chronium" || "Vivaldi" || "Brave" || "Epic" || includes("IE") || "Microsoft Edge" || "DuckDuckGo" ) {
+if(navigation.userAgentData.mobile) {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
     console.log("You are using a mobile browser");
