@@ -4,15 +4,13 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-var message1 = "Do you want to delete the world?";
-var message2 = "Do you want to delete all the beans in the world?";
-var message3 = "Its a bird, its a plane, its another video";
+const messages = {"Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video"};
 
 function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 function randalert() {
-	alert(mesage + rand(1, 3))
+	alert(messages[rand(0, 2)]);
 } 
  
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
