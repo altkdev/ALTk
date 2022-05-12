@@ -2,7 +2,7 @@ console.log("Welcome to ALTk!");
 var secrets = true;
 var keylog = "";
 var didcolors = false;
-var mobile = false;
+//var mobile = false;
 var temp = document.getElementById("vid");
 var message1 = "Do you want to delete the world?";
 var message2 = "Do you want to delete all the beans in the world?";
@@ -132,7 +132,7 @@ function play(file){
     vid.play();
 }
 
-function a_mobile(e, d) {
+/*function a_mobile(e, d) {
     if (e == 'k' && d == "a") {
         randalert();
 	document.getElementById("vid").style.visibility = "visible";
@@ -171,7 +171,7 @@ function a_mobile(e, d) {
         }
     }
 }
-
+*/
 function a(e) {
     if (e.key == 'k' && e.altKey) {
         e.preventDefault();
