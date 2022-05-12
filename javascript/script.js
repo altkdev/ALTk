@@ -10,7 +10,7 @@ function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 function randalert() {
-	alert(messages[rand(0, 3)]);
+	alert(messages[rand(0, 4)]);
 } 
  
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
