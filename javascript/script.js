@@ -14,12 +14,12 @@ function rand(min, max) {
 function randalert() {
 	alert(mesage + rand(1, 3))
 } 
-//detects if not one of thiese browsers! 
+/* Currently disabled by comments 
 if(navigation.userAgentData.mobile) {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
     console.log("You are using a mobile browser");
-}
+}*/
 
 $.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750})
 $("#vid").hide();
