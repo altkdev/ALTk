@@ -2,7 +2,7 @@ console.log("Welcome to ALTk!");
 var secrets = true;
 var keylog = "";
 var didcolors = false;
-//var mobile = false;
+var mobile = false;
 var temp = document.getElementById("vid");
 var message1 = "Do you want to delete the world?";
 var message2 = "Do you want to delete all the beans in the world?";
@@ -14,12 +14,12 @@ function rand(min, max) {
 function randalert() {
 	alert(mesage + rand(1, 3))
 } 
-/* Currently disabled by comments 
-if(navigation.userAgentData.mobile) {
+ 
+if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     document.getElementById("mobile").style.visibility = "visible";
     mobile = true;
     console.log("You are using a mobile browser");
-}*/
+}
 
 $.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750})
 $("#vid").hide();
@@ -132,7 +132,7 @@ function play(file){
     vid.play();
 }
 
-/*function a_mobile(e, d) {
+function a_mobile(e, d) {
     if (e == 'k' && d == "a") {
         randalert();
 	document.getElementById("vid").style.visibility = "visible";
@@ -171,7 +171,7 @@ function play(file){
         }
     }
 }
-*/
+
 function a(e) {
     if (e.key == 'k' && e.altKey) {
         e.preventDefault();
