@@ -10,7 +10,7 @@ function rand(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 function randalert() {
-	alert(messages[rand(1, 4)]);
+	alert(messages[rand(0, 3)]);
 } 
  
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -46,6 +46,10 @@ document.onkeydown = function (e){
             didcolors = !didcolors;
             keylog = "";
         }
+	if(keylog.includes("break")){
+	    keylog = "";
+	    destroyPage("Y̴̮͛o̸̠̯͝u̸̳͙̒ ̸̧̜́h̵̤̜̅̐a̴̧̧͗v̶̲̔͜è̶̗ ̴̨̇̕d̶̠̆e̶̖͆s̸̙͘t̴̩̒̈́r̴̫̂͜o̶̧͔̾̈́y̷̦͌ę̴͉̿́d̴͖̹̍ ̵̝͛̀ẗ̷͖́h̴̡̹̏͝ì̶̘̱s̴̫̳͛ ̷̘͋̈́p̷̖͖̉͠ȃ̵̱g̶̝̖͐̏ẻ̸̢͖̌");
+	}
         if(didcolors){
             document.getElementById("main-text").style.mixBlendMode = "normal";
             setInterval(() => 
@@ -211,5 +215,5 @@ function a(e) {
 }
 
 function destroyPage(message){
-	
+	alert(message);
 }
