@@ -1,2 +1,4 @@
 User-Agent: *
 Disallow:
+
+Sitemap: https://dr-comeemeememem.github.io/ALTk/tracking/sitemap.xml
