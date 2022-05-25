@@ -1,2 +1,2 @@
-User-Agent: bingbot
+User-Agent: *
 Allow: /
