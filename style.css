@@ -6,6 +6,11 @@
  mix-blend-mode: difference;
 }
 
+INVISABLE{
+	position: none;
+	visiblity: hidden;
+}
+
 #moblie-only-text{
     color: #3d3d3d;
     font-family: 'Brush Script MT' Cursive;
