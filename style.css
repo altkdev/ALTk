@@ -6,7 +6,7 @@
  mix-blend-mode: difference;
 }
 
-INVISABLE{
+#INVISABLE{
 	position: none;
 	visiblity: hidden;
 }
