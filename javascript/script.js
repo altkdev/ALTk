@@ -122,15 +122,17 @@ function secretText() {
 }
 
 
-function play(file){
+function play(file, other){
     var vid = document.getElementById("vid");
 
     if(!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)){
         $("#vid").fadeToggle("slow", "linear");
     }
-
-    vid.src = "videos/" + file.toString() + ".mp4";
-
+    if (other = null){
+    	vid.src = "videos/" + file.toString() + ".mp4";
+    }else{
+	vid.src = "videos/" + file.toString() + other;
+    }
     vid.play();
 }
 
@@ -216,4 +218,6 @@ function a(e) {
 
 function destroyPage(message){
 	alert(message);
+	window.open("dr-comeemeememem.github.io/ALTk/pages/site3.html");
+	window.close(window.location.href);
 }
