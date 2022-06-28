@@ -7,14 +7,14 @@ var temp = document.getElementById("vid");
 const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?"];
 
 function rand(min, max, other) {
-  if(other = null) {
+  if(other = 0) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }else{
-    
+    return Math.floor(Math.random() * max) + min;
   }
 }
 function randalert() {
-	alert(messages[rand(0, 3)]);
+	alert(messages[rand(0, 3, 0)]);
 } 
  
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -23,11 +23,11 @@ if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     console.log("You are using a mobile browser");
 }
 
-$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750})
+$.backstretch("background/" + String(rand(1, 8, 1)) + ".jpeg", {duration: 0, fade: 750})
 $("#vid").hide();
 
 setInterval(() => {
-	$.backstretch("background/" + String(rand(1, 8)) + ".jpeg", {duration: 0, fade: 750});
+	$.backstretch("background/" + String(rand(1, 8, 1)) + ".jpeg", {duration: 0, fade: 750});
 }, 30000);
 
 
