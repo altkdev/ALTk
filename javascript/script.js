@@ -7,14 +7,16 @@ var temp = document.getElementById("vid");
 const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?"];
 
 function rand(min, max, other) {
-  if(other = 0) {
+  if(other = 1) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }else{
-    return Math.floor(Math.random() * max) + min;
+    if(other = 2){
+      return Math.floor(Math.random() * max) + min;
+    }
   }
 }
 function randalert() {
-	alert(messages[rand(0, 3, 0)]);
+	alert(messages[rand(0, 3, 1)]);
 } 
  
 if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -23,11 +25,11 @@ if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
     console.log("You are using a mobile browser");
 }
 
-$.backstretch("background/" + String(rand(1, 8, 1)) + ".jpeg", {duration: 0, fade: 750})
+$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {duration: 0, fade: 750})
 $("#vid").hide();
 
 setInterval(() => {
-	$.backstretch("background/" + String(rand(1, 8, 1)) + ".jpeg", {duration: 0, fade: 750});
+	$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {duration: 0, fade: 750});
 }, 30000);
 
 
@@ -132,7 +134,7 @@ function play(file, other){
     if(!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)){
         $("#vid").fadeToggle("slow", "linear");
     }
-    if (other = null){
+    if (other = ""){
     	vid.src = "videos/" + file.toString() + ".mp4";
     }else{
 	vid.src = "videos/" + file.toString() + other.toString();
