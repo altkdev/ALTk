@@ -116,7 +116,7 @@ function secretText() {
             play(2);
         }
         if(document.getElementById("secretText").value == "something random"){
-            window.open("dr-comeemeememem.github.io/ALTk/pages/hELLO.html");
+            window.open("/ALTk/pages/hELLO.html");
 	    }
         if(document.getElementById("secretText").value == "69420"){
 	        play(420);
@@ -224,6 +224,6 @@ function a(e) {
 
 function destroyPage(message){
 	alert(message);
-	window.open("/pages/site3.html");
-	window.close(window.location.href);
+	window.open("/ALTk/pages/site3.html");
+	window.close(window.location.href());
 }
