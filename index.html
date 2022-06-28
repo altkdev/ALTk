@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- HELLO AND THANK YOU krishrajchal for your help!
 ur welcome-->
-<html lang="en">
+<html lang="en" style="width:100%;height:100%;">
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="ALTk where you press alt k and something happens and yess this page is 44.2% javascript!">
@@ -11,7 +11,7 @@ ur welcome-->
     <!--<base href="https://dr-comeemeememem.github.io/ALTk/" target="_blank">-->
     <link rel="shortcut icon" href="favicon.ico">
     <!-- just put latest verson in replace of 2.1.18 for easyer updates ===start JQuery content=== -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ===End JQuery links=== -->
     <link rel="stylesheet" href="style.css">
@@ -42,12 +42,46 @@ ur welcome-->
     })(window,document,'script','dataLayer','GTM-5R9H3HK');</script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+  <body style="width:100%;height:100%;margin:0;">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe id="INVISIBLE" src="https://www.googletagmanager.com/ns.html?id=GTM-5R9H3HK" height="0" width="0"></iframe>
-      <style href="javascript/no-script.css"></style>
-      <h1 class="noscript">You must be not smart to think you ca go to ALTk without havig JavaScript enabled in your browser!</h1>
+      <style>
+        #main {
+  visibility: hidden;
+          z-index: 1;
+}
+
+#vid {
+ visibility: hidden; 
+  z-index; 1;
+}
+/*https://codepen.io/P1N2O/pen/pyBNzX*/
+
+body {
+	background: linear-gradient(-45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #007fff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+	background-size: 100% 100%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+  z-index: 3;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+        }
+      </style>
+      <svg height="100%" width="100%" z-index="4">
+        <text x="0" y="50" font-family="Verdana" font-size="35" fill="red">You think you can go to ALTk without any javascript</text>
+      </svg>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <a href="https://dr-comeemeememem.github.io/ALTk/pages/site2.html" class="main-text" id="main-text">PRESS ALT K !! There are also hiden ester eggs</a>
