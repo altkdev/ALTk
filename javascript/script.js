@@ -224,6 +224,6 @@ function a(e) {
 
 function destroyPage(message){
 	alert(message);
-	window.open("dr-comeemeememem.github.io/ALTk/pages/site3.html");
+	window.open("/pages/site3.html");
 	window.close(window.location.href);
 }
