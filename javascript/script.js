@@ -135,7 +135,7 @@ function play(file, other){
     if (other = null){
     	vid.src = "videos/" + file.toString() + ".mp4";
     }else{
-	vid.src = "videos/" + file.toString() + other;
+	vid.src = "videos/" + file.toString() + other.toString();
     }
     vid.play();
 }
