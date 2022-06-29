@@ -220,6 +220,5 @@ function a(e) {
 
 function destroyPage(message) {
 	alert(message);
-	window.open("/ALTk/pages/site3.html");
-	window.close("/ALTk/");
+	window.location.replace("/ALTk/pages/site3.html");
 }
