@@ -6,6 +6,7 @@ var mobile = false;
 var temp = document.getElementById("vid");
 const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?"];
 let cookies = navigator.cookieEnabled;
+function welcome(){
 if (cookies = true){
 	function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -40,7 +41,8 @@ function checkCookie() {
     }
   }
 }
-	
+checkCookie();	
+}
 }
 function rand(min, max, other) {
 	if (other = 1) {
