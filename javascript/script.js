@@ -180,7 +180,13 @@ function a_mobile(e, d) {
 	if (e == 'k' && d == "a") {
 		randalert();
 		document.getElementById("vid").style.visibility = "visible";
-		play(69, 0)
+		play(69, 0); 
+		var times = times + 1; 
+		if (times = 42){
+			Alert("I like trains if you like trains share ALTk with your friends!");
+			var times = 0;
+		}
+		
 	}
 	if (d == "c" && secrets) {
 		if (e == 'a') {
@@ -221,6 +227,11 @@ function a(e) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
+		var times = times + 1; 
+		if (times = 42){
+			Alert("I like trains if you like trains share ALTk with your friends!");
+			var times = 0;
+		}
 	}
 	if (e.ctrlKey && secrets) {
 		if (e.key == 'a') {
