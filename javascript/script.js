@@ -4,7 +4,7 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-const screen = [width:"window.screen.availWidth;", length:"window.screen.availWidth"];
+const screen = ["window.screen.availWidth;", "window.screen.availWidth"];
 const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
 let cookies = navigator.cookieEnabled;
 function welcome(){
@@ -58,8 +58,8 @@ function rand(min, max, other) {
 function randalert() {
 	alert(messages[rand(0, 4, 1)])
 }
-if (screen.width <= 877){
-	if (screen.height <= 1400){
+if (screen[1] <= 877){
+	if (screen[2] <= 1400){
 	
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
