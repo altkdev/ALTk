@@ -4,7 +4,8 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?"];
+const screen = [width:"window.screen.availWidth;", length:"window.screen.availWidth"];
+const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
 let cookies = navigator.cookieEnabled;
 function welcome(){
   function setCookie(cname, cvalue, exdays) {
@@ -55,12 +56,15 @@ function rand(min, max, other) {
 }
 
 function randalert() {
-	alert(messages[rand(0, 3, 1)])
+	alert(messages[rand(0, 4, 1)])
 }
-if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+if (screen.width <= 877){
+	if (screen.height <= 1400){
+	
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
+	}
 }
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
