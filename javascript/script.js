@@ -183,7 +183,7 @@ function a_mobile(e, d) {
 		play(69, 0); 
 		var times = times + 1; 
 		if (times = 42){
-			Alert("I like trains if you like trains share ALTk with your friends!");
+			alert("I like trains if you like trains share ALTk with your friends!");
 			var times = 0;
 		}
 		
@@ -229,7 +229,7 @@ function a(e) {
 		play(69, 0)
 		var times = times + 1; 
 		if (times = 42){
-			Alert("I like trains if you like trains share ALTk with your friends!");
+			alert("I like trains if you like trains share ALTk with your friends!");
 			var times = 0;
 		}
 	}
