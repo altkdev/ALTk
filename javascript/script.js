@@ -4,7 +4,7 @@ var keylog = "";
 var didcolors = false;
 var mobile = false;
 var temp = document.getElementById("vid");
-const screen = ["window.screen.availWidth;", "window.screen.availWidth"];
+var times = 0
 const messages = ["Do you want to delete the world?", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
 let cookies = navigator.cookieEnabled;
 function welcome(){
@@ -58,13 +58,12 @@ function rand(min, max, other) {
 function randalert() {
 	alert(messages[rand(0, 4, 1)])
 }
-if (screen[1] <= 877){
-	if (screen[2] <= 1400){
-	
+
+	if (navigator.userAgent.toLowerCase().match(/mobile/i))
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
-	}
+	
 }
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
@@ -188,7 +187,7 @@ function a_mobile(e, d) {
 		var times = times + 1; 
 		if (times = 42){
 			alert("I like trains if you like trains share ALTk with your friends!");
-			var times = 0;
+			times = 0;
 		}
 		
 	}
@@ -234,7 +233,7 @@ function a(e) {
 		var times = times + 1; 
 		if (times = 42){
 			alert("I like trains if you like trains share ALTk with your friends!");
-			var times = 0;
+			times = 0;
 		}
 	}
 	if (e.ctrlKey && secrets) {
