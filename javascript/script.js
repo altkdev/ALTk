@@ -44,7 +44,7 @@ function checkCookie() {
 if (cookies = true){
   checkCookie();	
 }
-}
+
 function rand(min, max, other) {
 	if (other = 1) {
 		return Math.floor(Math.random() * (max - min + 1)) + min
@@ -56,14 +56,13 @@ function rand(min, max, other) {
 }
 
 function randalert() {
-	alert(messages[rand(0, 4, 1)])
+	alert(messages[rand(0, 4, 1)]);
 }
 
-	if (navigator.userAgent.toLowerCase().match(/mobile/i))
+if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
-	
 }
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
