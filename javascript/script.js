@@ -76,11 +76,6 @@ setInterval(() => {
 		fade: 750
 	})
 }, 3e4);
-document.getElementById("vid").addEventListener("ended", function () {
-	if ($("#vid").is(":visible")) {
-		$("#vid").fadeOut("slow", "linear")
-	}
-});
 document.getElementById("vid").onpause = function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear")
@@ -124,7 +119,7 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 	}
 });
 
-welcome();
+setTimeout(welcome(), 1);
 
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
