@@ -124,6 +124,8 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 	}
 });
 
+welcome();
+
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
 	document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
