@@ -1,3 +1,4 @@
+[![CodeQL](https://github.com/dr-comeemeememem/ALTk/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/dr-comeemeememem/ALTk/actions/workflows/codeql-analysis.yml)
 # ALTk
 Welcome to ALTk where you press alt k. 
 
