@@ -76,33 +76,33 @@ setInterval(() => {
 		fade: 750
 	})
 }, 3e4);
-document.getElementById("vid").onpause = function () {
+document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
-		$("#vid").fadeOut("slow", "linear")
+		$("#vid").fadeOut("slow", "linear");
 	}
-};
+});
 document.onkeydown = function (e) {
 	if (secrets) {
 		keylog += e.key;
 		if (keylog.includes("awesome")) {
 			didcolors = !didcolors;
-			keylog = ""
+			keylog = "";
 		}
 		if (keylog.includes("break")) {
 			keylog = "";
-			destroyPage("Y̴̮͛o̸̠̯͝u̸̳͙̒ ̸̧̜́h̵̤̜̅̐a̴̧̧͗v̶̲̔͜è̶̗ ̴̨̇̕d̶̠̆e̶̖͆s̸̙͘t̴̩̒̈́r̴̫̂͜o̶̧͔̾̈́y̷̦͌ę̴͉̿́d̴͖̹̍ ̵̝͛̀ẗ̷͖́h̴̡̹̏͝ì̶̘̱s̴̫̳͛ ̷̘͋̈́p̷̖͖̉͠ȃ̵̱g̶̝̖͐̏ẻ̸̢͖̌")
+			destroyPage("Y̴̮͛o̸̠̯͝u̸̳͙̒ ̸̧̜́h̵̤̜̅̐a̴̧̧͗v̶̲̔͜è̶̗ ̴̨̇̕d̶̠̆e̶̖͆s̸̙͘t̴̩̒̈́r̴̫̂͜o̶̧͔̾̈́y̷̦͌ę̴͉̿́d̴͖̹̍ ̵̝͛̀ẗ̷͖́h̴̡̹̏͝ì̶̘̱s̴̫̳͛ ̷̘͋̈́p̷̖͖̉͠ȃ̵̱g̶̝̖͐̏ẻ̸̢͖̌");
 		}
 		if (didcolors) {
 			document.getElementById("main-text").style.mixBlendMode = "normal";
 			setInterval(() => {
 				if (!didcolors) {
-					return
+					return;
 				}
-				document.getElementById("main-text").style.color = "#" + Math.floor(Math.random() * 16777215).toString(16)
+				document.getElementById("main-text").style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
 			}, 1)
 		} else {
 			document.getElementById("main-text").style.mixBlendMode = "difference";
-			document.getElementById("main-text").style.color = "white"
+			document.getElementById("main-text").style.color = "white";
 		}
 	}
 	a(e)
