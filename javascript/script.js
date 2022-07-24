@@ -1,3 +1,4 @@
+$(document).ready(function() {
 console.log("Welcome to ALTk!");
 var secrets = true;
 var keylog = "";
@@ -271,3 +272,4 @@ function destroyPage(message) {
 	alert(message);
 	window.location.replace("/ALTk/pages/site3.html");
 }
+});
