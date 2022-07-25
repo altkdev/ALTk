@@ -110,9 +110,20 @@ document.onkeydown = function (e) {
 	}
 	a(e)
 };
-document.getElementById("secretText").addEventListener("input", () => {
-	secretText()
+document.getElementById("skip-nav").addEventListener("click", () => {
+	skipnav();
 });
+	
+document.getElementById("secret").addEventListener("change", () => {
+	if(document.getElementById("secret").checked){
+		secretChecked();
+	}
+});
+	
+document.getElementById("secretText").addEventListener("input", () => {
+	secretText();
+});
+	
 document.getElementById("mobile-only").addEventListener("input", () => {
 	c = document.getElementById("mobile-only");
 	if (c.value.includes('c ')) {
