@@ -6,6 +6,11 @@
  mix-blend-mode: difference;
 }
 
+#if-script{
+	position: none;
+	visibility: hidden;
+}
+
 #INVISIBLE{
 	position: none;
 	visibility: hidden;
