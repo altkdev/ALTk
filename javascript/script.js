@@ -1,5 +1,7 @@
 $(document).ready(function() {
 console.log("Welcome to ALTk!");
+$("#if-script").show();
+$("#if-script").css('visibility', 'visible');
 var secrets = true;
 var keylog = "";
 var didcolors = false;
