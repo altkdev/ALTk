@@ -115,6 +115,13 @@ document.getElementById("skip-nav").addEventListener("click", () => {
 });
 	
 document.getElementById("secret").addEventListener("change", () => {
+	if(!secret){
+		try {
+			$("#vid").pause()
+		} catch (Exception) {
+			return
+		}
+	}
 	if(document.getElementById("secret").checked){
 		secretChecked();
 	}
