@@ -150,7 +150,7 @@ function skipnav() {
 	didcolors = false;
 	secrets = false;
 	try {
-		$("#vid").pause()
+		document.getElementById("vid").pause()
 	} catch (Exception) {
 		return
 	}
