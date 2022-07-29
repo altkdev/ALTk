@@ -149,7 +149,7 @@ function skipnav() {
 	document.getElementById("main-text").style.color = "white";
 	didcolors = false;
 	secrets = false;
-	$("a").attr("href", "");
+	$("a").attr("href", "#");
 	try {
 		document.getElementById("vid").pause()
 	} catch (Exception) {
