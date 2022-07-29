@@ -33,4 +33,4 @@ jobs:
       - name: get date
         run: |
           echo geting date
-          echo $(Get-Date -Format "YYYYMMDDThhmmssZ")
+          echo $Get-Date -Format "YYYYMMDDThhmmssZ"
