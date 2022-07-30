@@ -33,4 +33,5 @@ jobs:
       - name: get date
         run: |
           echo geting date...
-          $date
+          date=$(date)
+          echo $date
