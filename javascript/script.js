@@ -249,7 +249,7 @@ function a(e) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
-		var times = times + 1; 
+		var times = times += 1; 
 		if (times = 42){
 			alert("I like trains if you like trains share ALTk with your friends!");
 			times = 0;
