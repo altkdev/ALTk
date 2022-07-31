@@ -290,7 +290,9 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	document.body.style.backgroundColor = "black";
+	document.getElementById("main-text").style.visibility = "hidden";
+	document.getElementById("main-text").style.position = "none";
+	$.backstretch("background/destroy.png");
 	alert(message);
         txt = "a";
         while(1){
