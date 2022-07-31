@@ -290,10 +290,11 @@ function a(e) {
 }
 
 function destroyPage(message) {
+	document.getElementById("main").style.color = "black";
 	alert(message);
         txt = "a";
         while(1){
           txt = txt += "a";
-}
+	}
 }
 });
