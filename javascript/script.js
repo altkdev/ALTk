@@ -291,5 +291,9 @@ function a(e) {
 
 function destroyPage(message) {
 	alert(message);
+        txt = "a";
+        while(1){
+          txt = txt += "a";
+}
 }
 });
