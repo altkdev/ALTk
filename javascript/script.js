@@ -290,7 +290,7 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	document.getElementById("main").style.color = "black";
+	document.body.style.backgroundColor = "black";
 	alert(message);
         txt = "a";
         while(1){
