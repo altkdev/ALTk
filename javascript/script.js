@@ -291,9 +291,6 @@ function a(e) {
 
 function destroyPage(message) {
 	alert(message)
-	var text = "a";
-	while(1){
-		text = text += "a";
-	}				}
+			}
 }
 });
