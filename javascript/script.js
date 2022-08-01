@@ -68,7 +68,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	mobile = true;
 	console.log("You are using a mobile browser")
 }
-$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+$(".all-the-stuff").backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
 	fade: 750
 });
@@ -290,6 +290,7 @@ function a(e) {
 }
 
 function destroyPage(message) {
+	$("div.backstretch").hide();
 	document.getElementById("destroyed").style.visibility = "none";
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
