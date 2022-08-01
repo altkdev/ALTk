@@ -290,13 +290,15 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	document.getElementById("main-text").style.visibility = "hidden";
-	document.getElementById("main-text").style.position = "none";
-	$.backstretch("background/destroy.png");
+	document.getElementById("destroyed").style.visibility = "none";
+	document.getElementById("all-the-stuff").style.visibility = "hidden";
+	document.getElementById("all-the-stuff").style.position = "none";
 	alert(message);
+	/*
         txt = "a";
         while(1){
           txt = txt += "a";
 	}
+	*/
 }
 });
