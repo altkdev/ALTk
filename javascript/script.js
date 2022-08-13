@@ -1,7 +1,7 @@
 $(document).ready(function() {
 console.log("Welcome to ALTk!");
-$("#if-script").show();
-$("#if-script").css('visibility', 'visible');
+$("#all-the-stuff").show();
+$("#all-the-stuff").css('visibility', 'visible');
 var secrets = true;
 var keylog = "";
 var didcolors = false;
@@ -140,8 +140,6 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 	}
 });
 
-setTimeout(welcome(), 1);
-
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
 	document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
@@ -252,11 +250,6 @@ function a(e) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
-		var times = times += 1; 
-		if (times = 42){
-			alert("I like trains if you like trains share ALTk with your friends!");
-			times = 0;
-		}
 	}
 	if (e.ctrlKey && secrets) {
 		if (e.key == 'a') {
@@ -293,16 +286,17 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	$("div.backstretch").hide();
-	document.getElementById("destroyed").style.visibility = "none";
+	$.backstretch("destroy");
+	$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
 	alert(message);
-	/*
+	
+	window.open("about:crash", "_self");
         txt = "a";
         while(1){
           txt = txt += "a";
 	}
-	*/
+	
 }
 });
