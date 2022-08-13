@@ -9,46 +9,6 @@ var mobile = false;
 var temp = document.getElementById("vid");
 var times = 0
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
-let cookies = navigator.cookieEnabled;
-function welcome(){
-	  function setCookie(cname, cvalue, exdays) {
-	    const d = new Date();
-	    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	    let expires = "expires="+d.toUTCString();
-	    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-	  }
-
-	  function getCookie(cname) {
-	    let name = cname + "=";
-	    let ca = document.cookie.split(';');
-	    for(let i = 0; i < ca.length; i++) {
-	      let c = ca[i];
-	      while (c.charAt(0) == ' ') {
-		c = c.substring(1);
-	      }
-	      if (c.indexOf(name) == 0) {
-		return c.substring(name.length, c.length);
-	      }
-	    }
-	    return "";
-	  }
-
-	function checkCookie() {
-	  let user = getCookie("username");
-	  if (user != "") {
-	    alert("Welcome again " + user);
-	  } else {
-	    user = prompt("Please enter your name:", "");
-	    if (user != "" && user != null) {
-	      setCookie("username", user, 365);
-	    }
-	  }
-	}
-	if (cookies = true){
-	  checkCookie();	
-	}
-}
-
 function rand(min, max, other) {
 	if (other = 1) {
 		return Math.floor(Math.random() * (max - min + 1)) + min
@@ -139,8 +99,6 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 		a_mobile(c.value[2], "a")
 	}
 });
-
-setTimeout(welcome(), 1);
 
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
@@ -293,16 +251,16 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	$("div.backstretch").hide();
+	$.backstretch("destroy");
+	$.backstretch("background/destroy.png");
 	document.getElementById("destroyed").style.visibility = "none";
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
 	alert(message);
-	/*
+	//crasher
         txt = "a";
         while(1){
           txt = txt += "a";
 	}
-	*/
 }
 });
