@@ -5,6 +5,7 @@ $("#if-script").css('visibility', 'visible');
 var secrets = true;
 var keylog = "";
 var didcolors = false;
+var pageIsDestroyed = false;
 var mobile = false;
 var temp = document.getElementById("vid");
 var times = 0
@@ -34,18 +35,20 @@ $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 });
 $("#vid").hide();
 setInterval(() => {
-	$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
-		duration: 0,
-		fade: 750
-	})
-}, 30);
+	if(!pageIsDestroyed){
+		$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+			duration: 0,
+			fade: 750
+		})
+	}
+}, 30000);
 document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear");
 	}
 });
 document.onkeydown = function (e) {
-	if (secrets) {
+	if (secrets && !pageIsDestroyed) {
 		keylog += e.key;
 		if (keylog.includes("awesome")) {
 			didcolors = !didcolors;
@@ -53,6 +56,7 @@ document.onkeydown = function (e) {
 		}
 		if (keylog.includes("break")) {
 			keylog = "";
+			pageIsDestroyed = true;
 			destroyPage("Y̴̮͛o̸̠̯͝u̸̳͙̒ ̸̧̜́h̵̤̜̅̐a̴̧̧͗v̶̲̔͜è̶̗ ̴̨̇̕d̶̠̆e̶̖͆s̸̙͘t̴̩̒̈́r̴̫̂͜o̶̧͔̾̈́y̷̦͌ę̴͉̿́d̴͖̹̍ ̵̝͛̀ẗ̷͖́h̴̡̹̏͝ì̶̘̱s̴̫̳͛ ̷̘͋̈́p̷̖͖̉͠ȃ̵̱g̶̝̖͐̏ẻ̸̢͖̌");
 		}
 		if (didcolors) {
@@ -160,6 +164,8 @@ function play(file, other) {
 }
 
 function a_mobile(e, d) {
+	if(pageIsDestroyed)
+		return;
 	if (e == 'k' && d == "a") {
 		randalert();
 		document.getElementById("vid").style.visibility = "visible";
@@ -206,6 +212,8 @@ function a_mobile(e, d) {
 }
 
 function a(e) {
+	if(pageIsDestroyed)
+		return;
 	if (e.key == 'k' && e.altKey) {
 		e.preventDefault();
 		randalert();
