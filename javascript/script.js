@@ -261,9 +261,8 @@ function a(e) {
 function destroyPage(message) {
 	$.backstretch("destroy");
 	$.backstretch("background/destroy.png");
-	document.getElementById("destroyed").style.visibility = "none";
-	document.getElementById("all-the-stuff").style.visibility = "hidden";
-	document.getElementById("all-the-stuff").style.position = "none";
+	document.getElementById("main").style.visibility = "hidden";
+	document.getElementById("main").style.position = "none";
 	alert(message);
 	//crasher
         txt = "a";
