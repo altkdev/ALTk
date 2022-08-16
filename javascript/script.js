@@ -31,6 +31,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	console.log("You are using a mobile browser")
 }else if(navigator.userAgent.toLowerCase() = "safari"){
 	document.getElementById("main-text").innerHTML = "Press ⌥ K";
+}
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
 	fade: 750
