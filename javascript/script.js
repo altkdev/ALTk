@@ -7,6 +7,7 @@ var keylog = "";
 var didcolors = false;
 var pageIsDestroyed = false;
 var mobile = false;
+var apple = false;
 var temp = document.getElementById("vid");
 var times = 0
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
@@ -28,7 +29,8 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
-}
+}else if(navigator.userAgent.toLowerCase() = "safari"){
+	document.getElementById("main-text").innerHTML = "Press ⌥ K";
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
 	fade: 750
@@ -214,7 +216,7 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && e.altKey) {
+	if (e.key == 'k' && e.altKey || e.key == 'k' && e.optionKey && apple) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
@@ -224,7 +226,7 @@ function a(e) {
 			times = 0;
 		}
 	}
-	if (e.ctrlKey && secrets) {
+	if (e.ctrlKey && secrets || e.controlKey && secrets && apple) {
 		if (e.key == 'a') {
 			e.preventDefault();
 			randalert();
@@ -261,8 +263,8 @@ function a(e) {
 function destroyPage(message) {
 	$.backstretch("destroy");
 	$.backstretch("background/destroy.png");
-	document.getElementById("main").style.visibility = "hidden";
-	document.getElementById("main").style.position = "none";
+	document.getElementById("all-the-stuff").style.visibility = "hidden";
+	document.getElementById("all-the-stuff").style.position = "none";
 	alert(message);
 	//crasher
         txt = "a";
