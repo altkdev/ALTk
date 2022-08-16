@@ -217,7 +217,16 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && e.altKey || e.key == 'k' && e.optionKey && apple) {
+	if (e.key == 'k' && e.altKey) {
+		e.preventDefault();
+		randalert();
+		play(69, 0)
+		var times = times += 1; 
+		if (times = 42){
+			alert("I like trains if you like trains share ALTk with your friends!");
+			times = 0;
+		}
+	}else if(e.key == 'k' && e.optionKey && apple) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
@@ -227,7 +236,7 @@ function a(e) {
 			times = 0;
 		}
 	}
-	if (e.ctrlKey && secrets || e.controlKey && secrets && apple) {
+	if (e.ctrlKey && secrets) {
 		if (e.key == 'a') {
 			e.preventDefault();
 			randalert();
@@ -258,6 +267,37 @@ function a(e) {
 			randalert();
 			play(7, 0)
 		}
+	}else if(e.controlKey && secrets && apple) {
+		if (e.key == 'a') {
+			e.preventDefault();
+			randalert();
+			play(9, 0)
+		}
+		if (e.key == 'b') {
+			e.preventDefault();
+			randalert();
+			play(4, 0)
+		}
+		if (e.key == 'c') {
+			e.preventDefault();
+			randalert();
+			play(10, 0)
+		}
+		if (e.key == 'd') {
+			e.preventDefault();
+			randalert();
+			play(6, 0)
+		}
+		if (e.key == 'e') {
+			e.preventDefault();
+			randalert();
+			play(8, 0)
+		}
+		if (e.key == 'f') {
+			e.preventDefault();
+			randalert();
+			play(7, 0)
+		}		
 	}
 }
 
