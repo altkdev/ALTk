@@ -28,7 +28,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	mobile = true;
 	console.log("You are using a mobile browser")
 }
-$(".all-the-stuff").backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
 	fade: 750
 });
@@ -38,7 +38,7 @@ setInterval(() => {
 		duration: 0,
 		fade: 750
 	})
-}, 3e4);
+}, 30);
 document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear");
