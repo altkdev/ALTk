@@ -223,7 +223,7 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && (e.altKey || (e.metakey && apple)) {
+	if (e.key == 'k' && (e.altKey || (e.metakey && apple))) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
@@ -276,7 +276,7 @@ function destroyPage(message) {
 	//crasher
         txt = "a";
         while(1){
-          txt = txt += "a";
+          txt += "a";
 	}
 }
 });
