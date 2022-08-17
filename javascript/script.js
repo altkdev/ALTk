@@ -30,7 +30,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
-}else if(navigator.platform.indexOf("Mac") === 0){
+}else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
 	apple = true;
 	document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
 }
