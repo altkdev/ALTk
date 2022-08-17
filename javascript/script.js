@@ -7,6 +7,7 @@ var keylog = "";
 var didcolors = false;
 var pageIsDestroyed = false;
 var mobile = false;
+var times = 0;
 var apple = false;
 var temp = document.getElementById("vid");
 var times = 0
@@ -29,8 +30,9 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	document.getElementById("mobile").style.visibility = "visible";
 	mobile = true;
 	console.log("You are using a mobile browser")
-}else if(navigator.userAgent.toLowerCase() = "safari"){
-	document.getElementById("main-text").innerHTML = "Press ⌥ K";
+}else if(navigator.platform.indexOf("Mac") === 0){
+	apple = true;
+	document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
 }
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
@@ -109,7 +111,11 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
-	document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
+	if(!apple){
+		document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
+	}else{
+		document.getElementById("main-text").innerHTML = "PRESS COMMAND K !!";
+	}
 	document.getElementById("main-text").style.mixBlendMode = "difference";
 	document.getElementById("main-text").style.color = "white";
 	didcolors = false;
@@ -158,7 +164,7 @@ function play(file, other) {
 	if (!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)) {
 		$("#vid").fadeToggle("slow", "linear")
 	}
-	if (other = "0") {
+	if (other == 0) {
 		vid.src = "videos/" + file.toString() + ".mp4"
 	} else {
 		vid.src = "videos/" + file.toString() + other.toString()
@@ -173,8 +179,8 @@ function a_mobile(e, d) {
 		randalert();
 		document.getElementById("vid").style.visibility = "visible";
 		play(69, 0); 
-		var times = times + 1; 
-		if (times = 42){
+		times += 1;
+		if (times == 42){
 			alert("I like trains if you like trains share ALTk with your friends!");
 			times = 0;
 		}
@@ -217,16 +223,7 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && e.altKey) {
-		e.preventDefault();
-		randalert();
-		play(69, 0)
-		var times = times += 1; 
-		if (times = 42){
-			alert("I like trains if you like trains share ALTk with your friends!");
-			times = 0;
-		}
-	}else if(e.key == 'k' && e.optionKey && apple) {
+	if (e.key == 'k' && (e.altKey || (e.metakey && apple)) {
 		e.preventDefault();
 		randalert();
 		play(69, 0)
@@ -267,37 +264,6 @@ function a(e) {
 			randalert();
 			play(7, 0)
 		}
-	}else if(e.controlKey && secrets && apple) {
-		if (e.key == 'a') {
-			e.preventDefault();
-			randalert();
-			play(9, 0)
-		}
-		if (e.key == 'b') {
-			e.preventDefault();
-			randalert();
-			play(4, 0)
-		}
-		if (e.key == 'c') {
-			e.preventDefault();
-			randalert();
-			play(10, 0)
-		}
-		if (e.key == 'd') {
-			e.preventDefault();
-			randalert();
-			play(6, 0)
-		}
-		if (e.key == 'e') {
-			e.preventDefault();
-			randalert();
-			play(8, 0)
-		}
-		if (e.key == 'f') {
-			e.preventDefault();
-			randalert();
-			play(7, 0)
-		}		
 	}
 }
 
