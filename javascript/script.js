@@ -175,7 +175,7 @@ function play(file, other) {
 function a_mobile(e, d) {
 	if(pageIsDestroyed)
 		return;
-	if (e == 'k'.toLowerCase() && d == "a".toLowerCase() {
+	if (e == 'k'.toLowerCase() && d == "a".toLowerCase()) {
 		randalert();
 		document.getElementById("vid").style.visibility = "visible";
 		play(69, 0); 
