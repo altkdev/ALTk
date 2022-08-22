@@ -11,7 +11,7 @@ var times = 0;
 var apple = false;
 var temp = document.getElementById("vid");
 var times = 0
-const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver"];
+const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay"];
 function rand(min, max, other) {
 	if (other = 1) {
 		return Math.floor(Math.random() * (max - min + 1)) + min
@@ -23,7 +23,7 @@ function rand(min, max, other) {
 }
 
 function randalert() {
-	alert(messages[rand(0, 4, 1)]);
+	alert(messages[rand(0, 6, 1)]);
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)){
