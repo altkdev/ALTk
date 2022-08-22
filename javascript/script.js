@@ -23,7 +23,7 @@ function rand(min, max, other) {
 }
 
 function randalert() {
-	alert(messages[rand(0, 6, 1)]);
+	alert(messages[rand(0, 7, 1)]);
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)){
@@ -175,7 +175,7 @@ function play(file, other) {
 function a_mobile(e, d) {
 	if(pageIsDestroyed)
 		return;
-	if (e == 'k' && d == "a") {
+	if (e == 'k'.toLowerCase() && d == "a".toLowerCase() {
 		randalert();
 		document.getElementById("vid").style.visibility = "visible";
 		play(69, 0); 
@@ -186,33 +186,33 @@ function a_mobile(e, d) {
 		}
 		
 	}
-	if (d == "c" && secrets) {
-		if (e == 'a') {
+	if (d == "c".toLowerCase() && secrets) {
+		if (e == 'a'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(9, 0)
 		}
-		if (e == 'b') {
+		if (e == 'b'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(4, 0)
 		}
-		if (e == 'c') {
+		if (e == 'c'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(10, 0)
 		}
-		if (e == 'd') {
+		if (e == 'd'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(6, 0)
 		}
-		if (e == 'e') {
+		if (e == 'e'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(8, 0)
 		}
-		if (e == 'f') {
+		if (e == 'f'.toLowerCase()) {
 			randalert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(7, 0)
