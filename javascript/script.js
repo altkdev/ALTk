@@ -50,7 +50,7 @@ setInterval(() => {
 document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear");
-	        temp.destroy();
+	        temp.src = "none";
 	}
 });
 document.onkeydown = function (e) {
