@@ -110,6 +110,11 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 	}
 });
 
+function helpme() {
+	alert ("go to https://github.com/dr-comeemeememem/ALTk#readme for help");
+	window.location.replace("https://github.com/dr-comeemeememem/ALTk#readme");
+}
+
 function skipnav() {
 	document.getElementById("main").style.visibility = "hidden";
 	if(!apple){
