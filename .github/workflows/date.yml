@@ -39,17 +39,17 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: satackey/action-js-inline@bf6fcaf35de1ed03bcfd25a0a8b1fa4c551ec908
         uses: satackey/action-js-inline@v0.0.2
-          with:
+        with:
             # The package manager used to install the required packages.
             package-manager: # default is npm
             # Required package to run JavaScript snippet.
             required-packages: # optional
             # The JavaScript snippet to be executed.
-          script:
-            //just a test
-            const date = new Date();
-            $.ajax({
-              type: "POST",
-              url: "mailto:server@example.net",
-              data: date
-            });
+            script:
+              //just a test
+              const date = new Date();
+              $.ajax({
+                type: "POST",
+                url: "mailto:server@example.net",
+                data: date
+              });
