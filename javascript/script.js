@@ -231,7 +231,6 @@ function a(e) {
 		return;
 	if (e.key == 'k' && (e.altKey || (e.metakey && apple))) {
 		e.preventDefault();
-		randalert();
 		play(69, 0)
 		var times = times += 1; 
 		if (times = 42){
