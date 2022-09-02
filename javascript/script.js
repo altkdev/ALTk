@@ -229,7 +229,7 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && (e.altKey || (e.metakey && apple))) {
+	if (e.key == 'k' && (e.altKey || (event.key === 'Meta' && apple))) {
 		e.preventDefault();
 		play(69, 0)
 		var times = times += 1; 
