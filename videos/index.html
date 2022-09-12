@@ -6,13 +6,14 @@
   <body>
     <script>
       function what() {
-         var whater = document.getElementById("A").value.toString()
-         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater
+         var whater = document.getElementById("A").value.toString();
+         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
+         document.getElemenrById("vid").play;
       }
     </script>
     <div>
       <input id="A" placeholder="put video name here">
       <button onclick="what()">play the vid</button>
-      <video id="vid"></video>
+      <video id="vid" controls></video>
     </div>
 </html>
