@@ -5,6 +5,11 @@
   </head>
   <body>
     <script>
+      if (document.navigator.href != "https://dr-comeemeemeememem.github.io/ALTk/videos/"){
+        var whater = document.navigator.href.split("?").pop()
+        document.getElementById("A").value = whater;
+        document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
+      }
       function what() {
          var whater = document.getElementById("A").value.toString();
          document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
