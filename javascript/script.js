@@ -10,20 +10,99 @@ var mobile = false;
 var times = 0;
 var apple = false;
 var temp = document.getElementById("vid");
-var times = 0
+var times = 0;
+const zalgo_up = [
+	'\u030d', /*     ̍     */		'\u030e', /*     ̎     */		'\u0304', /*     ̄     */		'\u0305', /*     ̅     */
+	'\u033f', /*     ̿     */		'\u0311', /*     ̑     */		'\u0306', /*     ̆     */		'\u0310', /*     ̐     */
+	'\u0352', /*     ͒     */		'\u0357', /*     ͗     */		'\u0351', /*     ͑     */		'\u0307', /*     ̇     */
+	'\u0308', /*     ̈     */		'\u030a', /*     ̊     */		'\u0342', /*     ͂     */		'\u0343', /*     ̓     */
+	'\u0344', /*     ̈́     */		'\u034a', /*     ͊     */		'\u034b', /*     ͋     */		'\u034c', /*     ͌     */
+	'\u0303', /*     ̃     */		'\u0302', /*     ̂     */		'\u030c', /*     ̌     */		'\u0350', /*     ͐     */
+	'\u0300', /*     ̀     */		'\u0301', /*     ́     */		'\u030b', /*     ̋     */		'\u030f', /*     ̏     */
+	'\u0312', /*     ̒     */		'\u0313', /*     ̓     */		'\u0314', /*     ̔     */		'\u033d', /*     ̽     */
+	'\u0309', /*     ̉     */		'\u0363', /*     ͣ     */		'\u0364', /*     ͤ     */		'\u0365', /*     ͥ     */
+	'\u0366', /*     ͦ     */		'\u0367', /*     ͧ     */		'\u0368', /*     ͨ     */		'\u0369', /*     ͩ     */
+	'\u036a', /*     ͪ     */		'\u036b', /*     ͫ     */		'\u036c', /*     ͬ     */		'\u036d', /*     ͭ     */
+	'\u036e', /*     ͮ     */		'\u036f', /*     ͯ     */		'\u033e', /*     ̾     */		'\u035b', /*     ͛     */
+	'\u0346', /*     ͆     */		'\u031a' /*     ̚     */
+];
+
+//those go DOWN
+const zalgo_down = [
+	'\u0316', /*     ̖     */		'\u0317', /*     ̗     */		'\u0318', /*     ̘     */		'\u0319', /*     ̙     */
+	'\u031c', /*     ̜     */		'\u031d', /*     ̝     */		'\u031e', /*     ̞     */		'\u031f', /*     ̟     */
+	'\u0320', /*     ̠     */		'\u0324', /*     ̤     */		'\u0325', /*     ̥     */		'\u0326', /*     ̦     */
+	'\u0329', /*     ̩     */		'\u032a', /*     ̪     */		'\u032b', /*     ̫     */		'\u032c', /*     ̬     */
+	'\u032d', /*     ̭     */		'\u032e', /*     ̮     */		'\u032f', /*     ̯     */		'\u0330', /*     ̰     */
+	'\u0331', /*     ̱     */		'\u0332', /*     ̲     */		'\u0333', /*     ̳     */		'\u0339', /*     ̹     */
+	'\u033a', /*     ̺     */		'\u033b', /*     ̻     */		'\u033c', /*     ̼     */		'\u0345', /*     ͅ     */
+	'\u0347', /*     ͇     */		'\u0348', /*     ͈     */		'\u0349', /*     ͉     */		'\u034d', /*     ͍     */
+	'\u034e', /*     ͎     */		'\u0353', /*     ͓     */		'\u0354', /*     ͔     */		'\u0355', /*     ͕     */
+	'\u0356', /*     ͖     */		'\u0359', /*     ͙     */		'\u035a', /*     ͚     */		'\u0323' /*     ̣     */
+];
+
+//those always stay in the middle
+const zalgo_mid = [
+	'\u0315', /*     ̕     */		'\u031b', /*     ̛     */		'\u0340', /*     ̀     */		'\u0341', /*     ́     */
+	'\u0358', /*     ͘     */		'\u0321', /*     ̡     */		'\u0322', /*     ̢     */		'\u0327', /*     ̧     */
+	'\u0328', /*     ̨     */		'\u0334', /*     ̴     */		'\u0335', /*     ̵     */		'\u0336', /*     ̶     */
+	'\u034f', /*     ͏     */		'\u035c', /*     ͜     */		'\u035d', /*     ͝     */		'\u035e', /*     ͞     */
+	'\u035f', /*     ͟     */		'\u0360', /*     ͠     */		'\u0362', /*     ͢     */		'\u0338', /*     ̸     */
+	'\u0337', /*     ̷     */		'\u0361', /*     ͡     */		'\u0489' /*     ҉_     */		
+];
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay"];
+
 function rand(min, max, other) {
-	if (other = 1) {
-		return Math.floor(Math.random() * (max - min + 1)) + min
-	} else {
-		if (other = 2) {
-			return Math.floor(Math.random() * max) + min
-		}
+	if (other == 1) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	} else if(other == 2){
+		return Math.floor(Math.random() * max) + min;
 	}
+}
+
+function is_zalgo_char(c)
+{
+	var i;
+	for(i=0; i<zalgo_up.length; i++)
+		if(c == zalgo_up[i])
+			return true;
+	for(i=0; i<zalgo_down.length; i++)
+		if(c == zalgo_down[i])
+			return true;
+	for(i=0; i<zalgo_mid.length; i++)
+		if(c == zalgo_mid[i])
+			return true;
+	return false;
 }
 
 function randalert() {
 	alert(messages[rand(0, 7, 1)]);
+}
+
+function zalgo(text){
+	var newtxt = '';
+	for(var i=0; i<text.length; i++){
+		if(is_zalgo_char(txt.substr(i, 1)))
+      		continue;
+
+			newtxt += txt.substr(i, 1);
+		
+		for(var j=0; j<rand(8); j++)
+			newtxt += rand_zalgo(zalgo_up);
+
+		for(var j=0; j<rand(2); j++)
+			newtxt += rand_zalgo(zalgo_mid);
+
+		for(var j=0; j<rand(8); j++)
+			newtxt += rand_zalgo(zalgo_down);
+	}
+	return newtxt;
+}
+
+function rand_zalgo(array)
+{
+	var ind = Math.floor(Math.random() * array.length);
+	return array[ind];
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)){
@@ -54,6 +133,9 @@ document.getElementById("vid").addEventListener('pause', function () {
 	}
 });
 document.onkeydown = function (e) {
+	if(pageIsDestroyed){
+		document.title = zalgo("ALTk");
+	}
 	if (secrets && !pageIsDestroyed) {
 		keylog += e.key;
 		if (keylog.includes("awesome")) {
@@ -277,11 +359,7 @@ function destroyPage(message) {
 	$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
+	document.title = zalgo("ALTk");
 	alert(message);
-	//crasher
-        txt = "a";
-        while(1){
-          txt += "a";
-	}
 }
 });
