@@ -82,10 +82,10 @@ function randalert() {
 function zalgo(text){
 	var newtxt = '';
 	for(var i=0; i<text.length; i++){
-		if(is_zalgo_char(txt.substr(i, 1)))
+		if(is_zalgo_char(text.substr(i, 1)))
       		continue;
 
-			newtxt += txt.substr(i, 1);
+			newtxt += text.substr(i, 1);
 		
 		for(var j=0; j<rand(8); j++)
 			newtxt += rand_zalgo(zalgo_up);
