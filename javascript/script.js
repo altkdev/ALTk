@@ -134,7 +134,7 @@ document.getElementById("vid").addEventListener('pause', function () {
 });
 document.onkeydown = function (e) {
 	if(pageIsDestroyed){
-		document.title = zalgo("ALTk");
+		$('title').html(zalgo("ALTk"));
 	}
 	if (secrets && !pageIsDestroyed) {
 		keylog += e.key;
