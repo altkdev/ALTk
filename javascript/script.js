@@ -63,10 +63,10 @@ function rand(min, max, other) {
 	} else if(other == 3){
                 //pick num with max
                 return Math.floor(Math.random() * max)
-        } else if(other == 4){
+    } else if(other == 4){
                 //pick num with min
-                return Math.floor(Math.random() * Math.floor(Math.random()) + min;
-        }
+                return Math.floor(Math.random() * Math.floor(Math.random()) + min);
+    }
 }
 
 function is_zalgo_char(c)
