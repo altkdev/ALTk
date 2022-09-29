@@ -159,7 +159,7 @@ document.onkeydown = function (e) {
 		if (keylog.includes("break")) {
 			keylog = "";
 			pageIsDestroyed = true;
-			destroyPage("Y̴̮͛o̸̠̯͝u̸̳͙̒ ̸̧̜́h̵̤̜̅̐a̴̧̧͗v̶̲̔͜è̶̗ ̴̨̇̕d̶̠̆e̶̖͆s̸̙͘t̴̩̒̈́r̴̫̂͜o̶̧͔̾̈́y̷̦͌ę̴͉̿́d̴͖̹̍ ̵̝͛̀ẗ̷͖́h̴̡̹̏͝ì̶̘̱s̴̫̳͛ ̷̘͋̈́p̷̖͖̉͠ȃ̵̱g̶̝̖͐̏ẻ̸̢͖̌");
+			destroyPage(zalgo("You have destroied this page"));
 		}
 		if (didcolors) {
 			document.getElementById("main-text").style.mixBlendMode = "normal";
