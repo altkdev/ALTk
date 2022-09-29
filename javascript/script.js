@@ -117,7 +117,9 @@ $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	duration: 0,
 	fade: 750
 });
+
 $("#vid").hide();
+
 setInterval(() => {
 	if(!pageIsDestroyed){
 		$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
@@ -126,6 +128,12 @@ setInterval(() => {
 		})
 	}
 }, 30000);
+
+setInterval(() =>{
+	if(pageIsDestroyed)
+		$('title').html(zalgo("ALTk"));
+}, 100);
+
 document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear");
@@ -133,9 +141,6 @@ document.getElementById("vid").addEventListener('pause', function () {
 	}
 });
 document.onkeydown = function (e) {
-	if(pageIsDestroyed){
-		$('title').html(zalgo("ALTk"));
-	}
 	if (secrets && !pageIsDestroyed) {
 		keylog += e.key;
 		if (keylog.includes("awesome")) {
