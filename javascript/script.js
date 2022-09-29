@@ -139,7 +139,7 @@ setInterval(() =>{
 		else{
 			document.title = zalgo("ALTk");
 		}
-		document.getElementById("mobile-only").style.visibility = "hidden";
+		document.getElementById("mobile").style.visibility = "hidden";
 	}
 }, 100);
 
