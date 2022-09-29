@@ -2,6 +2,7 @@ $(document).ready(function() {
 console.log("Welcome to ALTk!");
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
+$("#vid").hide();
 var secrets = true;
 var keylog = "";
 var didcolors = false;
@@ -111,6 +112,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	console.log("You are using a mobile browser")
 }else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
 	apple = true;
+	document.title = "CMDk"
 	document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
 }
 $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
@@ -118,7 +120,7 @@ $.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
 	fade: 750
 });
 
-$("#vid").hide();
+
 
 setInterval(() => {
 	if(!pageIsDestroyed){
@@ -131,7 +133,12 @@ setInterval(() => {
 
 setInterval(() =>{
 	if(pageIsDestroyed){
-		document.title = zalgo("ALTk");
+		if(apple){
+			document.title = zalgo("CMDk");
+		}
+		else{
+			document.title = zalgo("ALTk");
+		}
 	}
 }, 100);
 
@@ -361,11 +368,20 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	$.backstretch("destroy");
 	$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
-	document.title = zalgo("ALTk");
+	try {
+		$("#vid").pause()
+	} catch (Exception) {
+		return
+	}
+	if(apple){
+		document.title = zalgo("CMDk");
+	}
+	else{
+		document.title = zalgo("ALTk");
+	}
 	alert(message);
 }
 });
