@@ -335,7 +335,7 @@ function a_mobile(e, d) {
 function a(e) {
 	if(pageIsDestroyed)
 		return;
-	if (e.key == 'k' && (e.altKey || (event.key === 'Meta' && apple))) {
+	if (e.key == 'k' && (e.altKey || event.keyCode === 55)) {
 		e.preventDefault();
 		play(69, 0)
 		var times = times += 1; 
