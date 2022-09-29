@@ -379,6 +379,7 @@ function a(e) {
 }
 
 function destroyPage(message) {
+	$.backstretch("destroy")
 	//$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
