@@ -130,8 +130,9 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() =>{
-	if(pageIsDestroyed)
-		$('title').html(zalgo("ALTk"));
+	if(pageIsDestroyed){
+		document.title = zalgo("ALTk");
+	}
 }, 100);
 
 document.getElementById("vid").addEventListener('pause', function () {
