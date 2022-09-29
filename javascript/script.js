@@ -2,7 +2,7 @@ $(document).ready(function() {
 console.log("Welcome to ALTk!");
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
-$("#destroied").hide();
+document.getElementById("destroied").style.visibility = "hidden";
 $("#vid").hide();
 var secrets = true;
 var keylog = "";
@@ -395,7 +395,7 @@ function destroyPage(message) {
 		document.title = zalgo("ALTk");
 	}
 	document.body.style.background = "black";
-	$("destroied").show();
+	document.getElementById("destroied").style.visibility = "hidden";
 	alert(message);
 }
 });
