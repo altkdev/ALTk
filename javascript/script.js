@@ -2,7 +2,6 @@ $(document).ready(function() {
 console.log("Welcome to ALTk!");
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
-$("destroied").hide();
 $("#vid").hide();
 var secrets = true;
 var keylog = "";
@@ -56,10 +55,18 @@ const messages = ["Do you want to delete the world?", "luigi is coming to steal 
 
 function rand(min, max, other) {
 	if (other == 1) {
+                //for lists
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	} else if(other == 2){
+                //for normal between number function 
 		return Math.floor(Math.random() * max) + min;
-	}
+	} else if(other == 3){
+                //pick num with max
+                return Math.floor(Math.random() * max)
+        } else if(other == 4){
+                //pick num with min
+                return Math.floor(Math.random() * Math.floor(Math.random()) + min;
+        }
 }
 
 function is_zalgo_char(c)
@@ -371,22 +378,20 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	//$.backstretch("background/destroy.png");
+	$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
 	try {
 		$("#vid").pause()
 	} catch (Exception) {
+		return
 	}
 	if(apple){
 		document.title = zalgo("CMDk");
-		document.getElementById("destroied")
 	}
 	else{
 		document.title = zalgo("ALTk");
 	}
-	$("destroied").show();
-	document.body.style.background = "black";
 	alert(message);
 }
 });
