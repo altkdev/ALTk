@@ -394,8 +394,9 @@ function destroyPage(message) {
 	else{
 		document.title = zalgo("ALTk");
 	}
-	document.body.style.background = "black";
-	document.getElementById("destroied").style.visibility = "hidden";
+	document.body.style.background = "#000000";
+	document.getElementById("destroied").style.visibility = "visible";
+	document.getElementById("destroied").style.position = "static";
 	alert(message);
 }
 });
