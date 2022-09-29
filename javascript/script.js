@@ -257,7 +257,7 @@ function secretText() {
 			play(2, 0)
 		}
 		if (document.getElementById("secretText").value == "something random") {
-			window.open("/ALTk/pages/hELLO.html")
+			window.open("/pages/hELLO.html")
 		}
 		if (document.getElementById("secretText").value == "69420") {
 			play(420, 0)
