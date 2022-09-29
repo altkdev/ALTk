@@ -2,6 +2,7 @@ $(document).ready(function() {
 console.log("Welcome to ALTk!");
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
+$("destroied").hide();
 $("#vid").hide();
 var secrets = true;
 var keylog = "";
@@ -370,20 +371,22 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	$.backstretch("background/destroy.png");
+	//$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
 	try {
 		$("#vid").pause()
 	} catch (Exception) {
-		return
 	}
 	if(apple){
 		document.title = zalgo("CMDk");
+		document.getElementById("destroied")
 	}
 	else{
 		document.title = zalgo("ALTk");
 	}
+	$("destroied").show();
+	document.body.style.background = "black";
 	alert(message);
 }
 });

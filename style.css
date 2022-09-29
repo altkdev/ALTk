@@ -6,6 +6,13 @@
  mix-blend-mode: difference;
 }
 
+#destroied{
+    color: #ffffff;
+    font-family: 'Marker Felt' fantacy;
+    font-size: 15vw;
+    text-align: center;
+}
+
 #if-script{
 	position: none;
 	visibility: hidden;
