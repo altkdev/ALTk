@@ -81,6 +81,7 @@ function randalert() {
 }
 
 function zalgo(text){
+	// zalgo stuff https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
 	var newtxt = '';
 	for(var i=0; i<text.length; i++){
 		if(is_zalgo_char(text.substr(i, 1)))
