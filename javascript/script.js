@@ -2,6 +2,7 @@ $(document).ready(function() {
 console.log("Welcome to ALTk!");
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
+$("#destroied").hide();
 $("#vid").hide();
 var secrets = true;
 var keylog = "";
@@ -378,7 +379,7 @@ function a(e) {
 }
 
 function destroyPage(message) {
-	$.backstretch("background/destroy.png");
+	//$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
 	try {
@@ -392,6 +393,8 @@ function destroyPage(message) {
 	else{
 		document.title = zalgo("ALTk");
 	}
+	document.body.style.background = "black";
+	$("destroied").show();
 	alert(message);
 }
 });
