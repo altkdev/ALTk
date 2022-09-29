@@ -87,13 +87,13 @@ function zalgo(text){
 
 			newtxt += text.substr(i, 1);
 		
-		for(var j=0; j<rand(8); j++)
+		for(var j=0; j<Math.floor(Math.random() * 8); j++)
 			newtxt += rand_zalgo(zalgo_up);
 
-		for(var j=0; j<rand(2); j++)
+		for(var j=0; j<Math.floor(Math.random() * 2); j++)
 			newtxt += rand_zalgo(zalgo_mid);
 
-		for(var j=0; j<rand(8); j++)
+		for(var j=0; j<Math.floor(Math.random() * 8); j++)
 			newtxt += rand_zalgo(zalgo_down);
 	}
 	return newtxt;
