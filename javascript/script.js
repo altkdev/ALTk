@@ -1,18 +1,22 @@
 $(document).ready(function() {
-console.log("Welcome to ALTk!");
+//#region Setting Visibility For Elements
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
-document.getElementById("destroied").style.visibility = "hidden";
 $("#vid").hide();
-var secrets = true;
-var keylog = "";
-var didcolors = false;
+document.getElementById("destroyed").style.visibility = "hidden";
+//#endregion
+
+//#region Variables
+var secretsAreOn = true;
+var keyLog = "";
+var hasDoneRainbowText = false;
 var pageIsDestroyed = false;
-var mobile = false;
-var times = 0;
-var apple = false;
-var temp = document.getElementById("vid");
-var times = 0;
+var isOnMobile = false;
+var timesVisitedWebsite = 0;
+var isOnApple = false;
+const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
+
+//#region Zalgo Variables
 const zalgo_up = [
 	'\u030d', /*     ̍     */		'\u030e', /*     ̎     */		'\u0304', /*     ̄     */		'\u0305', /*     ̅     */
 	'\u033f', /*     ̿     */		'\u0311', /*     ̑     */		'\u0306', /*     ̆     */		'\u0310', /*     ̐     */
@@ -52,330 +56,80 @@ const zalgo_mid = [
 	'\u035f', /*     ͟     */		'\u0360', /*     ͠     */		'\u0362', /*     ͢     */		'\u0338', /*     ̸     */
 	'\u0337', /*     ̷     */		'\u0361', /*     ͡     */		'\u0489' /*     ҉_     */		
 ];
-const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay"];
+//#endregion
 
-function rand(min, max, other) {
-	if (other == 1) {
-                //for lists
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	} else if(other == 2){
-                //for normal between number function 
-		return Math.floor(Math.random() * max) + min;
-	} else if(other == 3){
-                //pick num with max
-                return Math.floor(Math.random() * max)
-    } else if(other == 4){
-                //pick num with min
-                return Math.floor(Math.random() * Math.floor(Math.random()) + min);
-    }
-}
+//#endregion
 
+//#region Functions
+
+//#region Zalgo
+//https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
 function is_zalgo_char(c)
 {
 	var i;
-	for(i=0; i<zalgo_up.length; i++)
+	for(i=0; i<zalgo_up.length; i++){
 		if(c == zalgo_up[i])
 			return true;
-	for(i=0; i<zalgo_down.length; i++)
+	}
+	for(i=0; i<zalgo_down.length; i++){
 		if(c == zalgo_down[i])
 			return true;
-	for(i=0; i<zalgo_mid.length; i++)
+	}
+	for(i=0; i<zalgo_mid.length; i++){
 		if(c == zalgo_mid[i])
 			return true;
+	}
 	return false;
 }
 
-function randalert() {
-	alert(messages[rand(0, 7, 1)]);
-}
-
 function zalgo(text){
-	// zalgo stuff https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
+	
 	var newtxt = '';
 	for(var i=0; i<text.length; i++){
 		if(is_zalgo_char(text.substr(i, 1)))
       		continue;
 
-			newtxt += text.substr(i, 1);
+		newtxt += text.substr(i, 1);
 		
 		for(var j=0; j<Math.floor(Math.random() * 8); j++)
-			newtxt += rand_zalgo(zalgo_up);
+			newtxt += randZalgoChar(zalgo_up);
 
 		for(var j=0; j<Math.floor(Math.random() * 2); j++)
-			newtxt += rand_zalgo(zalgo_mid);
+			newtxt += randZalgoChar(zalgo_mid);
 
 		for(var j=0; j<Math.floor(Math.random() * 8); j++)
-			newtxt += rand_zalgo(zalgo_down);
+			newtxt += randZalgoChar(zalgo_down);
 	}
 	return newtxt;
 }
 
-function rand_zalgo(array)
+function randZalgoChar(array)
 {
 	var ind = Math.floor(Math.random() * array.length);
 	return array[ind];
 }
 
-if (navigator.userAgent.toLowerCase().match(/mobile/i)){
-	document.getElementById("mobile").style.visibility = "visible";
-	mobile = true;
-	console.log("You are using a mobile browser")
-}else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
-	apple = true;
-	document.title = "CMDk"
-	document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
-}
-$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
-	duration: 0,
-	fade: 750
-});
+//#endregion
 
-
-
-setInterval(() => {
-	if(!pageIsDestroyed){
-		$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
-			duration: 0,
-			fade: 750
-		})
-	}
-}, 30000);
-
-setInterval(() =>{
-	if(pageIsDestroyed){
-		if(apple){
-			document.title = zalgo("CMDk");
-		}
-		else{
-			document.title = zalgo("ALTk");
-		}
-		document.getElementById("mobile").style.visibility = "hidden";
-	}
-}, 100);
-
-document.getElementById("vid").addEventListener('pause', function () {
-	if ($("#vid").is(":visible")) {
-		$("#vid").fadeOut("slow", "linear");
-	        temp.src = "none";
-	}
-});
-document.onkeydown = function (e) {
-	if (secrets && !pageIsDestroyed) {
-		keylog += e.key;
-		if (keylog.includes("awesome")) {
-			didcolors = !didcolors;
-			keylog = "";
-		}
-		if (keylog.includes("break")) {
-			keylog = "";
-			pageIsDestroyed = true;
-			destroyPage(zalgo("You have destroied this page"));
-		}
-		if (didcolors) {
-			document.getElementById("main-text").style.mixBlendMode = "normal";
-			setInterval(() => {
-				if (!didcolors) {
-					return;
-				}
-				document.getElementById("main-text").style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
-			}, 1)
-		} else {
-			document.getElementById("main-text").style.mixBlendMode = "difference";
-			document.getElementById("main-text").style.color = "white";
-		}
-	}
-	a(e)
-};
-document.getElementById("skip-nav").addEventListener("click", () => {
-	skipnav();
-});
-	
-document.getElementById("secret").addEventListener("change", () => {
-	if(!secret){
-		try {
-			$("#vid").pause()
-		} catch (Exception) {
-			return
-		}
-	}
-	if(document.getElementById("secret").checked){
-		secretChecked();
-	}
-});
-	
-document.getElementById("secretText").addEventListener("input", () => {
-	secretText();
-});
-	
-document.getElementById("mobile-only").addEventListener("input", () => {
-	c = document.getElementById("mobile-only");
-	if (c.value.includes('c ')) {
-		a_mobile(c.value[2], "c")
-	} else if (c.value.includes('a ')) {
-		a_mobile(c.value[2], "a")
-	}
-});
-
+//#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
 	alert ("go to https://github.com/dr-comeemeememem/ALTk#readme for help");
 	window.location.replace("https://github.com/dr-comeemeememem/ALTk#readme");
 }
 
-function skipnav() {
-	document.getElementById("main").style.visibility = "hidden";
-	if(!apple){
-		document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
-	}else{
-		document.getElementById("main-text").innerHTML = "PRESS COMMAND K !!";
-	}
-	document.getElementById("main-text").style.mixBlendMode = "difference";
-	document.getElementById("main-text").style.color = "white";
-	didcolors = false;
-	secrets = false;
-	$("a").attr("href", "#");
-	try {
-		document.getElementById("vid").pause()
-	} catch (Exception) {
-		return
-	}
-}
-
-function secretChecked() {
-	if (document.getElementById('secret').checked && secrets) {
-		console.log("checked");
-		alert("YoU haVe fOUnD A scErEt");
-		play("The_Funeral", 0)
-	}
-}
-
-function secretText() {
-	if (secrets) {
-		if (document.getElementById("secretText").value == "text") {
-			play(1, 0)
-		}
-		if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
-			play(2, 0)
-		}
-		if (document.getElementById("secretText").value == "something random") {
-			window.open("/pages/hELLO.html")
-		}
-		if (document.getElementById("secretText").value == "69420") {
-			play(420, 0)
-		}
-		if (document.getElementById("secretText").value == "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99") {
-			play(800, 0)
-		}
-        if (document.GetElementById("secretText").value == "I like trains") {
-            play(11, 0)
-        }
-	}
-}
-
-function play(file, other) {
+function play(file) {
 	var vid = document.getElementById("vid");
+
 	if (!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)) {
 		$("#vid").fadeToggle("slow", "linear")
 	}
-	if (other == 0) {
-		vid.src = "videos/" + file.toString() + ".mp4"
-	} else {
-		vid.src = "videos/" + file.toString() + other.toString()
-	}
+
+	vid.src = "videos/" + file.toString() + ".mp4"
 	vid.play()
 }
 
-function a_mobile(e, d) {
-	if(pageIsDestroyed)
-		return;
-	if (e == 'k'.toLowerCase() && d == "a".toLowerCase()) {
-		randalert();
-		document.getElementById("vid").style.visibility = "visible";
-		play(69, 0); 
-		times += 1;
-		if (times == 42){
-			alert("I like trains if you like trains share ALTk with your friends!");
-			times = 0;
-		}
-		
-	}
-	if (d == "c".toLowerCase() && secrets) {
-		if (e == 'a'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(9, 0)
-		}
-		if (e == 'b'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(4, 0)
-		}
-		if (e == 'c'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(10, 0)
-		}
-		if (e == 'd'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(6, 0)
-		}
-		if (e == 'e'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(8, 0)
-		}
-		if (e == 'f'.toLowerCase()) {
-			randalert();
-			document.getElementById("vid").style.visibility = "visible";
-			play(7, 0)
-		}
-	}
-}
-
-function a(e) {
-	if(pageIsDestroyed)
-		return;
-	if (e.key == 'k' && (e.altKey || event.keyCode === 55)) {
-		e.preventDefault();
-		play(69, 0)
-		var times = times += 1; 
-		if (times = 42){
-			alert("I like trains if you like trains share ALTk with your friends!");
-			times = 0;
-		}
-	}
-	if (e.ctrlKey && secrets) {
-		if (e.key == 'a') {
-			e.preventDefault();
-			randalert();
-			play(9, 0)
-		}
-		if (e.key == 'b') {
-			e.preventDefault();
-			randalert();
-			play(4, 0)
-		}
-		if (e.key == 'c') {
-			e.preventDefault();
-			randalert();
-			play(10, 0)
-		}
-		if (e.key == 'd') {
-			e.preventDefault();
-			randalert();
-			play(6, 0)
-		}
-		if (e.key == 'e') {
-			e.preventDefault();
-			randalert();
-			play(8, 0)
-		}
-		if (e.key == 'f') {
-			e.preventDefault();
-			randalert();
-			play(7, 0)
-		}
-	}
+function randAlert() {
+	alert(messages[Math.floor(Math.random() * (max - min + 1)) + min]);
 }
 
 function destroyPage(message) {
@@ -388,15 +142,274 @@ function destroyPage(message) {
 	} catch (Exception) {
 		return
 	}
-	if(apple){
+	if(isOnApple){
 		document.title = zalgo("CMDk");
 	}
 	else{
 		document.title = zalgo("ALTk");
 	}
 	document.body.style.background = "#000000";
-	document.getElementById("destroied").style.visibility = "visible";
-	document.getElementById("destroied").style.position = "static";
+	document.getElementById("destroyed").style.visibility = "visible";
+	document.getElementById("destroyed").style.position = "static";
 	alert(message);
 }
+//#endregion
+
+//#region Secrets
+function skipNav() {
+	document.getElementById("main").style.visibility = "hidden";
+
+	if(!isOnApple){
+		document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
+	}else{
+		document.getElementById("main-text").innerHTML = "PRESS COMMAND K !!";
+	}
+
+	document.getElementById("main-text").style.mixBlendMode = "difference";
+	document.getElementById("main-text").style.color = "white";
+
+	hasDoneRainbowText = false;
+	secretsAreOn = false;
+
+	$("a").attr("href", "#");
+
+	try {
+		document.getElementById("vid").pause()
+	} catch (Exception) {
+		return
+	}
+}
+
+function secretChecked() {
+	console.log("checked");
+	alert("YoU haVe fOUnD A scErEt");
+	play("The_Funeral");
+}
+
+function secretText() {
+	if (secretsAreOn) {
+		if (document.getElementById("secretText").value == "text") {
+			play(1);
+		}else if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
+			play(2);
+		}else if (document.getElementById("secretText").value == "something random") {
+			window.open("/pages/hELLO.html")
+		}else if (document.getElementById("secretText").value == "69420") {
+			play(420);
+		}else if (document.getElementById("secretText").value == "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99") {
+			play(800);
+		}else if (document.getElementById("secretText").value == "I like trains") {
+            play(11);
+        }
+	}
+}
+
+//#endregion
+
+//#region Commands for video
+function playVideoMobile(key, command) {
+	if(pageIsDestroyed)
+		return;
+	if (key == 'k'.toLowerCase() && command == "a".toLowerCase()) {
+		randAlert();
+		document.getElementById("vid").style.visibility = "visible";
+		play(69); 
+		timesVisitedWebsite += 1;
+		if (timesVisitedWebsite == 42){
+			alert("I like trains if you like trains share ALTk with your friends!");
+			timesVisitedWebsite = 0;
+		}
+		
+	}
+	if (command == "c".toLowerCase() && secretsAreOn) {
+		if (key == 'a'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(9);
+		}
+		if (key == 'b'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(4);
+		}
+		if (key == 'c'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(10);
+		}
+		if (key == 'd'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(6);
+		}
+		if (key == 'e'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(8);
+		}
+		if (key == 'f'.toLowerCase()) {
+			randAlert();
+			document.getElementById("vid").style.visibility = "visible";
+			play(7);
+		}
+	}
+}
+
+function playVideo(key) {
+	if(pageIsDestroyed)
+		return;
+		
+	key.preventDefault();
+	if (key.key == 'k' && (key.altKey || event.keyCode === 55)) {
+		play(69);
+		timesVisitedWebsite += 1; 
+		if (timesVisitedWebsite == 42){
+			alert("I like trains if you like trains share ALTk with your friends!");
+			timesVisitedWebsite = 0;
+		}
+	}
+	if (key.ctrlKey && secretsAreOn) {
+		if (key.key == 'a') {
+			randAlert();
+			play(9);
+		}
+		if (key.key == 'b') {
+			randAlert();
+			play(4);
+		}
+		if (key.key == 'c') {
+			randAlert();
+			play(10);
+		}
+		if (key.key == 'd') {
+			randAlert();
+			play(6);
+		}
+		if (key.key == 'e') {
+			randAlert();
+			play(8);
+		}
+		if (key.key == 'f') {
+			randAlert();
+			play(7);
+		}
+	}
+}
+//#endregion
+//#endregion
+
+//#region Platform specific
+if (navigator.userAgent.toLowerCase().match(/mobile/i)){
+	document.getElementById("mobile").style.visibility = "visible";
+	isOnMobile = true;
+	console.log("You are using a mobile browser")
+}else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
+	isOnApple = true;
+	console.log("Welcome to CMDk!");
+	document.title = "CMDk"
+	document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
+}else{
+	console.log("Welcome to ALTk!");
+}
+
+document.getElementById("mobile-only").addEventListener("input", () => {
+	c = document.getElementById("mobile-only");
+	if (c.value.includes('c ')) {
+		playVideoMobile(c.value[2], "c")
+	} else if (c.value.includes('a ')) {
+		playVideoMobile(c.value[2], "a")
+	}
+});
+
+//#endregion
+
+//#region Backstretch
+$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+	duration: 0,
+	fade: 750
+});
+//#endregion
+
+//#region Intervals
+setInterval(() => {
+	if(!pageIsDestroyed){
+		$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+			duration: 0,
+			fade: 750
+		})
+	}
+}, 30000);
+
+setInterval(() =>{
+	if(pageIsDestroyed){
+		if(isOnApple){
+			document.title = zalgo("CMDk");
+		}
+		else{
+			document.title = zalgo("ALTk");
+		}
+		document.getElementById("mobile").style.visibility = "hidden";
+	}
+}, 100);
+//#endregion
+
+//#region Listeners
+document.onkeydown = function (key) {
+	if (secretsAreOn && !pageIsDestroyed) {
+		keyLog += key.key;
+		if (keyLog.includes("awesome")) {
+			hasDoneRainbowText = !hasDoneRainbowText;
+			keyLog = "";
+		}
+		if (keyLog.includes("break")) {
+			keyLog = "";
+			pageIsDestroyed = true;
+			destroyPage(zalgo("You have destroyed this page"));
+		}
+		if (hasDoneRainbowText) {
+			document.getElementById("main-text").style.mixBlendMode = "normal";
+			setInterval(() => {
+				if (!hasDoneRainbowText) {
+					return;
+				}
+				document.getElementById("main-text").style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+			}, 1);
+		} else {
+			document.getElementById("main-text").style.mixBlendMode = "difference";
+			document.getElementById("main-text").style.color = "white";
+		}
+	}
+	playVideo(key);
+};
+
+document.getElementById("vid").addEventListener('pause', function () {
+	if ($("#vid").is(":visible")) {
+		$("#vid").fadeOut("slow", "linear");
+	        document.getElementById("vid").src = "none";
+	}
+});
+
+document.getElementById("skipNav").addEventListener("click", () => {
+	skipNav();
+});
+	
+document.getElementById("secretCheckbox").addEventListener("change", () => {
+	if(!secretsAreOn){
+		try {
+			$("#vid").pause()
+		} catch (Exception) {
+			return;
+		}
+		if(document.getElementById("secret").checked){
+			secretChecked();
+		}
+	}
+	
+});
+	
+document.getElementById("secretText").addEventListener("input", () => {
+	secretText();
+});
+//#endregion
+
 });
