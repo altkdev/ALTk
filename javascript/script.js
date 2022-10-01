@@ -129,7 +129,7 @@ function play(file) {
 }
 
 function randAlert() {
-	alert(messages[Math.floor(Math.random() * (max - min + 1)) + min]);
+	alert(messages[Math.floor(Math.random() * (messages.length + 1))]);
 }
 
 function destroyPage(message) {
@@ -333,7 +333,7 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 //#region Intervals
 setInterval(() => {
 	if(!pageIsDestroyed){
-		$.backstretch("background/" + String(rand(1, 8, 2)) + ".jpeg", {
+		$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
 			duration: 0,
 			fade: 750
 		})
@@ -410,6 +410,10 @@ document.getElementById("secretCheckbox").addEventListener("change", () => {
 document.getElementById("secretText").addEventListener("input", () => {
 	secretText();
 });
+
+document.getElementById("main-text").addEventListener("click", () =>{
+	helpme();
+})
 //#endregion
 
 });
