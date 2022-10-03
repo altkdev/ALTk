@@ -392,7 +392,15 @@ document.getElementById("skipNav").addEventListener("click", () => {
 	skipNav();
 });
 	
-document.getElementById("secretCheckbox").addEventListener("change", () => {
+document.getElementById("secretText").addEventListener("input", () => {
+	secretText();
+});
+
+document.getElementById("main-text").addEventListener("click", () =>{
+	helpme();
+});
+
+document.getElementById("secretCheckbox").onchange = function(){
 	if(!secretsAreOn){
 		try {
 			$("#vid").pause()
@@ -404,15 +412,7 @@ document.getElementById("secretCheckbox").addEventListener("change", () => {
 		}
 	}
 	
-});
-	
-document.getElementById("secretText").addEventListener("input", () => {
-	secretText();
-});
-
-document.getElementById("main-text").addEventListener("click", () =>{
-	helpme();
-})
+};
 //#endregion
 
 });
