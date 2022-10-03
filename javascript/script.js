@@ -148,9 +148,8 @@ function destroyPage(message) {
 	else{
 		document.title = zalgo("ALTk");
 	}
-	document.body.style.background = "#000000";
+	document.body.style.background = "black";
 	document.getElementById("destroyed").style.visibility = "visible";
-	document.getElementById("destroyed").style.position = "static";
 	alert(message);
 }
 //#endregion
