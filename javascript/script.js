@@ -258,8 +258,8 @@ function playVideo(key) {
 	if(pageIsDestroyed)
 		return;
 		
-	key.preventDefault();
 	if (key.key == 'k' && (key.altKey || event.keyCode === 55)) {
+		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
 		if (timesVisitedWebsite == 42){
@@ -269,26 +269,32 @@ function playVideo(key) {
 	}
 	if (key.ctrlKey && secretsAreOn) {
 		if (key.key == 'a') {
+			key.preventDefault();
 			randAlert();
 			play(9);
 		}
 		if (key.key == 'b') {
+			key.preventDefault();
 			randAlert();
 			play(4);
 		}
 		if (key.key == 'c') {
+			key.preventDefault();
 			randAlert();
 			play(10);
 		}
 		if (key.key == 'd') {
+			key.preventDefault();
 			randAlert();
 			play(6);
 		}
 		if (key.key == 'e') {
+			key.preventDefault();
 			randAlert();
 			play(8);
 		}
 		if (key.key == 'f') {
+			key.preventDefault();
 			randAlert();
 			play(7);
 		}
@@ -407,7 +413,7 @@ document.getElementById("secretCheckbox").onchange = function(){
 		} catch (Exception) {
 			return;
 		}
-		if(document.getElementById("secret").checked){
+		if(document.getElementById("secretCheckbox").checked){
 			secretChecked();
 		}
 	}
