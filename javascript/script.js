@@ -369,7 +369,7 @@ setInterval(() =>{
 		document.getElementById("mobile").style.visibility = "hidden";
 		document.getElementById("destroyed").innerHTML = zalgo("ALTk is now in self destruct mode...........");
 	}
-}, 10);
+}, 100);
 //#endregion
 
 //#region Listeners
