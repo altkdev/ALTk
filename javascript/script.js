@@ -360,6 +360,7 @@ setInterval(() => {
 
 setInterval(() =>{
 	if(pageIsDestroyed){
+		document.getElementById("destroyed").style.visibility = "visible";
 		if(isOnApple){
 			document.title = zalgo("CMDk");
 		}
