@@ -147,13 +147,11 @@ function destroyPage(message) {
 	}
 	document.body.style.background = "black";
 	document.getElementById("destroyed").style.visibility = "visible";
-	alert(message);
 	try {
 		$("#vid").pause()
 	} catch (Exception) {
-		return
 	}
-
+	alert(message);
 }
 //#endregion
 
@@ -369,8 +367,9 @@ setInterval(() =>{
 			document.title = zalgo("ALTk");
 		}
 		document.getElementById("mobile").style.visibility = "hidden";
+		document.getElementById("destroyed").innerHTML = zalgo("ALTk is now in self destruct mode...........");
 	}
-}, 100);
+}, 10);
 //#endregion
 
 //#region Listeners
