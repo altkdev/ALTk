@@ -139,11 +139,6 @@ function destroyPage(message) {
 	//$.backstretch("background/destroy.png");
 	document.getElementById("all-the-stuff").style.visibility = "hidden";
 	document.getElementById("all-the-stuff").style.position = "none";
-	try {
-		$("#vid").pause()
-	} catch (Exception) {
-		return
-	}
 	if(isOnApple){
 		document.title = zalgo("CMDk");
 	}
@@ -153,6 +148,12 @@ function destroyPage(message) {
 	document.body.style.background = "black";
 	document.getElementById("destroyed").style.visibility = "visible";
 	alert(message);
+	try {
+		$("#vid").pause()
+	} catch (Exception) {
+		return
+	}
+
 }
 //#endregion
 
