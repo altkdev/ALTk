@@ -411,7 +411,7 @@ document.getElementById("secretCheckbox").onchange = function(){
 		try {
 			$("#vid").pause()
 		} catch (Exception) {
-			return;
+			
 		}
 		if(document.getElementById("secretCheckbox").checked){
 			secretChecked();
