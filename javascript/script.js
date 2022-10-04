@@ -113,8 +113,10 @@ function randZalgoChar(array)
 
 //#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
-	alert ("go to https://github.com/dr-comeemeememem/ALTk#readme for help");
-	window.location.replace("https://github.com/dr-comeemeememem/ALTk#readme");
+	if(secretsAreOn){
+		alert ("go to https://github.com/dr-comeemeememem/ALTk#readme for help");
+		window.location.replace("https://github.com/dr-comeemeememem/ALTk#readme");
+	}
 }
 
 function play(file) {
@@ -156,33 +158,44 @@ function destroyPage(message) {
 
 //#region Secrets
 function skipNav() {
-	document.getElementById("main").style.visibility = "hidden";
+	if(secretsAreOn){
+		document.getElementById("main").style.visibility = "hidden";
 
-	if(!isOnApple){
-		document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
-	}else{
-		document.getElementById("main-text").innerHTML = "PRESS COMMAND K !!";
-	}
+		if(!isOnApple){
+			document.getElementById("main-text").innerHTML = "PRESS ALT K !!";
+		}else{
+			document.getElementById("main-text").innerHTML = "PRESS COMMAND K !!";
+		}
 
-	document.getElementById("main-text").style.mixBlendMode = "difference";
-	document.getElementById("main-text").style.color = "white";
+		document.getElementById("main-text").style.mixBlendMode = "difference";
+		document.getElementById("main-text").style.color = "white";
 
-	hasDoneRainbowText = false;
-	secretsAreOn = false;
+		hasDoneRainbowText = false;
+		secretsAreOn = false;
 
-	$("a").attr("href", "#");
+		$("a").attr("href", "#");
 
-	try {
-		document.getElementById("vid").pause()
-	} catch (Exception) {
-		return
+		try {
+			document.getElementById("vid").pause()
+		} catch (Exception) {
+			return
+		}
 	}
 }
 
 function secretChecked() {
-	console.log("checked");
-	alert("YoU haVe fOUnD A scErEt");
-	play("The_Funeral");
+	if(!secretsAreOn){
+		try {
+			$("#vid").pause();
+		} catch (Exception) {
+			return;
+		}
+	}
+	if(document.getElementById("secretCheckbox").checked && secretsAreOn){
+		console.log("checked");
+		alert("YoU haVe fOUnD A scErEt");
+		play("The_Funeral");
+	}
 }
 
 function secretText() {
@@ -406,19 +419,9 @@ document.getElementById("main-text").addEventListener("click", () =>{
 	helpme();
 });
 
-document.getElementById("secretCheckbox").onchange = function(){
-	if(!secretsAreOn){
-		try {
-			$("#vid").pause()
-		} catch (Exception) {
-			
-		}
-		if(document.getElementById("secretCheckbox").checked){
-			secretChecked();
-		}
-	}
-	
-};
+document.getElementById("secretCheckbox").addEventListener("change", () => {
+	secretChecked();
+});
 //#endregion
 
 });
