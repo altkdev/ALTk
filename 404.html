@@ -9,7 +9,7 @@
       function countdown() {
         document.getElementById("paragragh").innerHTML = "im sorry pur no one is here to play woth Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark>";
         timer -= 1;
-        if(timer < 0){
+        if(timer < 1){
           location.replace("altk.xyz/?role=true", "_self");
         }
       }
