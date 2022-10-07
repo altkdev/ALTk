@@ -5,11 +5,18 @@
   </head>
   <body>
     <script>
+      var timer = 10
       function countdown() {
-        //
+        document.getElementById("secs").innerHTML = timer - 1;
+        timer = timer - 1;
       }
       for (let i=0, i<10, i++) {
         setTimeout(countdown, 1000)
+      }
+      while (true) {
+        if (timer = 0) {
+          location.replace("altk.xyz/?role=true", "_self");
+        }
       }
     </script>
     <center>
