@@ -7,15 +7,13 @@
     <script>
       var timer = 10;
       function countdown() {
-        document.getElementById("paragragh").innerHTML = "im sorry pur no one is here to play woth Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer + " seconds</code></mark>timer - 1;
+        document.getElementById("paragragh").innerHTML = "im sorry pur no one is here to play woth Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark>";
         timer -= 1;
-      }
-      for (let i=0, i<10, i++) {
-        setTimeout(countdown, 1000);
         if(timer < 0){
           location.replace("altk.xyz/?role=true", "_self");
         }
       }
+      setInterval(countdown, 1000);
     </script>
     <center>
       <h1>404</h1>
@@ -24,3 +22,4 @@
         this page will automaticly redirect you in <mark><code>10 seconds</code></mark>
       </p>
     </center>
+    </body>
