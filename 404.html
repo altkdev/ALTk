@@ -5,24 +5,22 @@
   </head>
   <body>
     <script>
-      var timer = 10
+      var timer = 10;
       function countdown() {
-        document.getElementById("secs").innerHTML = timer - 1;
-        timer = timer - 1;
+        document.getElementById("paragragh").innerHTML = "im sorry pur no one is here to play woth Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer + " seconds</code></mark>timer - 1;
+        timer -= 1;
       }
       for (let i=0, i<10, i++) {
-        setTimeout(countdown, 1000)
-      }
-      while (true) {
-        if (timer = 0) {
+        setTimeout(countdown, 1000);
+        if(timer < 0){
           location.replace("altk.xyz/?role=true", "_self");
         }
       }
     </script>
     <center>
       <h1>404</h1>
-      <p>
-        im sorry pur no one is here to play woth Rick Astley right now.
-        this page will automaticly redirect you in <mark><code id="secs">10 seconds</code></mark>
+      <p id="paragragh">
+        im sorry pur no one is here to play woth Rick Astley right now.<br>
+        this page will automaticly redirect you in <mark><code>10 seconds</code></mark>
       </p>
     </center>
