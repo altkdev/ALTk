@@ -5,12 +5,12 @@
   </head>
   <body>
     <script>
-      var timer = 10;
+      var timer = 20;
       function countdown() {
-        document.getElementById("paragragh").innerHTML = "im sorry pur no one is here to play woth Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark>";
+        document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
         timer -= 1;
         if(timer < 1){
-          location.replace("altk.xyz/?role=true", "_self");
+          location.replace("https://altk.xyz/?role=true", "_self");
         }
       }
       setInterval(countdown, 1000);
@@ -19,7 +19,8 @@
       <h1>404</h1>
       <p id="paragragh">
         im sorry pur no one is here to play woth Rick Astley right now.<br>
-        this page will automaticly redirect you in <mark><code>10 seconds</code></mark>
+        this page will automaticly redirect you in <mark><code>20 seconds</code></mark>
       </p>
     </center>
-    </body>
+  </body>
+</html>
