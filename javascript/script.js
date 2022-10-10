@@ -1,9 +1,12 @@
 $(document).ready(function() {
-//#region Setting Visibility For Elements
+//#region Setting Visibility For Elements and Other Stuff
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#vid").hide();
 document.getElementById("destroyed").style.visibility = "hidden";
+if(/?role=true/.test(window.location.href)){
+	play(69);
+}
 //#endregion
 
 //#region Variables
