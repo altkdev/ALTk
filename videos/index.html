@@ -4,6 +4,12 @@
     <meta charset="utf-8">
   </head>
   <body>
+
+    <div>
+      <input id="A" placeholder="put video name here">
+      <button onclick="what()">play the vid</button>
+      <video id="vid" controls></video>
+    </div>
     <script>
       if (document.navigator.href != "https://dr-comeemeemeememem.github.io/ALTk/videos/"){
         var whater = document.navigator.href.split("?").pop()
@@ -12,13 +18,8 @@
       }
       function what() {
          var whater = document.getElementById("A").value.toString();
-         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
-         document.getElemenrById("vid").play;
+         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater+".mp4;
+         document.getElemenrById("vid").play();
       }
     </script>
-    <div>
-      <input id="A" placeholder="put video name here">
-      <button onclick="what()">play the vid</button>
-      <video id="vid" controls></video>
-    </div>
 </html>
