@@ -5,6 +5,7 @@
   </head>
   <body>
     <script>
+      const rpc = ["rock", "paper", "sisors"];
       let print = document.getElementById("computer");
       var timer = 20;
       var beat = false;
@@ -17,11 +18,18 @@
         }
       }
       setInterval(countdown, 1000);
+      function countdown2() {
+        document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
+        timer -= 1;
+        if(timer < 1){
+          location.replace("https://altk.xyz/?role=true", "_self");
+        }
+      }
       /* //js for game
       until(beat = true) {
-        timer2 -= 1
-
-        print.innerHTML = ""
+        var result = rpc[Math.floor(Math.random() * (3 + 1))];
+        print.innerHTML = "chose!"
+        
       }
       */
     </script>
