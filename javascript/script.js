@@ -277,7 +277,7 @@ function playVideo(key) {
 	if(pageIsDestroyed)
 		return;
 		
-	if (key.key == 'k' && (key.altKey || event.keyCode === 55)) {
+	if (key.key == 'k' && (key.altKey || event.keyCode === 75)) {
 		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
