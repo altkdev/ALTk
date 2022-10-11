@@ -7,7 +7,10 @@ document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	play(69);
 }
-if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true"))
+if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
+	document.getElementById("vid").loop = true;
+	document.getElementById("vid").load();
+}
 //#endregion
 
 //#region Variables
