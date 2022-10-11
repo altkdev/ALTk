@@ -4,11 +4,10 @@ $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#vid").hide();
 document.getElementById("destroyed").style.visibility = "hidden";
-/*
-if(/?role=true/.test(window.location.href)){
+if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	play(69);
 }
-*/
+if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true"))
 //#endregion
 
 //#region Variables
