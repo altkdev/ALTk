@@ -5,22 +5,46 @@
   </head>
   <body>
     <script>
+      let print = document.getElementById("computer");
       var timer = 20;
+      var beat = false;
+      let game = document.getElementById("actual-game");
       function countdown() {
         document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
         timer -= 1;
-        if(timer < 1){
+        if(timer = 0){
           location.replace("https://altk.xyz/?role=true", "_self");
         }
       }
       setInterval(countdown, 1000);
+      /* //js for game
+      until(beat = true) {
+        timer2 -= 1
+
+        print.innerHTML = ""
+      }
+      */
     </script>
     <center>
       <h1>404</h1>
       <p id="paragragh">
-        im sorry pur no one is here to play woth Rick Astley right now.<br>
+        im sorry but no one is here to play with Rick Astley right now.<br>
         this page will automaticly redirect you in <mark><code>20 seconds</code></mark>
       </p>
     </center>
+    </br>
+    </br>
+    <!--
+    <div id="game" class="game">
+      <b>to stop the timer and go back to the main website safely beat me in rock paper sizors</b>
+      <div id="actual-game" class="actual-game">
+          <div id="computer" class="computer"></div>
+          <div id="user" class="user">
+            <button type="button" id="rock">rock</button><button type="button" id="paper">paper</button><button type="button" id="sizors">sizors</button>
+            <div id="you-chose">none</div>
+          </div>
+      </div>
+    </div>
+    -->
   </body>
 </html>

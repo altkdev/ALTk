@@ -6,6 +6,7 @@ $("#vid").hide();
 document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	play(69);
+	document.getElementById("vid").play();
 }
 if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
 	document.getElementById("vid").loop = true;
@@ -121,8 +122,8 @@ function randZalgoChar(array)
 //#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
 	if(secretsAreOn){
-		alert ("go to https://github.com/dr-comeemeememem/ALTk#readme for help");
-		window.location.replace("https://github.com/dr-comeemeememem/ALTk#readme");
+		alert ("go to https://github.com/dr-comeemeememem/ALTk/discussions/9 to answer important question");
+		window.location.replace("https://github.com/dr-comeemeememem/ALTk/discussions/9");
 	}
 }
 
