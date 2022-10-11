@@ -12,7 +12,7 @@
       function countdown() {
         document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
         timer -= 1;
-        if(timer = 0){
+        if(timer < 1){
           location.replace("https://altk.xyz/?role=true", "_self");
         }
       }
