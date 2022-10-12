@@ -53,7 +53,24 @@
           print.innerHTML = "i chose : " + result;
           print.innerHTML = "you chose: " + youchose;
           if(result = youchose){}
-          if ((youchose = "rock" && result = "paper"
+          if ((youchose = "rock" && result = "paper")){
+            beat = false
+          }
+          if ((youchose = "rock" && result = "sizors")){
+            beat = true
+          }
+          if ((youchose = "paper" && result = "rock")){
+            beat = true
+          }
+          if ((youchose = "paper" && result = "sizors")){
+            beat = false
+          }
+          if ((youchose = "sizors" && result = "paper")){
+            beat = true
+          }
+          if ((youchose = "sizors" && result = "rock")){
+            beat = false
+          }
         }
        }
        until(beat = true) {
