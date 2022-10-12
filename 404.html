@@ -7,7 +7,7 @@
     <script>
       const rpc = ["rock", "paper", "sisors"];
       let print = document.getElementById("computer");
-      var timer = 20;
+      var timer = 10;
       var beat = false;
       let game = document.getElementById("actual-game");
       function countdown() {
@@ -18,20 +18,64 @@
         }
       }
       setInterval(countdown, 1000);
-      function countdown2() {
-        document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
-        timer -= 1;
-        if(timer < 1){
-          location.replace("https://altk.xyz/?role=true", "_self");
+      //
+      var timer2 = 4
+      function rock() {
+        document.getElementById("paper").removeEventListener("click", paper, false)
+        document.getElementById("sizors").removeEventListener("click", sizors, false)
+        document.getElementById("dia").innerHTML = "rock";
+        youchose = "rock"
+      }
+      function paper() {
+        document.getElementById("rock").removeEventListener("click", rock, false)
+        document.getElementById("sizors").removeEventListener("click", sizors, false)
+        document.getElementById("dia").innerHTML = "paper";
+        youchose = "paper"
+      }
+      function sizors() {
+        document.getElementById("paper").removeEventListener("click", paper, false)
+        document.getElementById("rock").removeEventListener("click", rock, false)
+        document.getElementById("dia").innerHTML = "sizors";
+        youchose = "sizors"
+      }
+      function countdown2(){
+        print.innerHTML = "Choose you have " + timer2.toString() + " seconds";
+        timer2 -= 1
+        if(timer2 < 1) {
+          timer2 = 4
+          print.innerHTML = "i chose : " + result;
+          print.innerHTML = "you chose: " + youchose;
+          if(result = youchose){}
+          if ((youchose = "rock" && result = "paper")){
+            beat = false
+          }
+          if ((youchose = "rock" && result = "sizors")){
+            beat = true
+          }
+          if ((youchose = "paper" && result = "rock")){
+            beat = true
+          }
+          if ((youchose = "paper" && result = "sizors")){
+            beat = false
+          }
+          if ((youchose = "sizors" && result = "paper")){
+            beat = true
+          }
+          if ((youchose = "sizors" && result = "rock")){
+            beat = false
+          }
         }
-      }
-      /* //js for game
-      until(beat = true) {
-        var result = rpc[Math.floor(Math.random() * (3 + 1))];
-        print.innerHTML = "chose!"
-        
-      }
-      */
+       }
+       until(beat = true) {
+         document.getElementById("rock").addEventListener("click", rock);
+         document.getElementById("paper").addEventListener("click", paper);
+         document.getElementById("sizors").addEventListener("click", sizors);
+         print.innerHTML = "Chose you have 4 seconds"
+         for(let i = 0; i < 4; i++) {
+           setTimeout(countdown2, 1000);
+         }
+         var result = rpc[Math.floor(Math.random() * (3 + 1))];
+       }
     </script>
     <center>
       <h1>404</h1>
@@ -40,19 +84,17 @@
         this page will automaticly redirect you in <mark><code>20 seconds</code></mark>
       </p>
     </center>
-    </br>
-    </br>
-    <!--
+    <br>
+    <br>
     <div id="game" class="game">
       <b>to stop the timer and go back to the main website safely beat me in rock paper sizors</b>
-      <div id="actual-game" class="actual-game">
-          <div id="computer" class="computer"></div>
-          <div id="user" class="user">
+      <div id="actual-game" class="actual-game" style="border-style: solid;">
+          <div style="border-style: solid;" id="computer" class="computer"></div>
+          <div id="user" class="user" style="border-style: solid;">
             <button type="button" id="rock">rock</button><button type="button" id="paper">paper</button><button type="button" id="sizors">sizors</button>
-            <div id="you-chose">none</div>
+            <div id="dia">none</div>
           </div>
       </div>
     </div>
-    -->
   </body>
 </html>
