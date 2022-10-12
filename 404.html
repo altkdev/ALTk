@@ -6,11 +6,8 @@
   <body>
     <script>
       const rpc = ["rock", "paper", "sisors"];
-      let rock = 1
-      let paper = 2
-      let sizors = 3
       let print = document.getElementById("computer");
-      var timer = 20;
+      var timer = 10;
       var beat = false;
       let game = document.getElementById("actual-game");
       function countdown() {
@@ -21,32 +18,28 @@
         }
       }
       setInterval(countdown, 1000);
-      function countdown() {
-        document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
-        timer -= 1;
-        if(timer < 1){
-          location.replace("https://altk.xyz/?role=true", "_self");
-        }
-      }
-      /* //js for game
+      //
       var timer2 = 4
       function rock() {
         document.getElementById("paper").removeEventListener("click", paper, false)
         document.getElementById("sizors").removeEventListener("click", sizors, false)
+        document.getElementById("dia").innerHTML = "rock";
         youchose = "rock"
       }
       function paper() {
         document.getElementById("rock").removeEventListener("click", rock, false)
         document.getElementById("sizors").removeEventListener("click", sizors, false)
+        document.getElementById("dia").innerHTML = "paper";
         youchose = "paper"
       }
       function sizors() {
         document.getElementById("paper").removeEventListener("click", paper, false)
         document.getElementById("rock").removeEventListener("click", rock, false)
+        document.getElementById("dia").innerHTML = "sizors";
         youchose = "sizors"
       }
       function countdown2(){
-        print.innerHTML = "Choose you have " + timer2 + " seconds";
+        print.innerHTML = "Choose you have " + timer2.toString() + " seconds";
         timer2 -= 1
         if(timer2 < 1) {
           timer2 = 4
@@ -83,7 +76,6 @@
          }
          var result = rpc[Math.floor(Math.random() * (3 + 1))];
        }
-      */
     </script>
     <center>
       <h1>404</h1>
@@ -94,17 +86,15 @@
     </center>
     <br>
     <br>
-    <!--
     <div id="game" class="game">
       <b>to stop the timer and go back to the main website safely beat me in rock paper sizors</b>
-      <div id="actual-game" class="actual-game">
-          <div id="computer" class="computer"></div>
-          <div id="user" class="user">
+      <div id="actual-game" class="actual-game" style="border-style: solid;">
+          <div style="border-style: solid;" id="computer" class="computer"></div>
+          <div id="user" class="user" style="border-style: solid;">
             <button type="button" id="rock">rock</button><button type="button" id="paper">paper</button><button type="button" id="sizors">sizors</button>
-            <div id="you-chose">none</div>
+            <div id="dia">none</div>
           </div>
       </div>
     </div>
-    -->
   </body>
 </html>
