@@ -6,6 +6,9 @@
   <body>
     <script>
       const rpc = ["rock", "paper", "sisors"];
+      let rock = 1
+      let paper = 2
+      let sizors = 3
       let print = document.getElementById("computer");
       var timer = 20;
       var beat = false;
@@ -27,24 +30,42 @@
       }
       /* //js for game
       var timer2 = 4
+      function rock() {
+        document.getElementById("paper").removeEventListener("click", paper, false)
+        document.getElementById("sizors").removeEventListener("click", sizors, false)
+        youchose = "rock"
+      }
+      function paper() {
+        document.getElementById("rock").removeEventListener("click", rock, false)
+        document.getElementById("sizors").removeEventListener("click", sizors, false)
+        youchose = "paper"
+      }
+      function sizors() {
+        document.getElementById("paper").removeEventListener("click", paper, false)
+        document.getElementById("rock").removeEventListener("click", rock, false)
+        youchose = "sizors"
+      }
       function countdown2(){
         print.innerHTML = "Choose you have " + timer2 + " seconds";
         timer2 -= 1
         if(timer2 < 1) {
           timer2 = 4
-          print.innerHTML = "i chose :" + result;
+          print.innerHTML = "i chose : " + result;
+          print.innerHTML = "you chose: " + youchose;
+          if(result = youchose){}
+          if ((youchose = "rock" && result = "paper"
         }
        }
-      document.getElementById("rock").addEventListener("click", rock);
-      document.getElementById("paper").addEventListener("click", paper);
-      document.getElementById("sizors").addEventListener("click", sizors);
-      until(beat = true) {
-        print.innerHTML = "Chose you have 4 seconds"
-        for(let i = 0; i < 4; i++) {
-          setTimeout(countdown2, 1000);
+       until(beat = true) {
+         document.getElementById("rock").addEventListener("click", rock);
+         document.getElementById("paper").addEventListener("click", paper);
+         document.getElementById("sizors").addEventListener("click", sizors);
+         print.innerHTML = "Chose you have 4 seconds"
+         for(let i = 0; i < 4; i++) {
+           setTimeout(countdown2, 1000);
          }
-        var result = rpc[Math.floor(Math.random() * (3 + 1))];
-      }
+         var result = rpc[Math.floor(Math.random() * (3 + 1))];
+       }
       */
     </script>
     <center>
@@ -54,8 +75,8 @@
         this page will automaticly redirect you in <mark><code>20 seconds</code></mark>
       </p>
     </center>
-    </br>
-    </br>
+    <br>
+    <br>
     <!--
     <div id="game" class="game">
       <b>to stop the timer and go back to the main website safely beat me in rock paper sizors</b>
