@@ -6,9 +6,8 @@ $("#vid").hide();
 function abc() { document.getElementById("vid").muted = false; }
 document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
-	document.getElementById("vid").muted = true;
 	play(69);
-	setTimeout(abc, 100);
+	setTimeout(abc, 1000);
 	document.getElementById("vid").play();
 }
 if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
@@ -135,9 +134,11 @@ function play(file) {
 
 	if (!$("#vid").is(":visible") && !(vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2)) {
 		$("#vid").fadeToggle("slow", "linear")
+		vid.muted = true
 	}
 
 	vid.src = "videos/" + file.toString() + ".mp4"
+	vid.muted = false
 	vid.play()
 }
 
@@ -416,7 +417,8 @@ document.onkeydown = function (key) {
 document.getElementById("vid").addEventListener('pause', function () {
 	if ($("#vid").is(":visible")) {
 		$("#vid").fadeOut("slow", "linear");
-	        document.getElementById("vid").src = "none";
+	    document.getElementById("vid").src = "none";
+		document.getElementById("vid").muted = true;
 	}
 });
 
