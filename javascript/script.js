@@ -3,9 +3,12 @@ $(document).ready(function() {
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#vid").hide();
+function abc() { document.getElementById("vid").muted = false; }
 document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
+	document.getElementById("vid").muted = true;
 	play(69);
+	setTimeout(abc, 100);
 	document.getElementById("vid").play();
 }
 if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
