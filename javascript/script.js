@@ -124,7 +124,7 @@ function randZalgoChar(array)
 //#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
 	if(secretsAreOn){
-		alert ("go to https://github.com/dr-comeemeememem/ALTk/discussions/9 to answer important question");
+		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
 		window.location.replace("https://github.com/dr-comeemeememem/ALTk/discussions/9");
 	}
 }
