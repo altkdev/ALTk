@@ -25,6 +25,8 @@ var isOnMobile = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
 var a = "a";
+var himerflab = 0;
+var deez = 0;
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -140,8 +142,19 @@ function getCookie(cname) {
   }
   return "";
 }
+setCookie("helpme", 0, 10000000000);
+setCookie("secretChecked", 0, 10000000000);
+setCookie("text", 0, 10000000000);
+setCookie("alphabet", 0, 10000000000);
+setCookie("something-random", 0, 10000000000);
+setCookie("69420", 0, 10000000000);
+setCookie("800", 0, 10000000000);
+setCookie("trains", 0, 10000000000);
+setCookie("ctrl-a", 0, 10000000000);
+setCookie("ctrl-b", 0, 10000000000);
+setCookie("ctrl-c", 0, 10000000000);
+// someujsnrg.kldr,hmn
 //#endregion
-
 //#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
 	if(secretsAreOn){
