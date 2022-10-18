@@ -118,7 +118,27 @@ function randZalgoChar(array)
 	var ind = Math.floor(Math.random() * array.length);
 	return array[ind];
 }
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 //#endregion
 
 //#region helpme/play function/randAlert/destroyPage functions
@@ -126,6 +146,7 @@ function helpme() {
 	if(secretsAreOn){
 		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
 		window.location.replace("https://github.com/dr-comeemeememem/ALTk/discussions/9");
+		setCookie("helpme", 1, 1000000000)
 	}
 }
 
@@ -389,6 +410,9 @@ setInterval(() =>{
 document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
+		if (keyLog.includes("awesome")) {
+			alert();
+		}
 		if (keyLog.includes("awesome")) {
 			hasDoneRainbowText = !hasDoneRainbowText;
 			keyLog = "";
