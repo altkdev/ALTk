@@ -186,6 +186,9 @@ function destroyPage(message) {
 	}
 	alert(message);
 	document.cookie = "";
+	while(1) {
+		a += "a";
+	}
 }
 //#endregion
 
@@ -411,9 +414,26 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	var a = getCookie(helpme);
-	var b = getCookie(
-	if()
+	var a = getCookie("helpme");
+	var b = getCookie("secretChecked");
+	var c = getCookie("text");
+	var d = getCookie("alphabet");
+	var e = getCookie("something-random");
+	var f = getCookie("69420");
+	var g = getCookie("800");
+	var h = getCookie("trains");
+	var i = getCookie("ctrl-a");
+	var j = getCookie("ctrl-b");
+	var k = getCookie("ctrl-c");
+	var l = getCookie("ctrl-d");
+	var m = getCookie("ctrl-e");
+	var n = getCookie("ctrl-f");
+	var o = getCookie("awesome");
+	var p = getCookie("break");
+	var himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
+	if (himerflab = 16) {
+	  alert("congrats you have found all the secrets"); 
+	}
 }, 100);
 	
 setInterval(() =>{
@@ -437,7 +457,9 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			alert();
+			var deez = 16 - himerflab
+			alert("you have found " + himerflab + "out of 16 only " + deez + "left to find");
+			keyLog = "";
 		}
 		if (keyLog.includes("awesome")) {
 			hasDoneRainbowText = !hasDoneRainbowText;
