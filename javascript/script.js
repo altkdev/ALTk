@@ -153,7 +153,11 @@ setCookie("trains", 0, 10000000000);
 setCookie("ctrl-a", 0, 10000000000);
 setCookie("ctrl-b", 0, 10000000000);
 setCookie("ctrl-c", 0, 10000000000);
-// someujsnrg.kldr,hmn
+setCookie("ctrl-d", 0, 10000000000);
+setCookie("ctrl-e", 0, 10000000000);
+setCookie("ctrl-f", 0, 10000000000);
+setCookie("awesome", 0, 10000000000);
+setCookie("break", 0, 10000000000);
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
 function helpme() {
