@@ -11,14 +11,14 @@
       <video id="vid" controls></video>
     </div>
     <script>
-      if (document.navigator.href != "https://dr-comeemeemeememem.github.io/ALTk/videos/"){
+      if (document.navigator.href != "https://altk.xyz/videos/"){
         var whater = document.navigator.href.split("?").pop()
         document.getElementById("A").value = whater;
         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
       }
       function what() {
          var whater = document.getElementById("A").value.toString();
-         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater+".mp4;
+         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater + ".mp4";
          document.getElemenrById("vid").play();
       }
     </script>
