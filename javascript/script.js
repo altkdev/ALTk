@@ -25,8 +25,8 @@ var isOnMobile = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
 var a = "a";
-var himerflab = 0;
-var deez = 0;
+const himerflab = 0;
+const deez = 0;
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -432,23 +432,23 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	var a = getCookie("helpme");
-	var b = getCookie("secretChecked");
-	var c = getCookie("text");
-	var d = getCookie("alphabet");
-	var e = getCookie("something-random");
-	var f = getCookie("69420");
-	var g = getCookie("800");
-	var h = getCookie("trains");
-	var i = getCookie("ctrl-a");
-	var j = getCookie("ctrl-b");
-	var k = getCookie("ctrl-c");
-	var l = getCookie("ctrl-d");
-	var m = getCookie("ctrl-e");
-	var n = getCookie("ctrl-f");
-	var o = getCookie("awesome");
-	var p = getCookie("break");
-	var himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
+	const a = getCookie("helpme");
+	const b = getCookie("secretChecked");
+	const c = getCookie("text");
+	const d = getCookie("alphabet");
+	const e = getCookie("something-random");
+	const f = getCookie("69420");
+	const g = getCookie("800");
+	const h = getCookie("trains");
+	const i = getCookie("ctrl-a");
+	const j = getCookie("ctrl-b");
+	const k = getCookie("ctrl-c");
+	const l = getCookie("ctrl-d");
+	const m = getCookie("ctrl-e");
+	const n = getCookie("ctrl-f");
+	const o = getCookie("awesome");
+	const p = getCookie("break");
+	const himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
 	if (himerflab = 16) {
 	  alert("congrats you have found all the secrets"); 
 	}
@@ -475,7 +475,7 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			var deez = 16 - himerflab
+			const deez = 16 - himerflab
 			alert("you have found " + himerflab + "out of 16 only " + deez + "left to find");
 			keyLog = "";
 		}
