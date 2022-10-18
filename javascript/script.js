@@ -185,6 +185,7 @@ function destroyPage(message) {
 	} catch (Exception) {
 	}
 	alert(message);
+	document.cookie = "";
 }
 //#endregion
 
@@ -227,6 +228,7 @@ function secretChecked() {
 		console.log("checked");
 		alert("YoU haVe fOUnD A scErEt");
 		play("The_Funeral");
+		setCookie("secretChecked", 1, 1000000000000);
 	}
 }
 
@@ -234,17 +236,23 @@ function secretText() {
 	if (secretsAreOn) {
 		if (document.getElementById("secretText").value == "text") {
 			play(1);
+			setCookie("text", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
 			play(2);
+			setCookie("alphabet", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "something random") {
 			window.open("/pages/hELLO.html")
+			setCookie("something-random", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "69420") {
 			play(420);
+			setCookie("69420", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99") {
 			play(800);
+			setCookie("800", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "I like trains") {
-            play(11);
-        }
+            		play(11);
+			setCookie("trains", 1, 100000000000000);
+        	}
 	}
 }
 
@@ -270,31 +278,37 @@ function playVideoMobile(key, command) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(9);
+			setCookie("ctrl-a", 1, 100000000000000);
 		}
 		if (key == 'b'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(4);
+			setCookie("ctrl-b", 1, 100000000000000);
 		}
 		if (key == 'c'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(10);
+			setCookie("ctrl-c", 1, 100000000000000);
 		}
 		if (key == 'd'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(6);
+			setCookie("ctrl-d", 1, 100000000000000);
 		}
 		if (key == 'e'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(8);
+			setCookie("ctrl-e", 1, 100000000000000);
 		}
 		if (key == 'f'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(7);
+			setCookie("ctrl-e", 1, 100000000000000);
 		}
 	}
 }
@@ -317,31 +331,37 @@ function playVideo(key) {
 			key.preventDefault();
 			randAlert();
 			play(9);
+			setCookie("ctrl-a", 1, 100000000000000);
 		}
 		if (key.key == 'b') {
 			key.preventDefault();
 			randAlert();
 			play(4);
+			setCookie("ctrl-b", 1, 100000000000000);
 		}
 		if (key.key == 'c') {
 			key.preventDefault();
 			randAlert();
 			play(10);
+			setCookie("ctrl-c", 1, 100000000000000);
 		}
 		if (key.key == 'd') {
 			key.preventDefault();
 			randAlert();
 			play(6);
+			setCookie("ctrl-d", 1, 100000000000000);
 		}
 		if (key.key == 'e') {
 			key.preventDefault();
 			randAlert();
 			play(8);
+			setCookie("ctrl-e", 1, 100000000000000);
 		}
 		if (key.key == 'f') {
 			key.preventDefault();
 			randAlert();
 			play(7);
+			setCookie("ctrl-f", 1, 100000000000000);
 		}
 	}
 }
@@ -390,6 +410,12 @@ setInterval(() => {
 	}
 }, 30000);
 
+setInterval(() => {
+	var a = getCookie(helpme);
+	var b = getCookie(
+	if()
+}, 100);
+	
 setInterval(() =>{
 	if(pageIsDestroyed){
 		document.getElementById("destroyed").style.visibility = "visible";
@@ -410,17 +436,19 @@ setInterval(() =>{
 document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
-		if (keyLog.includes("awesome")) {
+		if (keyLog.includes("secrets")) {
 			alert();
 		}
 		if (keyLog.includes("awesome")) {
 			hasDoneRainbowText = !hasDoneRainbowText;
 			keyLog = "";
+			setCookie("awesome", 1, 100000000000000);
 		}
 		if (keyLog.includes("break")) {
 			keyLog = "";
 			pageIsDestroyed = true;
 			destroyPage(zalgo("You have destroyed this page"));
+			setCookie("break", 1, 100000000000000);
 		}
 		if (hasDoneRainbowText) {
 			document.getElementById("main-text").style.mixBlendMode = "normal";
