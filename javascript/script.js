@@ -24,6 +24,7 @@ var pageIsDestroyed = false;
 var isOnMobile = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
+var a = "a";
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
