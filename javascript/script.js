@@ -143,12 +143,8 @@ function getCookie(cname) {
   }
   return "";
 }
-if (indexOf(getCookie("firstTime")) > 0){
-  firstTime = true;
-}else{
-  setCookie(firstTime, "", 100000000000000);
-}
-if (firstTime = true){
+if (getCookie("firstTime") == ""){
+  firstTime = true;  
   setCookie("helpme", 0, 10000000000);
   setCookie("secretChecked", 0, 10000000000);
   setCookie("text", 0, 10000000000);
@@ -165,6 +161,7 @@ if (firstTime = true){
   setCookie("ctrl-f", 0, 10000000000);
   setCookie("awesome", 0, 10000000000);
   setCookie("break", 0, 10000000000);
+  setCookie("firstTime", 0, 100000000000000);
 }
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
