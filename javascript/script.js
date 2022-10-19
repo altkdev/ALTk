@@ -3,11 +3,8 @@ $(document).ready(function() {
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#vid").hide();
-function abc() { document.getElementById("vid").muted = false; }
-document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	play(69);
-	setTimeout(abc, 1000);
 	document.getElementById("vid").play();
 }
 if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
@@ -24,9 +21,10 @@ var pageIsDestroyed = false;
 var isOnMobile = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
+var loadingScreenOnClick = false;
+var himerflab = 0;
+var deez = 0;
 var a = "a";
-const himerflab = 0;
-const deez = 0;
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -142,24 +140,26 @@ function getCookie(cname) {
   }
   return "";
 }
-setCookie("helpme", 0, 10000000000);
-setCookie("secretChecked", 0, 10000000000);
-setCookie("text", 0, 10000000000);
-setCookie("alphabet", 0, 10000000000);
-setCookie("something-random", 0, 10000000000);
-setCookie("69420", 0, 10000000000);
-setCookie("800", 0, 10000000000);
-setCookie("trains", 0, 10000000000);
-setCookie("ctrl-a", 0, 10000000000);
-setCookie("ctrl-b", 0, 10000000000);
-setCookie("ctrl-c", 0, 10000000000);
-setCookie("ctrl-d", 0, 10000000000);
-setCookie("ctrl-e", 0, 10000000000);
-setCookie("ctrl-f", 0, 10000000000);
-setCookie("awesome", 0, 10000000000);
-setCookie("break", 0, 10000000000);
+if(getCookie("helpme") == ""){
+	setCookie("helpme", 0, 10000000000);
+	setCookie("secretChecked", 0, 10000000000);
+	setCookie("text", 0, 10000000000);
+	setCookie("alphabet", 0, 10000000000);
+	setCookie("something-random", 0, 10000000000);
+	setCookie("69420", 0, 10000000000);
+	setCookie("800", 0, 10000000000);
+	setCookie("trains", 0, 10000000000);
+	setCookie("ctrl-a", 0, 10000000000);
+	setCookie("ctrl-b", 0, 10000000000);
+	setCookie("ctrl-c", 0, 10000000000);
+	setCookie("ctrl-d", 0, 10000000000);
+	setCookie("ctrl-e", 0, 10000000000);
+	setCookie("ctrl-f", 0, 10000000000);
+	setCookie("awesome", 0, 10000000000);
+	setCookie("break", 0, 10000000000);
+}
 //#endregion
-//#region helpme/play function/randAlert/destroyPage functions
+//#region Other functions
 function helpme() {
 	if(secretsAreOn){
 		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
@@ -421,7 +421,15 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 });
 //#endregion
 
-//#region Intervals
+//#region Intervals/Timeouts
+
+setTimeout(() => {
+	document.getElementById("loader").style.display = "none";
+	document.getElementById("clickLoader").style.display = "block";
+	document.getElementById("clickLoader").style.animation.add("fadeShow");
+}, 5000)
+
+
 setInterval(() => {
 	if(!pageIsDestroyed){
 		$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
@@ -430,6 +438,7 @@ setInterval(() => {
 		})
 	}
 }, 30000);
+
 
 setInterval(() => {
 	const a = getCookie("helpme");
@@ -475,7 +484,7 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			const deez = 16 - himerflab
+			var deez = 16 - 1;
 			alert("you have found " + himerflab + "out of 16 only " + deez + "left to find");
 			keyLog = "";
 		}
@@ -529,6 +538,14 @@ document.getElementById("main-text").addEventListener("click", () =>{
 document.getElementById("secretCheckbox").addEventListener("change", () => {
 	secretChecked();
 });
+
+window.onclick = () => {
+	if(loadingScreenOnClick){
+		document.getElementById("clickLoader").style.animation.remove("fadeShow");
+		document.getElementById("clickLoader").style.animation.add("fadeHide");
+		document.getElementById("all-the-stuff").style.display = "block";
+	}
+};
 //#endregion
 
 });
