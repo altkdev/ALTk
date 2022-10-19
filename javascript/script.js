@@ -455,7 +455,7 @@ setInterval(() => {
 	const o = getCookie("awesome");
 	const p = getCookie("break");
 	const himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
-	if (himerflab = 16) {
+	if (himerflab == 16) {
 	  alert("congrats you have found all the secrets"); 
 	}
 }, 100);
