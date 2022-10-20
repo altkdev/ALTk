@@ -6,10 +6,11 @@
   <body>
     <script>
       function load(what) {
-        if (what.toString().includes(("https://" || "http://"));
+        if (what.toString().includes(("https://" || "http://")) {
           document.getElementById("frame").src = what.toString();
         }else{
           document.getElementById("frame").src = "http://" + what.toString();
+        }
       }
     </script>
     <iframe id="frame" src="about:blank" height="100%" width="100%"></iframe>
