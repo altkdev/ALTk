@@ -6,7 +6,10 @@
   <body>
     <script>
       function abcdefg() {
-        document.getElementById("frame").src = document.getElementById("no").toString();
+        if (document.getElementById("no").value.toString().includes(("https://" || "http://"));
+          document.getElementById("frame").src = document.getElementById("no").toString();
+        }else{
+          document.getElementById("frame").src = "http://" + document.getElementById("no").toString();
       }
     </script>
     <input id="no" type="text"></input>
