@@ -5,15 +5,13 @@
   </head>
   <body>
     <script>
-      function abcdefg() {
-        if (document.getElementById("no").value.toString().includes(("https://" || "http://"));
-          document.getElementById("frame").src = document.getElementById("no").toString();
+      function load(what) {
+        if (what.toString().includes(("https://" || "http://"));
+          document.getElementById("frame").src = what.toString();
         }else{
-          document.getElementById("frame").src = "http://" + document.getElementById("no").toString();
+          document.getElementById("frame").src = "http://" + what.toString();
       }
     </script>
-    <input id="no" type="text"></input>
-    <button onclick="abcdefg()">go</button>
-    <iframe id="frame" src="https://altk.xyz"></iframe>
+    <iframe id="frame" src="about:blank" height="100%" width="100%"></iframe>
   </body>
 </html>
