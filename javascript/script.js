@@ -2,13 +2,15 @@ $(document).ready(function() {
 //#region Setting Visibility For Elements and Other Stuff
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
+$("#loader").hide();
+$("#clickLoader").hide();
 $("#vid").hide();
-function abc() { document.getElementById("vid").muted = false; }
-document.getElementById("destroyed").style.visibility = "hidden";
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
-	play(69);
-	setTimeout(abc, 1000);
-	document.getElementById("vid").play();
+	$("#loader").show();
+	$("#loader").css('visibility', 'visible');
+	$("#clickLoader").show();
+	$("#clickLoader").css('visibility', 'visible');
+	document.getElementById("clickLoader").addEventListener("click", "role");
 }
 if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
 	document.getElementById("vid").loop = true;
@@ -75,6 +77,12 @@ const zalgo_mid = [
 //#endregion
 
 //#region Functions
+
+function role(){
+	play(69);
+	$("#loader").hide();
+	$("#clickLoader").hide();
+}
 
 //#region Zalgo
 //https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
