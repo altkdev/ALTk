@@ -1,38 +1,13 @@
 $(document).ready(function() {
-//#region Setting Visibility For Elements and Other Stuff
-$("#if-script").show();
-$("#if-script").css('visibility', 'visible');
-$("#loader").hide();
-$("#clickLoader").hide();
-$("#vid").hide();
-$("#destroyed").hide();
-$("a").show()
-$("a").css('visibility', 'visible');
-if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
-	$("#loader").show();
-	$("#loader").css('visibility', 'visible');
-	$("#clickLoader").show();
-	$("#clickLoader").css('visibility', 'visible');
-	document.getElementById("clickLoader").addEventListener("click", "role");
-}
-if(window.location.href.includes("&repeat=true") || window.location.href.includes("?repeat=true")){
-	document.getElementById("vid").loop = true;
-	document.getElementById("vid").load();
-}
-//#endregion
-
 //#region Variables
 var secretsAreOn = true;
 var keyLog = "";
 var hasDoneRainbowText = false;
 var pageIsDestroyed = false;
-var isOnMobile = false;
-var firstTime = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
-var a = "a";
+var autoPlay = false;
 const himerflab = 0;
-const deez = 0;
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -79,14 +54,25 @@ const zalgo_mid = [
 
 //#endregion
 
-//#region Functions
-
-function role(){
-	play(69);
-	$("#loader").hide();
-	$("#clickLoader").hide();
+//#region Setting Visibility For Elements and Other Stuff
+$("#if-script").show();
+$("#if-script").css('visibility', 'visible');
+$("#clickLoader").hide();
+$("#all-the-stuff").hide();
+$("#vid").hide();
+$("#destroyed").hide();
+$("a").show()
+$("a").css('visibility', 'visible');
+if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
+	autoPlay = true;
 }
+if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
+	document.getElementById("vid").loop = true;
+	document.getElementById("vid").load();
+}
+//#endregion
 
+//#region Functions
 //#region Zalgo
 //https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
 function is_zalgo_char(c)
@@ -155,7 +141,6 @@ function getCookie(cname) {
   return "";
 }
 if (getCookie("firstTime") == ""){
-  firstTime = true;  
   setCookie("helpme", 0, 10000000000);
   setCookie("secretChecked", 0, 10000000000);
   setCookie("text", 0, 10000000000);
@@ -180,7 +165,7 @@ if (getCookie("firstTime") == ""){
 function helpme() {
 	if(secretsAreOn){
 		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
-		window.location.replace("https://github.com/dr-comeemeememem/ALTk/discussions/9");
+		window.location.replace("https://github.com/altkdev/ALTk/discussions/9");
 		setCookie("helpme", 1, 1000000000)
 	}
 }
@@ -205,8 +190,7 @@ function randAlert() {
 function destroyPage(message) {
 	$.backstretch("destroy")
 	//$.backstretch("background/destroy.png");
-	document.getElementById("all-the-stuff").style.visibility = "hidden";
-	document.getElementById("all-the-stuff").style.position = "none";
+	$("#all-the-stuff").hide();
 	if(isOnApple){
 		document.title = zalgo("CMDk");
 	}
@@ -214,19 +198,14 @@ function destroyPage(message) {
 		document.title = zalgo("ALTk");
 	}
 	document.body.style.background = "black";
-	document.getElementById("destroyed").style.visibility = "visible";
+	$("#destroyed").show();
 	try {
 		$("#vid").pause()
 	} catch (Exception) {
 	}
 	alert(message);
-	document.cookie = "";
-	while(1) {
-		a += "a";
-	}
 }
 //#endregion
-
 //#region Secrets
 function skipNav() {
 	if(secretsAreOn){
@@ -295,7 +274,6 @@ function secretText() {
 }
 
 //#endregion
-
 //#region Commands for video
 function playVideoMobile(key, command) {
 	if(pageIsDestroyed)
@@ -409,7 +387,6 @@ function playVideo(key) {
 //#region Platform specific
 if (navigator.userAgent.toLowerCase().match(/mobile/i)){
 	document.getElementById("mobile").style.visibility = "visible";
-	isOnMobile = true;
 	console.log("You are using a mobile browser")
 }else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
 	isOnApple = true;
@@ -438,7 +415,21 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 });
 //#endregion
 
-//#region Intervals
+//#region Intervals/Timouts
+
+setTimeout(() => {
+	document.getElementById("loader").style.display = "none";
+	$("#clickLoader").fadeToggle();
+	window.onclick = function(){
+		if(!$("#all-the-stuff").is(":visible")){
+			$("#clickLoader").fadeToggle();
+			$("#all-the-stuff").fadeToggle();
+			if(autoPlay)
+				play(69)
+		}
+	};
+}, 5000)
+
 setInterval(() => {
 	if(!pageIsDestroyed){
 		$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
@@ -520,7 +511,9 @@ document.onkeydown = function (key) {
 			document.getElementById("main-text").style.color = "white";
 		}
 	}
-	playVideo(key);
+	console.log(key);
+	if(key.key == 'k' && (key.altKey || key.code === 75) || secretsAreOn)
+		playVideo(key);
 };
 
 document.getElementById("vid").addEventListener('pause', function () {
