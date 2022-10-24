@@ -7,7 +7,6 @@
 }
 
 #loader {
-    visibility: none;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -32,16 +31,6 @@
     mix-blend-mode: difference;
 }
 
-@-webkit-keyframes fadeShow {
-    from {opacity:0}
-    to{opacity:1}
-}
-
-@-webkit-keyframes fadeHide {
-    from {opacity:1}
-    to{opacity:0}
-}
-
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
@@ -60,11 +49,6 @@
     animation-duration: 1s
   }
   
-@-webkit-keyframes animatebottom {
-    from { opacity:0 } 
-    to { opacity:1 }
-}
-
 #destroyed{
     color: #ffffff;
     font-family: 'Marker Felt' fantacy;
@@ -87,10 +71,6 @@
     font-family: 'Brush Script MT' Cursive;
     text-decoration: none;
     font-size: 1.5rem;
-}
-
-#all-the-stuff{
-    display:none;
 }
 
 #mobile{
