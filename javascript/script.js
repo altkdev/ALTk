@@ -5,6 +5,9 @@ $("#if-script").css('visibility', 'visible');
 $("#loader").hide();
 $("#clickLoader").hide();
 $("#vid").hide();
+$("#destroyed").hide();
+$("#main-text").show()
+$("#main-text").css('visibility', 'visible');
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	$("#loader").show();
 	$("#loader").css('visibility', 'visible');
