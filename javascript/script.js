@@ -63,6 +63,13 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
+if(!$("#all-the-stuff").is(":visible")){
+			$("#clickLoader").fadeToggle();
+			$("#all-the-stuff").fadeToggle();
+			if(autoPlay) {
+				play(69)
+                        }
+		}
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	autoPlay = true;
 }
@@ -416,7 +423,7 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 //#endregion
 
 //#region Intervals/Timouts
-
+if (autoRole) {
 setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
@@ -430,7 +437,7 @@ setTimeout(() => {
 		}
 	};
 }, 5000)
-
+}
 setInterval(() => {
 	if(!pageIsDestroyed){
 		$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
