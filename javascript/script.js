@@ -63,13 +63,8 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if(!$("#all-the-stuff").is(":visible")){
-			$("#clickLoader").fadeToggle();
-			$("#all-the-stuff").fadeToggle();
-			if(autoPlay) {
-				play(69)
-                        }
-		}
+$("#clickLoader").fadeToggle();
+$("#all-the-stuff").fadeToggle();
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	autoPlay = true;
 }
