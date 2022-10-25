@@ -418,13 +418,14 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 //#endregion
 
 //#region Intervals/Timouts
-if (autoRole) {
+if (autoPlay) {
 setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
 	window.onclick = function(){
 		if(!$("#all-the-stuff").is(":visible")){
 			$("#clickLoader").fadeToggle();
+                        $("#loader").fadeToggle();
 			$("#all-the-stuff").fadeToggle();
 			if(autoPlay) {
 				play(69)
