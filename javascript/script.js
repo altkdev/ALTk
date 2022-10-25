@@ -63,7 +63,7 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-$("#clickLoader").fadeToggle();
+$("#loader").fadeToggle();
 $("#all-the-stuff").fadeToggle();
 if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	autoPlay = true;
