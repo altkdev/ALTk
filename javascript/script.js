@@ -141,23 +141,23 @@ function getCookie(cname) {
   return "";
 }
 if (getCookie("firstTime") == ""){
-  setCookie("helpme", 0, 10000000000);
-  setCookie("secretChecked", 0, 10000000000);
-  setCookie("text", 0, 10000000000);
-  setCookie("alphabet", 0, 10000000000);
-  setCookie("something-random", 0, 10000000000);
-  setCookie("69420", 0, 10000000000);
-  setCookie("800", 0, 10000000000);
-  setCookie("trains", 0, 10000000000);
-  setCookie("ctrl-a", 0, 10000000000);
-  setCookie("ctrl-b", 0, 10000000000);
-  setCookie("ctrl-c", 0, 10000000000);
-  setCookie("ctrl-d", 0, 10000000000);
-  setCookie("ctrl-e", 0, 10000000000);
-  setCookie("ctrl-f", 0, 10000000000);
-  setCookie("awesome", 0, 10000000000);
-  setCookie("break", 0, 10000000000);
-  setCookie("firstTime", 0, 100000000000000);
+  setCookie("a", 0, 10000000000);
+  setCookie("b", 0, 10000000000);
+  setCookie("c", 0, 10000000000);
+  setCookie("d", 0, 10000000000);
+  setCookie("e", 0, 10000000000);
+  setCookie("f", 0, 10000000000);
+  setCookie("g", 0, 10000000000);
+  setCookie("h", 0, 10000000000);
+  setCookie("i", 0, 10000000000);
+  setCookie("j", 0, 10000000000);
+  setCookie("k", 0, 10000000000);
+  setCookie("l", 0, 10000000000);
+  setCookie("m", 0, 10000000000);
+  setCookie("n", 0, 10000000000);
+  setCookie("o", 0, 10000000000);
+  setCookie("p", 0, 10000000000);
+  setCookie("q", 0, 100000000000000);
 }
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
@@ -166,7 +166,7 @@ function helpme() {
 	if(secretsAreOn){
 		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
 		window.location.replace("https://github.com/altkdev/ALTk/discussions/9");
-		setCookie("helpme", 1, 1000000000)
+		setCookie("a", 1, 1000000000)
 	}
 }
 
@@ -245,7 +245,7 @@ function secretChecked() {
 		console.log("checked");
 		alert("YoU haVe fOUnD A scErEt");
 		play("The_Funeral");
-		setCookie("secretChecked", 1, 1000000000000);
+		setCookie("b", 1, 1000000000000);
 	}
 }
 
@@ -253,22 +253,22 @@ function secretText() {
 	if (secretsAreOn) {
 		if (document.getElementById("secretText").value == "text") {
 			play(1);
-			setCookie("text", 1, 100000000000000);
+			setCookie("c", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "abcdefghijklmnopqrstuvwxyz") {
 			play(2);
-			setCookie("alphabet", 1, 100000000000000);
+			setCookie("d", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "something random") {
 			window.open("/pages/hELLO.html")
-			setCookie("something-random", 1, 100000000000000);
+			setCookie("e", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "69420") {
 			play(420);
-			setCookie("69420", 1, 100000000000000);
+			setCookie("f", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99") {
 			play(800);
-			setCookie("800", 1, 100000000000000);
+			setCookie("g", 1, 100000000000000);
 		}else if (document.getElementById("secretText").value == "I like trains") {
             		play(11);
-			setCookie("trains", 1, 100000000000000);
+			setCookie("h", 1, 100000000000000);
         	}
 	}
 }
@@ -289,42 +289,42 @@ function playVideoMobile(key, command) {
 		}
 		
 	}
-	if (command == "c".toLowerCase() && secretsAreOn) {
-		if (key == 'a'.toLowerCase()) {
+	if (command.toLowerCase() == "c" && secretsAreOn) {
+		if (key.toLowerCase() == 'a'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(9);
-			setCookie("ctrl-a", 1, 100000000000000);
+			setCookie("i", 1, 100000000000000);
 		}
-		if (key == 'b'.toLowerCase()) {
+		if (key.toLowerCase() == 'b'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(4);
-			setCookie("ctrl-b", 1, 100000000000000);
+			setCookie("j", 1, 100000000000000);
 		}
-		if (key == 'c'.toLowerCase()) {
+		if (key.toLowerCase() == 'c'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(10);
-			setCookie("ctrl-c", 1, 100000000000000);
+			setCookie("k", 1, 100000000000000);
 		}
-		if (key == 'd'.toLowerCase()) {
+		if (key.toLowerCase() == 'd'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(6);
-			setCookie("ctrl-d", 1, 100000000000000);
+			setCookie("l", 1, 100000000000000);
 		}
-		if (key == 'e'.toLowerCase()) {
+		if (key.toLowerCase() == 'e'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(8);
-			setCookie("ctrl-e", 1, 100000000000000);
+			setCookie("m", 1, 100000000000000);
 		}
-		if (key == 'f'.toLowerCase()) {
+		if (key.toLowerCase() == 'f'.toLowerCase()) {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(7);
-			setCookie("ctrl-e", 1, 100000000000000);
+			setCookie("n", 1, 100000000000000);
 		}
 	}
 }
@@ -333,7 +333,7 @@ function playVideo(key) {
 	if(pageIsDestroyed)
 		return;
 		
-	if (key.key == 'k' && (key.altKey || event.keyCode === 75)) {
+	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple)) {
 		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
@@ -347,37 +347,37 @@ function playVideo(key) {
 			key.preventDefault();
 			randAlert();
 			play(9);
-			setCookie("ctrl-a", 1, 100000000000000);
+			setCookie("i", 1, 100000000000000);
 		}
 		if (key.key == 'b') {
 			key.preventDefault();
 			randAlert();
 			play(4);
-			setCookie("ctrl-b", 1, 100000000000000);
+			setCookie("j", 1, 100000000000000);
 		}
 		if (key.key == 'c') {
 			key.preventDefault();
 			randAlert();
 			play(10);
-			setCookie("ctrl-c", 1, 100000000000000);
+			setCookie("k", 1, 100000000000000);
 		}
 		if (key.key == 'd') {
 			key.preventDefault();
 			randAlert();
 			play(6);
-			setCookie("ctrl-d", 1, 100000000000000);
+			setCookie("l", 1, 100000000000000);
 		}
 		if (key.key == 'e') {
 			key.preventDefault();
 			randAlert();
 			play(8);
-			setCookie("ctrl-e", 1, 100000000000000);
+			setCookie("m", 1, 100000000000000);
 		}
 		if (key.key == 'f') {
 			key.preventDefault();
 			randAlert();
 			play(7);
-			setCookie("ctrl-f", 1, 100000000000000);
+			setCookie("n", 1, 100000000000000);
 		}
 	}
 }
@@ -441,22 +441,22 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	const a = getCookie("helpme");
-	const b = getCookie("secretChecked");
-	const c = getCookie("text");
-	const d = getCookie("alphabet");
-	const e = getCookie("something-random");
-	const f = getCookie("69420");
-	const g = getCookie("800");
-	const h = getCookie("trains");
-	const i = getCookie("ctrl-a");
-	const j = getCookie("ctrl-b");
-	const k = getCookie("ctrl-c");
-	const l = getCookie("ctrl-d");
-	const m = getCookie("ctrl-e");
-	const n = getCookie("ctrl-f");
-	const o = getCookie("awesome");
-	const p = getCookie("break");
+	const a = getCookie("a");
+	const b = getCookie("b");
+	const c = getCookie("c");
+	const d = getCookie("d");
+	const e = getCookie("e");
+	const f = getCookie("f");
+	const g = getCookie("g");
+	const h = getCookie("h");
+	const i = getCookie("i");
+	const j = getCookie("j");
+	const k = getCookie("k");
+	const l = getCookie("l");
+	const m = getCookie("m");
+	const n = getCookie("n");
+	const o = getCookie("o");
+	const p = getCookie("p");
 	const himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
 	if (himerflab == 16) {
 	  alert("congrats you have found all the secrets"); 
@@ -491,13 +491,13 @@ document.onkeydown = function (key) {
 		if (keyLog.includes("awesome")) {
 			hasDoneRainbowText = !hasDoneRainbowText;
 			keyLog = "";
-			setCookie("awesome", 1, 100000000000000);
+			setCookie("o", 1, 100000000000000);
 		}
 		if (keyLog.includes("break")) {
 			keyLog = "";
 			pageIsDestroyed = true;
 			destroyPage(zalgo("You have destroyed this page"));
-			setCookie("break", 1, 100000000000000);
+			setCookie("p", 1, 100000000000000);
 		}
 		if (hasDoneRainbowText) {
 			document.getElementById("main-text").style.mixBlendMode = "normal";
@@ -513,8 +513,6 @@ document.onkeydown = function (key) {
 		}
 	}
 	console.log(key);
-	if(key.key == 'k' && (key.altKey || key.code === 75) || secretsAreOn)
-		playVideo(key);
 };
 
 document.getElementById("vid").addEventListener('pause', function () {
