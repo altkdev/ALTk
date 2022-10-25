@@ -424,8 +424,9 @@ setTimeout(() => {
 		if(!$("#all-the-stuff").is(":visible")){
 			$("#clickLoader").fadeToggle();
 			$("#all-the-stuff").fadeToggle();
-			if(autoPlay)
+			if(autoPlay) {
 				play(69)
+                        }
 		}
 	};
 }, 5000)
