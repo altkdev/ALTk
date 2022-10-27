@@ -11,15 +11,25 @@
       <video id="vid" controls></video>
     </div>
     <script>
-      if (document.navigator.href != "https://altk.xyz/videos/"){
-        var whater = document.navigator.href.split("?").pop()
-        document.getElementById("A").value = whater;
-        document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater;
+      if (document.navigator.href.includes("https://altk.xyz/videos?f=")){
+        var whater = document.navigator.href.split("?")[1]
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', "https://altk.xyz/videos?f="+whater, false);
+        xhr.send();
+				if(xhr.status != "404"){
+						document.getElementById("A").value = whater;
+						document.getElementById("vid").src = whater + ".mp4;
+				}
       }
       function what() {
          var whater = document.getElementById("A").value.toString();
-         document.getElementById("vid").src = "https://dr-comeemeememem.github.io/ALTk/videos/" + whater + ".mp4";
-         document.getElemenrById("vid").play();
+				 xhr.open('HEAD', "https://altk.xyz/videos?f="+whater, false);
+         xhr.send();
+				 if(xhr.status != "404"){
+				 		document.getElementById("A").value = whater;
+						document.getElementById("vid").src = whater + ".mp4;
+					  document.getElemenrById("vid").play();
+				 }         
       }
     </script>
 </html>
