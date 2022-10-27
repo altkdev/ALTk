@@ -3,6 +3,7 @@ $(document).ready(function() {
 var secretsAreOn = true;
 var keyLog = "";
 var hasDoneRainbowText = false;
+var hasLoaded = false;
 var pageIsDestroyed = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
@@ -420,12 +421,13 @@ setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
 	window.onclick = function(){
-		if(!$("#all-the-stuff").is(":visible")){
+		if(!hasLoaded){
 			$("#clickLoader").fadeToggle();
                         $("#loader").fadeToggle();
 			$("#all-the-stuff").fadeToggle();
+			hasLoaded = true;
 			if(autoPlay) {
-				play(69)
+				play(69);
                         }
 		}
 	};
