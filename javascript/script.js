@@ -423,7 +423,6 @@ setTimeout(() => {
 	window.onclick = function(){
 		if(!hasLoaded){
 			$("#clickLoader").fadeToggle();
-                        $("#loader").fadeToggle();
 			$("#all-the-stuff").fadeToggle();
 			hasLoaded = true;
 			if(autoPlay) {
