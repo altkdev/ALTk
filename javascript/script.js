@@ -334,7 +334,7 @@ function playVideo(key) {
 	if(pageIsDestroyed)
 		return;
 		
-	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple)) {
+	if (key.key == 'k' && (key.altKey || event.metaKey && isOnApple)) {
 		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
@@ -513,7 +513,7 @@ document.onkeydown = function (key) {
 			document.getElementById("main-text").style.color = "white";
 		}
 	}
-	console.log(key);
+	playVideo(key);
 };
 
 document.getElementById("vid").addEventListener('pause', function () {
