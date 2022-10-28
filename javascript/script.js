@@ -334,7 +334,7 @@ function playVideo(key) {
 	if(pageIsDestroyed)
 		return;
 		
-	if (key.key == 'k' && (key.altKey || event.metaKey && isOnApple)) {
+	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple)) {
 		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
