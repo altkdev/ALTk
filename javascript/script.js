@@ -279,7 +279,7 @@ function secretText() {
 function playVideoMobile(key, command) {
 	if(pageIsDestroyed)
 		return;
-	if (key == 'k'.toLowerCase() && command == "a".toLowerCase()) {
+	if (key.toLowerCase() == 'k'.toLowerCase() && command.toLowerCase() == "a".toLowerCase()) {
 		randAlert();
 		document.getElementById("vid").style.visibility = "visible";
 		play(69); 
@@ -291,37 +291,37 @@ function playVideoMobile(key, command) {
 		
 	}
 	if (command.toLowerCase() == "c" && secretsAreOn) {
-		if (key.toLowerCase() == 'a'.toLowerCase()) {
+		if (key.toLowerCase() == 'a') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(9);
 			setCookie("i", 1, 100000000000000);
 		}
-		if (key.toLowerCase() == 'b'.toLowerCase()) {
+		if (key.toLowerCase() == 'b') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(4);
 			setCookie("j", 1, 100000000000000);
 		}
-		if (key.toLowerCase() == 'c'.toLowerCase()) {
+		if (key.toLowerCase() == 'c') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(10);
 			setCookie("k", 1, 100000000000000);
 		}
-		if (key.toLowerCase() == 'd'.toLowerCase()) {
+		if (key.toLowerCase() == 'd') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(6);
 			setCookie("l", 1, 100000000000000);
 		}
-		if (key.toLowerCase() == 'e'.toLowerCase()) {
+		if (key.toLowerCase() == 'e') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(8);
 			setCookie("m", 1, 100000000000000);
 		}
-		if (key.toLowerCase() == 'f'.toLowerCase()) {
+		if (key.toLowerCase() == 'f') {
 			randAlert();
 			document.getElementById("vid").style.visibility = "visible";
 			play(7);
