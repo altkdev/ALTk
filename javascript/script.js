@@ -420,7 +420,7 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
-	window.onclick = function(){
+	document.onclick = function(){
 		if(!hasLoaded){
 			$("#clickLoader").fadeToggle();
 			$("#all-the-stuff").fadeToggle();
