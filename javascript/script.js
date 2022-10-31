@@ -165,8 +165,8 @@ if (getCookie("firstTime") == ""){
 
 function helpme() {
 	if(secretsAreOn){
-		alert ("go to https://github.com/altkdev/ALTk/discussions/9 to answer important question");
-		window.location.replace("https://github.com/altkdev/ALTk/discussions/9");
+		alert ("altk has a discord server at http://discord.altk.xyz");
+		window.location.replace("http://discord.altk.xyz");
 		setCookie("a", 1, 1000000000)
 	}
 }
