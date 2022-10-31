@@ -14,22 +14,22 @@
       if (document.navigator.href.includes("https://altk.xyz/videos?f=")){
         var whater = document.navigator.href.split("?")[1]
         var xhr = new XMLHttpRequest();
-        xhr.open('HEAD', "https://altk.xyz/videos?f="+whater, false);
+        xhr.open('HEAD', "https://altk.xyz/videos?vid=" + whater, false);
         xhr.send();
-				if(xhr.status != "404"){
-						document.getElementById("A").value = whater;
-						document.getElementById("vid").src = whater + ".mp4;
-				}
+	if(xhr.status != "404"){
+		document.getElementById("A").value = whater;
+		document.getElementById("vid").src = whater + ".mp4;
+	}
       }
       function what() {
          var whater = document.getElementById("A").value.toString();
-				 xhr.open('HEAD', "https://altk.xyz/videos?f="+whater, false);
+	 xhr.open('HEAD', "https://altk.xyz/videos?f=" + whater, false);
          xhr.send();
-				 if(xhr.status != "404"){
-				 		document.getElementById("A").value = whater;
-						document.getElementById("vid").src = whater + ".mp4;
-					  document.getElemenrById("vid").play();
-				 }         
+	 if(xhr.status != "404"){
+	 	document.getElementById("A").value = whater;
+		document.getElementById("vid").src = whater + ".mp4";
+		document.getElemenrById("vid").play();
+	 }         
       }
     </script>
 </html>
