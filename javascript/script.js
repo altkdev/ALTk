@@ -421,14 +421,12 @@ setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
 	document.onclick = function(){
-		if(!hasLoaded){
-			$("#clickLoader").fadeToggle();
-			$("#all-the-stuff").fadeToggle();
-			hasLoaded = true;
-			if(autoPlay) {
-				play(69);
-                        }
-		}
+		$("#clickLoader").fadeToggle();
+		$("#all-the-stuff").fadeToggle();
+		hasLoaded = true;
+		if(autoPlay) {
+			play(69);
+                }
 	};
 }, 5000)
 	
