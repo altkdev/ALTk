@@ -418,6 +418,13 @@ $.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg
 
 //#region Intervals/Timouts
 setTimeout(() => {
+   document.addEventListener("visibilitychange", function () {
+    if (document["hidden"]) {
+        vid.play();
+    }
+   });
+}, 100)
+setTimeout(() => {
 	document.getElementById("loader").style.display = "none";
 	$("#clickLoader").fadeToggle();
 	document.onclick = function(){
