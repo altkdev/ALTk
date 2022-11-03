@@ -331,9 +331,19 @@ function playVideoMobile(key, command) {
 }
 
 function playVideo(key) {
-	if(pageIsDestroyed)
+	if(pageIsDestroyed) {
 		return;
-		
+	}
+	if (key.key == 'q' && key.ctrlKey && key.shiftKey) {
+		if (key.key == 'q' && key.ctrlKey && key.shiftKey) {
+			key.preventDefault();
+			if(confirm("do you want to log out?") == false) {
+				return false;
+			}else{
+				return true;
+			}
+		}
+	}
 	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple)) {
 		key.preventDefault();
 		play(69);
