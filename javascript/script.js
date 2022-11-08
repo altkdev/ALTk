@@ -8,7 +8,8 @@ var pageIsDestroyed = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
 var autoPlay = false;
-const himerflab = 0;
+var himerflab = 0;
+var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = ""; 
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -280,7 +281,6 @@ function playVideoMobile(key, command) {
 	if(pageIsDestroyed)
 		return;
 	if (key.toLowerCase() == 'k'.toLowerCase() && command.toLowerCase() == "a".toLowerCase()) {
-		randAlert();
 		document.getElementById("vid").style.visibility = "visible";
 		play(69); 
 		timesVisitedWebsite += 1;
@@ -459,23 +459,23 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	const a = getCookie("a");
-	const b = getCookie("b");
-	const c = getCookie("c");
-	const d = getCookie("d");
-	const e = getCookie("e");
-	const f = getCookie("f");
-	const g = getCookie("g");
-	const h = getCookie("h");
-	const i = getCookie("i");
-	const j = getCookie("j");
-	const k = getCookie("k");
-	const l = getCookie("l");
-	const m = getCookie("m");
-	const n = getCookie("n");
-	const o = getCookie("o");
-	const p = getCookie("p");
-	const himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
+	a = getCookie("a");
+	b = getCookie("b");
+	c = getCookie("c");
+        d = getCookie("d");
+	e = getCookie("e");
+	f = getCookie("f");
+	g = getCookie("g");
+	h = getCookie("h");
+	i = getCookie("i");
+	j = getCookie("j");
+	k = getCookie("k");
+	l = getCookie("l");
+	m = getCookie("m");
+	n = getCookie("n");
+	o = getCookie("o");
+	p = getCookie("p");
+	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
 	if (himerflab == 16) {
 	  alert("congrats you have found all the secrets"); 
 	}
