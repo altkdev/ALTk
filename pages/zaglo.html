@@ -80,7 +80,7 @@ function randZalgoChar(array)
 }
       while(1){
         yes = prompt("What is the text")
-        alert("your zaglo text is " + zaglo(yes));
+        alert("your zaglo text is " + zalgo(yes));
         copy = confirm("would you like to copy the zaglo text to your clipboard?")
         if(copy) {
           navigator.clipboard.write(zaglo(yes))
