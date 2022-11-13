@@ -51,23 +51,6 @@ const zalgo_mid = [
 //#endregion
 //#region Zalgo
 //https://codepen.io/captaincowtj/pen/dYzeWy?editors=1000
-function is_zalgo_char(c)
-{
-	var i;
-	for(i=0; i<zalgo_up.length; i++){
-		if(c == zalgo_up[i])
-			return true;
-	}
-	for(i=0; i<zalgo_down.length; i++){
-		if(c == zalgo_down[i])
-			return true;
-	}
-	for(i=0; i<zalgo_mid.length; i++){
-		if(c == zalgo_mid[i])
-			return true;
-	}
-	return false;
-}
 
 function zalgo(text){
 	
@@ -97,15 +80,11 @@ function randZalgoChar(array)
 }
       while(1){
         yes = prompt("What is the text")
-        if(is_zaglo_char(yes)){
-          alert("this text is aleradey zaglo text");
-        }else{
-          alert("your zaglo text is " + zaglo(yes));
-          copy = confirm("would you like to copy the zaglo text to your clipboard?")
-          if(copy) {
-            navigator.clipboard.write(zaglo(yes))
-          }
-        }  
+        alert("your zaglo text is " + zaglo(yes));
+        copy = confirm("would you like to copy the zaglo text to your clipboard?")
+        if(copy) {
+          navigator.clipboard.write(zaglo(yes))
+        }
       }
     </script>
   </body>
