@@ -1,104 +1,138 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      canvas{
+        position: fixed;
+        top:0;
+        left:0;
+      }
+
+      #v{
+        visibility: hidden;
+        display: none;
+      }
+
+      #start{
+        padding: 12px 18px;
+        color:white;
+        background:black;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+
+      #error{
+        position:absolute;
+        left: 45vw;
+        font-family: Roboto, sans-serif;
+        font-size: 100px;
+        color:white;
+      }
+
+      #s{
+        width: 98vw;
+        height: 98vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body{
+        background: black;
+      }
+    </style>
     <title>404</title>
   </head>
   <body>
-    <script>
-      /*
-      const rpc = ["rock", "paper", "sisors"];
-      let print = document.getElementById("computer");
-      */
-      var timer = 10;
-      //var beat = false;
-      //let game = document.getElementById("actual-game");
-      function countdown() {
-        document.getElementById("paragragh").innerHTML = "im sorry but no one is here to play with Rick Astley right now.<br>this page will automaticly redirect you in <mark><code>" + timer.toString() + " seconds</code></mark><sub>unless you beat this game... coming soon </sub>";
-        timer -= 1;
-        if(timer < 1){
-          location.replace("https://altk.xyz/?role=true", "_self");
+    <h1 id="error">404</h1>
+    <div id="s">
+      <button id="start">PLAY</button>
+    </div>
+    <video src="no ones around to help.mp4" id="v" loop></video>
+    <script async="" src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+    <script type="module">
+      import * as THREE from 'three';
+      import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+      //https://threejs.org/examples/#webgl_materials_video
+      document.getElementById("start").addEventListener("click", function(){
+        init();
+      })
+
+      function init(){
+        const b = document.createElement("canvas");
+        b.id = "bg";
+        document.body.appendChild(b);
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, .1, 1000);
+        
+        var clock = new THREE.Clock();
+        clock.autoStart = true;
+
+        const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector("#bg"),
+        });
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize( window.innerWidth, window.innerHeight);
+        camera.position.setZ(30);
+
+        //https://threejs.org/examples/#webgl_geometry_text_shapes
+        const loader = new FontLoader();
+
+        loader.load( 'Roboto_Regular.json', function ( font ) {
+
+
+        const geometry = new THREE.ShapeGeometry(font.generateShapes("404", 100));
+        geometry.computeBoundingBox();
+        const text = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+          color: "#ffffff"
+        }))
+        text.position.z -= 150;
+        scene.add(text);
+        } );
+
+        document.getElementById("v").play();
+        document.getElementById("v").addEventListener("play", function () {
+          this.currentTime = 3;
+        })
+        const texture = new THREE.VideoTexture(document.getElementById("v"));
+        const cube = new THREE.Mesh(
+        new THREE.BoxGeometry(10, 10, 10),
+        new THREE.MeshBasicMaterial({map:texture})
+        );
+
+        scene.add(cube);
+
+        var delta = clock.getDelta();
+
+        function animate(){
+          requestAnimationFrame(animate);
+          
+          delta = clock.getDelta();
+          cube.rotation.x += delta;
+          cube.rotation.y += delta;
+          cube.rotation.z += delta;
+          camera.aspect =  window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.render(scene, camera);
         }
+
+        animate();
       }
-      setInterval(countdown, 1000);
-      /*
-      var timer2 = 4
-      function rock() {
-        document.getElementById("paper").removeEventListener("click", paper, false)
-        document.getElementById("sizors").removeEventListener("click", sizors, false)
-        document.getElementById("dia").innerHTML = "rock";
-        youchose = "rock"
-      }
-      function paper() {
-        document.getElementById("rock").removeEventListener("click", rock, false)
-        document.getElementById("sizors").removeEventListener("click", sizors, false)
-        document.getElementById("dia").innerHTML = "paper";
-        youchose = "paper"
-      }
-      function sizors() {
-        document.getElementById("paper").removeEventListener("click", paper, false)
-        document.getElementById("rock").removeEventListener("click", rock, false)
-        document.getElementById("dia").innerHTML = "sizors";
-        youchose = "sizors"
-      }
-      function countdown2(){
-        print.innerHTML = "Choose you have " + timer2.toString() + " seconds";
-        timer2 -= 1
-        if(timer2 < 1) {
-          timer2 = 4
-          print.innerHTML = "i chose : " + result;
-          print.innerHTML = "you chose: " + youchose;
-          if(result = youchose){}
-          if ((youchose = "rock" && result = "paper")){
-            beat = false
-          }
-          if ((youchose = "rock" && result = "sizors")){
-            beat = true
-          }
-          if ((youchose = "paper" && result = "rock")){
-            beat = true
-          }
-          if ((youchose = "paper" && result = "sizors")){
-            beat = false
-          }
-          if ((youchose = "sizors" && result = "paper")){
-            beat = true
-          }
-          if ((youchose = "sizors" && result = "rock")){
-            beat = false
-          }
-        }
-       }
-       until(beat = true) {
-         document.getElementById("rock").addEventListener("click", rock);
-         document.getElementById("paper").addEventListener("click", paper);
-         document.getElementById("sizors").addEventListener("click", sizors);
-         print.innerHTML = "Chose you have 4 seconds"
-         for(let i = 0; i < 4; i++) {
-           setTimeout(countdown2, 1000);
-         }
-         var result = rpc[Math.floor(Math.random() * (3 + 1))];
-       }
-       */
+
     </script>
-    <center>
-      <h1>404</h1>
-      <p id="paragragh">
-        im sorry but no one is here to play with Rick Astley right now.<br>
-        this page will automaticly redirect you in <mark><code>20 seconds</code></mark>
-      </p>
-    </center>
-    <br>
-    <br>
-    <!--
-    <div id="game" class="game">
-      <b>to stop the timer and go back to the main website safely beat me in rock paper sizors</b>
-      <div id="actual-game" class="actual-game" style="border-style: solid;">
-          <div style="border-style: solid;" id="computer" class="computer"></div>
-          <div id="user" class="user" style="border-style: solid;">
-            <button type="button" id="rock">rock</button><button type="button" id="paper">paper</button><button type="button" id="sizors">sizors</button>
-            <div id="dia">none</div>
-          </div>
-      </div>
-    </div> -->
   </body>
 </html>
