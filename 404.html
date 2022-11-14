@@ -62,8 +62,8 @@
 			}
 		</script>
     <script type="module">
-      import * as THREE from 'three';
-      import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+      const THREE = require('three');
+      const FontLoader = require('FontLoader');
       //https://threejs.org/examples/#webgl_materials_video
       document.getElementById("start").addEventListener("click", function(){
         init();
