@@ -9,7 +9,7 @@ var timesVisitedWebsite = 0;
 var isOnApple = false;
 var autoPlay = false;
 var himerflab = 0;
-var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = ""; 
+var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -390,6 +390,12 @@ function playVideo(key) {
 			play(7);
 			setCookie("n", 1, 100000000000000);
 		}
+                if (key.key == 'g') {
+                        key.preventDefault();
+                        randAlert();
+                        play(12);
+                        setCookie("q", 1, 100000000000000);
+                }
 	}
 }
 //#endregion
@@ -475,8 +481,9 @@ setInterval(() => {
 	n = getCookie("n");
 	o = getCookie("o");
 	p = getCookie("p");
-	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p
-	if (himerflab == 16) {
+        q = getCookie("q");
+	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q
+	if (himerflab == 17) {
 	  alert("congrats you have found all the secrets"); 
 	}
 }, 100);
