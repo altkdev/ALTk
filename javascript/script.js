@@ -159,7 +159,7 @@ if (getCookie("firstTime") == ""){
   setCookie("n", 0, 10000000000);
   setCookie("o", 0, 10000000000);
   setCookie("p", 0, 10000000000);
-  setCookie("q", 0, 100000000000000);
+  setCookie("q", 0, 10000000000);
 }
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
@@ -482,7 +482,7 @@ setInterval(() => {
 	o = getCookie("o");
 	p = getCookie("p");
         q = getCookie("q");
-	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q
+	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
 	if (himerflab == 17) {
 	  alert("congrats you have found all the secrets"); 
 	}
@@ -509,8 +509,8 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			const deez = 16 - himerflab
-			alert("you have found " + himerflab + "out of 16 only " + deez + "left to find");
+			const deez = 17 - himerflab
+			alert("you have found " + himerflab + " out of 16 only " + deez + " left to find");
 			keyLog = "";
 		}
 		if (keyLog.includes("awesome")) {
