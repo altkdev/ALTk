@@ -100,7 +100,7 @@ function randZalgoChar(array)
         alert("your zaglo text is " + zalgo(yes));
         copy = confirm("would you like to copy the zaglo text to your clipboard?")
         if(copy) {
-          navigator.clipboard.write(zalgo(yes))
+          navigator.clipboard.writeText(zalgo(yes))
         }
       }
     </script>
