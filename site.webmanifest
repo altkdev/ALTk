@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "ALTk press alt+k",
+    "short_name": "ALTk",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",
@@ -8,7 +8,7 @@
           "type": "image/png"
        }
     ],
-    "theme_color": "#FFFFFF",
+    "theme_color": "#EC4EC4",
     "background_color": "#FFFFFF",
     "display": "standalone"
  }
