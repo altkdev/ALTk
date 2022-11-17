@@ -60,22 +60,17 @@ const zalgo_mid = [
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#clickLoader").hide();
-$("#skipLoad").hide();
 $("#all-the-stuff").hide();
 $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if (window.location.href.includes("&role=true") || window.location.href.includes("?role=true") && keylog != ""){
+if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
 	autoPlay = true;
-        keyLog = ""
 }
 if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
 	document.getElementById("vid").loop = true;
 	document.getElementById("vid").load();
-}
-if(keyLog != "") {
-  //sorry krish do your thing here
 }
 //#endregion
 
@@ -445,20 +440,29 @@ setTimeout(() => {
     }
    });
 }, 100)
-setTimeout(() => {
-	document.getElementById("loader").style.display = "none";
-	$("#clickLoader").fadeToggle();
-	document.onclick = function(){
-		if(!hasLoaded){
-			$("#clickLoader").fadeToggle();
-			$("#all-the-stuff").fadeToggle();
-			hasLoaded = true;
-			if(autoPlay) {
-				play(69);
-                        }
-		}
-	};
-}, 5000)
+
+$("#clickLoader").fadeToggle();
+document.onclick = function(){
+	if(!hasLoaded){
+		$("#clickLoader").fadeToggle();
+		$("#all-the-stuff").fadeToggle();
+		hasLoaded = true;
+		if(autoPlay) {
+			play(69);
+        }
+	}
+};
+
+window.addEventListener('keypress', function(_){
+	if(!hasLoaded){
+		$("#clickLoader").fadeToggle();
+		$("#all-the-stuff").fadeToggle();
+		hasLoaded = true;
+		if(autoPlay) {
+			play(69);
+        }
+	}
+});
 	
 setInterval(() => {
 	if(!pageIsDestroyed){
