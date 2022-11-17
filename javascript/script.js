@@ -125,7 +125,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  return document.cookie = cname + "=" + cvalue.toString() + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
@@ -142,24 +142,26 @@ function getCookie(cname) {
   }
   return "";
 }
+console.warn(getCookie("firstTime"))
 if (getCookie("firstTime") == ""){
-  setCookie("a", 0, 10000000000);
-  setCookie("b", 0, 10000000000);
-  setCookie("c", 0, 10000000000);
-  setCookie("d", 0, 10000000000);
-  setCookie("e", 0, 10000000000);
-  setCookie("f", 0, 10000000000);
-  setCookie("g", 0, 10000000000);
-  setCookie("h", 0, 10000000000);
-  setCookie("i", 0, 10000000000);
-  setCookie("j", 0, 10000000000);
-  setCookie("k", 0, 10000000000);
-  setCookie("l", 0, 10000000000);
-  setCookie("m", 0, 10000000000);
-  setCookie("n", 0, 10000000000);
-  setCookie("o", 0, 10000000000);
-  setCookie("p", 0, 10000000000);
-  setCookie("q", 0, 10000000000);
+  setCookie("a", "0", 10000000000);
+  setCookie("b", "0", 10000000000);
+  setCookie("c", "0", 10000000000);
+  setCookie("d", "0", 10000000000);
+  setCookie("e", "0", 10000000000);
+  setCookie("f", "0", 10000000000);
+  setCookie("g", "0", 10000000000);
+  setCookie("h", "0", 10000000000);
+  setCookie("i", "0", 10000000000);
+  setCookie("j", "0", 10000000000);
+  setCookie("k", "0", 10000000000);
+  setCookie("l", "0", 10000000000);
+  setCookie("m", "0", 10000000000);
+  setCookie("n", "0", 10000000000);
+  setCookie("o", "0", 10000000000);
+  setCookie("p", "0", 10000000000);
+  setCookie("q", "0", 10000000000);
+  setCookie("firstTime", 0, 10000000000)
 }
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
@@ -474,23 +476,23 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	a = getCookie("a");
-	b = getCookie("b");
-	c = getCookie("c");
-        d = getCookie("d");
-	e = getCookie("e");
-	f = getCookie("f");
-	g = getCookie("g");
-	h = getCookie("h");
-	i = getCookie("i");
-	j = getCookie("j");
-	k = getCookie("k");
-	l = getCookie("l");
-	m = getCookie("m");
-	n = getCookie("n");
-	o = getCookie("o");
-	p = getCookie("p");
-        q = getCookie("q");
+	var a = parseInt(getCookie("a"));
+	var b = parseInt(getCookie("b"));
+	var c = parseInt(getCookie("c"));
+    var d = parseInt(getCookie("d"));
+	var e = parseInt(getCookie("e"));
+	var f = parseInt(getCookie("f"));
+	var g = parseInt(getCookie("g"));
+	var h = parseInt(getCookie("h"));
+	var i = parseInt(getCookie("i"));
+	var j = parseInt(getCookie("j"));
+	var k = parseInt(getCookie("k"));
+	var l = parseInt(getCookie("l"));
+	var m = parseInt(getCookie("m"));
+	var n = parseInt(getCookie("n"));
+	var o = parseInt(getCookie("o"));
+	var p = parseInt(getCookie("p"));
+    var q = parseInt(getCookie("q"));
 	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
 	if (himerflab == 17) {
 	  alert("congrats you have found all the secrets"); 
@@ -518,8 +520,7 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			const deez = 17 - himerflab
-			alert("you have found " + himerflab + " out of 17 only " + deez + " left to find");
+			alert("you have found " + himerflab + " secrets. only " + (16 - himerflab).toString() + " left to find");
 			keyLog = "";
 		}
 		if (keyLog.includes("awesome")) {
