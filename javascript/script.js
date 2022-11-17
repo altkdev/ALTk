@@ -519,7 +519,7 @@ document.onkeydown = function (key) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
 			const deez = 17 - himerflab
-			alert("you have found " + himerflab + " out of 16 only " + deez + " left to find");
+			alert("you have found " + himerflab + " out of 17 only " + deez + " left to find");
 			keyLog = "";
 		}
 		if (keyLog.includes("awesome")) {
