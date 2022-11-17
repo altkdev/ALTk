@@ -60,13 +60,15 @@ const zalgo_mid = [
 $("#if-script").show();
 $("#if-script").css('visibility', 'visible');
 $("#clickLoader").hide();
+$("#skipLoad").hide();
 $("#all-the-stuff").hide();
 $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
+if (window.location.href.includes("&role=true") || window.location.href.includes("?role=true") || keylog != ""){
 	autoPlay = true;
+        keyLog = ""
 }
 if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
 	document.getElementById("vid").loop = true;
