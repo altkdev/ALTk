@@ -66,13 +66,16 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if (window.location.href.includes("&role=true") || window.location.href.includes("?role=true") || keylog != ""){
+if (window.location.href.includes("&role=true") || window.location.href.includes("?role=true") && keylog != ""){
 	autoPlay = true;
         keyLog = ""
 }
 if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
 	document.getElementById("vid").loop = true;
 	document.getElementById("vid").load();
+}
+if(keyLog != "") {
+  //sorry krish do your thing here
 }
 //#endregion
 
