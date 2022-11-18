@@ -520,7 +520,7 @@ document.onkeydown = function (key) {
 	if (secretsAreOn && !pageIsDestroyed) {
 		keyLog += key.key;
 		if (keyLog.includes("secrets")) {
-			alert("you have found " + himerflab + " secrets. only " + (16 - himerflab).toString() + " left to find");
+			alert("you have found " + himerflab + " secrets. only " + (17 - himerflab).toString() + " left to find");
 			keyLog = "";
 		}
 		if (keyLog.includes("awesome")) {
