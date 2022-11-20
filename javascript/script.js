@@ -2,6 +2,7 @@ $(document).ready(function() {
 //#region Variables
 var secretsAreOn = true;
 var keyLog = "";
+var hasShownAllSecretsAlert = false;
 var hasDoneRainbowText = false;
 var hasLoaded = false;
 var pageIsDestroyed = false;
@@ -494,8 +495,9 @@ setInterval(() => {
 	var p = parseInt(getCookie("p"));
     var q = parseInt(getCookie("q"));
 	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
-	if (himerflab == 17) {
+	if (himerflab == 17 && !hasShownAllSecretsAlert) {
 	  alert("congrats you have found all the secrets"); 
+	  hasShownAllSecrets = true;
 	}
 }, 100);
 	
