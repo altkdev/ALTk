@@ -477,27 +477,29 @@ setInterval(() => {
 }, 30000);
 
 setInterval(() => {
-	var a = parseInt(getCookie("a"));
-	var b = parseInt(getCookie("b"));
-	var c = parseInt(getCookie("c"));
-    var d = parseInt(getCookie("d"));
-	var e = parseInt(getCookie("e"));
-	var f = parseInt(getCookie("f"));
-	var g = parseInt(getCookie("g"));
-	var h = parseInt(getCookie("h"));
-	var i = parseInt(getCookie("i"));
-	var j = parseInt(getCookie("j"));
-	var k = parseInt(getCookie("k"));
-	var l = parseInt(getCookie("l"));
-	var m = parseInt(getCookie("m"));
-	var n = parseInt(getCookie("n"));
-	var o = parseInt(getCookie("o"));
-	var p = parseInt(getCookie("p"));
-    var q = parseInt(getCookie("q"));
-	himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
-	if (himerflab == 17 && !hasShownAllSecretsAlert) {
-	  alert("congrats you have found all the secrets"); 
-	  hasShownAllSecrets = true;
+	if(!hasShownAllSecretsAlert){
+		a = parseInt(getCookie("a"));
+		b = parseInt(getCookie("b"));
+		c = parseInt(getCookie("c"));
+		d = parseInt(getCookie("d"));
+		e = parseInt(getCookie("e"));
+		f = parseInt(getCookie("f"));
+		g = parseInt(getCookie("g"));
+		h = parseInt(getCookie("h"));
+		i = parseInt(getCookie("i"));
+		j = parseInt(getCookie("j"));
+		k = parseInt(getCookie("k"));
+		l = parseInt(getCookie("l"));
+		m = parseInt(getCookie("m"));
+		n = parseInt(getCookie("n"));
+		o = parseInt(getCookie("o"));
+		p = parseInt(getCookie("p"));
+		q = parseInt(getCookie("q"));
+		himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
+		if (himerflab == 17) {
+		  alert("congrats you have found all the secrets"); 
+		  hasShownAllSecretsAlert = true;
+		}
 	}
 }, 100);
 	
