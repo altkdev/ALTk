@@ -330,6 +330,12 @@ function playVideoMobile(key, command) {
 			play(7);
 			setCookie("n", 1, 100000000000000);
 		}
+                if (key.toLowerCase() == 'g') {
+                        randAlert();
+                        document.getElementById("vid").style.visibility = "visible";
+                        play(12)
+                        setCookie("o", 1, 10000000000000);
+                }
 	}
 }
 
