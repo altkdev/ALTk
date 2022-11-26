@@ -334,7 +334,7 @@ function playVideoMobile(key, command) {
                         randAlert();
                         document.getElementById("vid").style.visibility = "visible";
                         play(12)
-                        setCookie("o", 1, 10000000000000);
+                        setCookie("q", 1, 10000000000000);
                 }
 	}
 }
