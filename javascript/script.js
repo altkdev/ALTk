@@ -502,9 +502,15 @@ setInterval(() => {
 		p = parseInt(getCookie("p"));
 		q = parseInt(getCookie("q"));
 		himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
-		if (himerflab == 17) {
+		if (himerflab == 17 && getCookie("secretsFoundShown") == "") {
 		  alert("congrats you have found all the secrets"); 
+                  if(confirm("do you want to start over?") == true) {
+                    document.cookie = ""
+                    alert("you have started over");
+                    keyLog = "secrets"
+                  }
 		  hasShownAllSecretsAlert = true;
+                  setCookie("secretsFoundShown", 0, 10000000000000);
 		}
 	}
 }, 100);
