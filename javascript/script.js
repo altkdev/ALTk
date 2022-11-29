@@ -170,6 +170,7 @@ if (getCookie("firstTime") == ""){
 function helpme() {
 	if(secretsAreOn){
 		alert ("altk has a discord server at http://discord.altk.xyz");
+		alert ("also try to press the tab key");
 		window.location.replace("http://discord.altk.xyz");
 		setCookie("a", 1, 1000000000)
 	}
@@ -248,7 +249,8 @@ function secretChecked() {
 	}
 	if(document.getElementById("secretCheckbox").checked && secretsAreOn){
 		console.log("checked");
-		alert("YoU haVe fOUnD A scErEt");
+		alert("YoU haVe fOUnD A sEcrEt");
+		alert("try control+a it goes from control+a to control+g")
 		play("The_Funeral");
 		setCookie("b", 1, 1000000000000);
 	}
@@ -458,7 +460,7 @@ document.onclick = function(){
 		hasLoaded = true;
 		if(autoPlay) {
 			play(69);
-        }
+        	}
 	}
 };
 
