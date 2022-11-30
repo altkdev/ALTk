@@ -10,6 +10,8 @@ var timesVisitedWebsite = 0;
 var isOnApple = false;
 var autoPlay = false;
 var himerflab = 0;
+var vidToPlay = "";
+var noVidOption = false;
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
@@ -72,6 +74,40 @@ if(window.location.href.includes("&role=true") || window.location.href.includes(
 if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
 	document.getElementById("vid").loop = true;
 	document.getElementById("vid").load();
+}
+if((window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")) && noVidOption != true){
+        switch(window.location.href.split("=")[2]) {
+	        case '1' :
+	                vidToPlay = "1"
+		case '2' :
+			vidToPlay = "2"
+		case '4' :
+			vidToPlay = "4"
+		case '5' :
+			vidToPlay = "5"
+		case '6' :
+			vidToPlay = "6"
+		case '7' :
+		        vidToPlay = "7"
+		case '8' :
+			vidToPlay = "8"
+		case '9' :
+			vidToPlay = "9"
+		case '10' :
+			vidToPlay = "10"
+		case '11' :
+			vidToPlay = "11"
+		case '12' :
+			vidToPlay = "12"
+		case '420' :
+			vidToPlay = "420"
+		case '800' :
+			vidToPlay = "800"
+		case 'The_Funeral' :
+			vidToPlay = "The_Funeral"
+		case 'no%20ones%20around%20to%20help' :
+			vidToPlay = "no ones around to help"
+	}
 }
 //#endregion
 
@@ -461,6 +497,9 @@ document.onclick = function(){
 		if(autoPlay) {
 			play(69);
         	}
+		if(vidToPlay != "") {
+                        play(vidToPlay)
+		}
 	}
 };
 
@@ -471,7 +510,10 @@ window.addEventListener('keypress', function(_){
 		hasLoaded = true;
 		if(autoPlay) {
 			play(69);
-        }
+                }
+		if(vidToPlay != "") {
+                        play(vidToPlay)
+		}
 	}
 });
 	
