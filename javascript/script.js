@@ -76,7 +76,7 @@ if(window.location.href.includes("&loop=true") || window.location.href.includes(
 	document.getElementById("vid").load();
 }
 if((window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")) && noVidOption != true){
-        switch(window.location.href.split("=")[2]) {
+        switch(window.location.href.split("=").pop()) {
 	        case '1' :
 	                vidToPlay = "1"
 		case '2' :
