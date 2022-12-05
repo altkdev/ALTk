@@ -13,6 +13,7 @@ var himerflab = 0;
 var vidToPlay = "";
 var noVidOption = false;
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
+const urlParams = new URLSearchParams(window.location.href);
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -68,15 +69,19 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if(window.location.search.includes("&role=true") || window.location.href.includes("?role=true")){
-	autoPlay = true;
+if(urlParams.has('role')){
+	if(urlParams.get('role') == "true") {
+	        autoPlay = true;
+	}
 }
-if(window.location.search.includes("&loop=true") || window.location.href.includes("?loop=true")){
-	document.getElementById("vid").loop = true;
-	document.getElementById("vid").load();
+if(urlParams.has('loop'){
+        if(urlParams.get('loop') == "true") {
+	        document.getElementById("vid").loop = true;
+	        document.getElementById("vid").load();
+        }
 }
-if((window.location.search.includes("&vid=") || window.location.href.includes("?vid=")) && noVidOption != true){
-        switch(window.location.href.inc("=").pop()) {
+if(urlParams.has('vid') && noVidOption != true){
+        switch(urlParams.get('vid') {
 	        case '1' :
 	                vidToPlay = "1"
 		case '2' :
@@ -107,6 +112,8 @@ if((window.location.search.includes("&vid=") || window.location.href.includes("?
 			vidToPlay = "The_Funeral"
 		case 'no%20ones%20around%20to%20help' :
 			vidToPlay = "no ones around to help"
+	        default : 
+	                alert("you or your friend tried to play a video but the param is incorrect")
 	}
 }
 //#endregion
