@@ -68,15 +68,15 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if(window.location.href.includes("&role=true") || window.location.href.includes("?role=true")){
+if(window.location.search.includes("&role=true") || window.location.href.includes("?role=true")){
 	autoPlay = true;
 }
-if(window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")){
+if(window.location.search.includes("&loop=true") || window.location.href.includes("?loop=true")){
 	document.getElementById("vid").loop = true;
 	document.getElementById("vid").load();
 }
-if((window.location.href.includes("&loop=true") || window.location.href.includes("?loop=true")) && noVidOption != true){
-        switch(window.location.href.split("=").pop()) {
+if((window.location.search.includes("&vid=") || window.location.href.includes("?vid=")) && noVidOption != true){
+        switch(window.location.href.inc("=").pop()) {
 	        case '1' :
 	                vidToPlay = "1"
 		case '2' :
