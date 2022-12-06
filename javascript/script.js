@@ -79,7 +79,7 @@ if(urlParams.get('loop') == "true" || urlParams.get('loop') == "1") {
 }
 
 if(urlParams.has('vid') && !noVidOption){
-    switch(urlParams.get('vid') {
+    switch(urlParams.get('vid')) {
 	    case '1' :
 	        vidToPlay = "1"
 		case '2' :
