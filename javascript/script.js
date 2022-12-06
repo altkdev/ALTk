@@ -1,1 +1,2 @@
-alert("help my mom find a job as an hr business partner email owen@altk.xyz to to tell me")
+alert("go away nothing to see here")
+window.location.replace("https://example.com")
