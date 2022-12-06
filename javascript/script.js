@@ -13,7 +13,7 @@ var himerflab = 0;
 var vidToPlay = "";
 var noVidOption = false;
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
-const urlParams = new URLSearchParams(window.location.href);
+const urlParams = new URLSearchParams(new URL(window.location));
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -69,21 +69,19 @@ $("#vid").hide();
 $("#destroyed").hide();
 $("a").show()
 $("a").css('visibility', 'visible');
-if(urlParams.has('role')){
-	if(urlParams.get('role') == "true") {
-	        autoPlay = true;
-	}
+if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
+	autoPlay = true;
 }
-if(urlParams.has('loop'){
-        if(urlParams.get('loop') == "true") {
-	        document.getElementById("vid").loop = true;
-	        document.getElementById("vid").load();
-        }
+	
+if(urlParams.get('loop') == "true" || urlParams.get('loop') == "1") {
+	document.getElementById("vid").loop = true;
+	document.getElementById("vid").load();
 }
-if(urlParams.has('vid') && noVidOption != true){
-        switch(urlParams.get('vid') {
-	        case '1' :
-	                vidToPlay = "1"
+
+if(urlParams.has('vid') && !noVidOption){
+    switch(urlParams.get('vid') {
+	    case '1' :
+	        vidToPlay = "1"
 		case '2' :
 			vidToPlay = "2"
 		case '4' :
@@ -93,7 +91,7 @@ if(urlParams.has('vid') && noVidOption != true){
 		case '6' :
 			vidToPlay = "6"
 		case '7' :
-		        vidToPlay = "7"
+		    vidToPlay = "7"
 		case '8' :
 			vidToPlay = "8"
 		case '9' :
@@ -112,8 +110,8 @@ if(urlParams.has('vid') && noVidOption != true){
 			vidToPlay = "The_Funeral"
 		case 'no%20ones%20around%20to%20help' :
 			vidToPlay = "no ones around to help"
-	        default : 
-	                alert("you or your friend tried to play a video but the param is incorrect")
+	    default : 
+	        alert("you or your friend tried to play a video but the 'vid' parameter is set to an unknown video")
 	}
 }
 //#endregion
@@ -505,7 +503,7 @@ document.onclick = function(){
 			play(69);
         	}
 		if(vidToPlay != "") {
-                        play(vidToPlay)
+        	play(vidToPlay)
 		}
 	}
 };
