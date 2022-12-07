@@ -13,7 +13,7 @@ var himerflab = 0;
 var vidToPlay = "";
 var noVidOption = false;
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
-const urlParams = new URLSearchParams(new URL(window.location).search);
+const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
