@@ -480,7 +480,7 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 //#endregion
 
 //#region Backstretch
-if (date.toString() != 12) {
+if (date.toString() < 12) {
 	$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
 		duration: 0,
 		fade: 750
@@ -533,7 +533,7 @@ window.addEventListener('keypress', function(_){
 	
 setInterval(() => {
 	if(!pageIsDestroyed){
-		if (date.toString() != 12) {
+		if (date.toString() < 12) {
 			$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
 			duration: 0,
 			fade: 750
