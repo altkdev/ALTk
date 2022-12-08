@@ -14,6 +14,8 @@ var vidToPlay = "";
 var noVidOption = false;
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
+const da = new Date();
+const date = da.getMonth();
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
 
 //#region Zalgo Variables
@@ -478,10 +480,17 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 //#endregion
 
 //#region Backstretch
-$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
-	duration: 0,
-	fade: 750
-});
+if (date.toString() != 12) {
+	$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+		duration: 0,
+		fade: 750
+	});
+}else{
+	$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+		duration: 0,
+		fade: 750
+	});
+}
 //#endregion
 
 //#region Intervals/Timouts
@@ -503,7 +512,7 @@ document.onclick = function(){
 			play(69);
         	}
 		if(vidToPlay != "") {
-        	play(vidToPlay)
+        		play(vidToPlay)
 		}
 	}
 };
@@ -524,10 +533,18 @@ window.addEventListener('keypress', function(_){
 	
 setInterval(() => {
 	if(!pageIsDestroyed){
-		$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+		if (date.toString() != 12) {
+			$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
 			duration: 0,
 			fade: 750
-		})
+		});
+		}else{
+			$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+				duration: 0,
+				fade: 750
+			});
+		}
+
 	}
 }, 30000);
 
