@@ -73,6 +73,7 @@ $("a").show()
 $("a").css('visibility', 'visible');
 if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 	autoPlay = true;
+	noVidOption = true;
 }
 	
 if(urlParams.get('loop') == "true" || urlParams.get('loop') == "1") {
