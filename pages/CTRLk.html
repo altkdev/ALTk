@@ -1,0 +1,33 @@
+<<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Ctrl-k</title>
+	<style>
+	body{
+		background: #202124;
+	}
+	
+	h1{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		color:white;
+		font-family: 'helvetica';
+	}
+	</style>
+  </head>
+  <body>
+  
+	<h1>Press Ctrl+k</h1>
+
+    <script>
+    	document.onkeydown = function(event){
+        	if(event.key == "k" && event.ctrlKey){
+            	event.preventDefault();
+            	window.location.replace("https://altk.xyz/?role=1&loop=1");
+            }
+        }
+    </script>
+
+  </body>
+</html>
