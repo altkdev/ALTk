@@ -95,6 +95,7 @@ function randZalgoChar(array)
 	var ind = Math.floor(Math.random() * array.length);
 	return array[ind];
 }
+	window.onload = function(){
       while(1){
         yes = prompt("What is the text")
         alert("your zaglo text is " + zalgo(yes));
@@ -103,6 +104,7 @@ function randZalgoChar(array)
           navigator.clipboard.writeText(zalgo(yes))
         }
       }
+	}
     </script>
   </body>
 </html>
