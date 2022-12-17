@@ -12,7 +12,7 @@ var autoPlay = false;
 var himerflab = 0;
 var vidToPlay = "";
 var noVidOption = false;
-var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = "";
+var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = ""; var r = ""
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
 const date = da.getMonth();
@@ -206,6 +206,7 @@ if (getCookie("firstTime") == ""){
   setCookie("o", "0", 10000000000);
   setCookie("p", "0", 10000000000);
   setCookie("q", "0", 10000000000);
+  setCookie("r", "0", 10000000000);
   setCookie("firstTime", 0, 10000000000)
 }
 //#endregion
@@ -257,6 +258,10 @@ function destroyPage(message) {
 }
 //#endregion
 //#region Secrets
+function josh() {
+	$.backstretch("destroy")
+	$.backstretch("josh.jpeg")
+}
 function skipNav() {
 	if(secretsAreOn){
 		document.getElementById("main").style.visibility = "hidden";
@@ -320,7 +325,10 @@ function secretText() {
 		}else if (document.getElementById("secretText").value == "I like trains") {
             		play(11);
 			setCookie("h", 1, 100000000000000);
-        	}
+        	}else if (document.getElementById("secretText").value == "GigaChad") {
+			josh()
+			setCookie("r", 1, 100000000000000);
+		}
 	}
 }
 
