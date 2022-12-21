@@ -16,7 +16,7 @@ var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = 
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
 const date = da.getMonth();
-const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)"];
+const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)", "The duolingo bird is coming for your family", "undefined"];
 
 //#region Zalgo Variables
 const zalgo_up = [
@@ -85,34 +85,34 @@ if(urlParams.has('vid') && !noVidOption){
     switch(urlParams.get('vid')) {
 	    case '1' :
 	        vidToPlay = "1";
-		case '2' :
-			vidToPlay = "2";
-		case '4' :
-			vidToPlay = "4";
-		case '5' :
-			vidToPlay = "5";
-		case '6' :
-			vidToPlay = "6";
-		case '7' :
-		    vidToPlay = "7";
-		case '8' :
-			vidToPlay = "8";
-		case '9' :
-			vidToPlay = "9";
-		case '10' :
-			vidToPlay = "10";
-		case '11' :
-			vidToPlay = "11";
-		case '12' :
-			vidToPlay = "12";
-		case '420' :
-			vidToPlay = "420";
-		case '800' :
-			vidToPlay = "800";
-		case 'The_Funeral' :
-			vidToPlay = "The_Funeral";
-		case 'no%20ones%20around%20to%20help' :
-			vidToPlay = "no ones around to help";
+					case '2' :
+									vidToPlay = "2";
+					case '4' :
+									vidToPlay = "4";
+					case '5' :
+									vidToPlay = "5";
+					case '6' :
+									vidToPlay = "6";
+					case '7' :
+							  vidToPlay = "7";
+					case '8' :
+									vidToPlay = "8";
+					case '9' :
+									vidToPlay = "9";
+					case '10' :
+									vidToPlay = "10";
+					case '11' :
+									vidToPlay = "11";
+					case '12' :
+									vidToPlay = "12";
+					case '420' :
+									vidToPlay = "420";
+					case '800' :
+									vidToPlay = "800";
+					case 'The_Funeral' :
+									vidToPlay = "The_Funeral";
+					case 'no%20ones%20around%20to%20help' :
+									vidToPlay = "no ones around to help";
 	    default : 
 	        alert("you or your friend tried to play a video but the 'vid' parameter is set to an unknown video")
 	}
@@ -212,7 +212,7 @@ if (getCookie("firstTime") == ""){
 //#endregion
 //#region helpme/play function/randAlert/destroyPage functions
 
-function helpme() {
+function motd() {
 	if(secretsAreOn){
 		alert ("altk has a discord server at http://discord.altk.xyz");
 		alert ("also try to press the tab key");
@@ -235,7 +235,7 @@ function play(file) {
 }
 
 function randAlert() {
-	alert(messages[Math.floor(Math.random() * (messages.length + 1))]);
+	alert(messages[Math.floor(Math.random() * messages.length)]);
 }
 
 function destroyPage(message) {
@@ -658,7 +658,7 @@ document.getElementById("secretText").addEventListener("input", () => {
 });
 
 document.getElementById("main-text").addEventListener("click", () =>{
-	helpme();
+	motd();
 });
 
 document.getElementById("secretCheckbox").addEventListener("change", () => {
