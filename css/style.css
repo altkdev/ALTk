@@ -30,6 +30,11 @@ body{
     animation-name: animatebottom;
     animation-duration: 1s
   }
+
+#all-the-stuff{
+    width: 100%;
+    height: 100%;
+}
   
 #destroyed{
     color: #ffffff;
@@ -83,33 +88,34 @@ body{
 
 #christmasStuff{
     visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #wreath{
-    position:absolute;
-    left: 50%;
-    bottom: 55%;
+    display:block;
+    margin: 0 auto;
     width: 520px;
     height: 473px;
-    transform:translateX(-50%);
 }
 
 #bellLeft{
-    left: -7%;
-    bottom: 70%;
+    left: -60px;
+    top: 0;
     transform: rotate(-30deg);
 }
 
 #bellRight{
-    left: 81%;
-    bottom: 70%;
+    right: -60px;
+    top: 0;
     transform: rotate(30deg);
 }
 
 .bells{
     position: absolute;
-    width: 486px;
-    height: 405px;
+    width: 427px;
+    height: 224px;
 }
 
 .skipNav{
