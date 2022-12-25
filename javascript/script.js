@@ -497,7 +497,7 @@ if (date.toString() < 11) {
 		fade: 750
 	});
 }else{
-	$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+	$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 7) + 1) + ".jpeg", {
 		duration: 0,
 		fade: 750
 	});
