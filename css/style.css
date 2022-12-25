@@ -6,6 +6,13 @@
  mix-blend-mode: difference;
 }
 
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow: hidden;
+}
+
 #clickLoader{
     position: absolute;
     visibility: none;
@@ -74,6 +81,37 @@
     right: 0;
 }
 
+#christmasStuff{
+    visibility: hidden;
+}
+
+#wreath{
+    position:absolute;
+    left: 50%;
+    bottom: 55%;
+    width: 520px;
+    height: 473px;
+    transform:translateX(-50%);
+}
+
+#bellLeft{
+    left: -7%;
+    bottom: 70%;
+    transform: rotate(-30deg);
+}
+
+#bellRight{
+    left: 81%;
+    bottom: 70%;
+    transform: rotate(30deg);
+}
+
+.bells{
+    position: absolute;
+    width: 486px;
+    height: 405px;
+}
+
 .skipNav{
     position: absolute;
     background: #039CC6;
@@ -107,3 +145,4 @@
 .secretText:focus{
     opacity: 100;
 }
+

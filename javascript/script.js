@@ -187,7 +187,7 @@ function getCookie(cname) {
   }
   return "";
 }
-console.warn(getCookie("firstTime"))
+
 if (getCookie("firstTime") == ""){
   setCookie("a", "0", 10000000000);
   setCookie("b", "0", 10000000000);
@@ -210,7 +210,7 @@ if (getCookie("firstTime") == ""){
   setCookie("firstTime", 0, 10000000000)
 }
 //#endregion
-//#region helpme/play function/randAlert/destroyPage functions
+//#region Miscellaneous functions
 
 function motd() {
 	if(secretsAreOn){
@@ -242,6 +242,8 @@ function destroyPage(message) {
 	$.backstretch("destroy")
 	//$.backstretch("background/destroy.png");
 	$("#all-the-stuff").hide();
+	document.getElementById("christmasStuff").style.visibility = "hidden";
+	snowStorm.stop();
 	if(isOnApple){
 		document.title = zalgo("CMDk");
 	}
@@ -664,6 +666,13 @@ document.getElementById("main-text").addEventListener("click", () =>{
 document.getElementById("secretCheckbox").addEventListener("change", () => {
 	secretChecked();
 });
+//#endregion
+
+//#region Miscellaneous
+if(date == 11){
+	snowStorm.start();
+	document.getElementById("christmasStuff").style.visibility = "visible";
+}
 //#endregion
 
 });
