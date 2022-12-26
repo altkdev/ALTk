@@ -262,7 +262,7 @@ function destroyPage(message) {
 //#region Secrets
 function josh() {
 	$.backstretch("destroy")
-	$.backstretch("josh.jpeg")
+	$.backstretch("background/josh.jpeg")
 }
 function skipNav() {
 	if(secretsAreOn){
