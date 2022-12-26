@@ -66,6 +66,7 @@ body{
     width: 50%;
     height: 50%;
     background: #c9c9c986;
+    z-index: 54;
     border: 0px;
 }
 
