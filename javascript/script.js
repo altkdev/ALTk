@@ -84,37 +84,53 @@ if(urlParams.get('loop') == "true" || urlParams.get('loop') == "1") {
 if(urlParams.has('vid') && !noVidOption){
     switch(urlParams.get('vid')) {
 	    case '1' :
-	        vidToPlay = "1";
+	       vidToPlay = "1";
+									break;
 					case '2' :
 									vidToPlay = "2";
+									break;
 					case '4' :
 									vidToPlay = "4";
+									break;
 					case '5' :
 									vidToPlay = "5";
+									break;
 					case '6' :
 									vidToPlay = "6";
+									break;
 					case '7' :
 							  vidToPlay = "7";
+									break;
 					case '8' :
 									vidToPlay = "8";
+									break;
 					case '9' :
 									vidToPlay = "9";
+									break;
 					case '10' :
 									vidToPlay = "10";
+									break;
 					case '11' :
 									vidToPlay = "11";
+									break;
 					case '12' :
 									vidToPlay = "12";
+									break;
 					case '420' :
 									vidToPlay = "420";
+									break;
 					case '800' :
 									vidToPlay = "800";
+									break;
 					case 'The_Funeral' :
 									vidToPlay = "The_Funeral";
+									break;
 					case 'no%20ones%20around%20to%20help' :
 									vidToPlay = "no ones around to help";
+									break;
 	    default : 
 	        alert("you or your friend tried to play a video but the 'vid' parameter is set to an unknown video")
+									break;
 	}
 }
 //#endregion
