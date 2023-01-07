@@ -483,7 +483,7 @@ function playVideo(key) {
 //#endregion
 
 //#region Platform specific
-if (navigator.userAgent.toLowerCase().match(/mobile/i || /xbox/i || /meta/i)){
+if (navigator.userAgent.toLowerCase().match(/mobile/i){
 	document.getElementById("mobile").style.visibility = "visible";
 	console.log("You are using a mobile browser")
 }else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
