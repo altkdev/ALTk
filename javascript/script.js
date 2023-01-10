@@ -16,7 +16,7 @@ var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = 
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
 const date = da.getMonth();
-const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)", "The duolingo bird is coming for your family", "undefined"];
+const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)", "The duolingo bird is coming for your family", "undefined", "hehehe ha"];
 
 //#region Zalgo Variables
 const zalgo_up = [
