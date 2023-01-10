@@ -41,7 +41,7 @@ jobs:
         run: |
           sleep 300
           code=$(curl -s -o /dev/null -w "%{http_code}" https://altk.xyz)
-          if [$code == 200]; then
+          if [ "$code" == 200 ]; then
             echo "ALTk is online"
           else
             echo "something is wrong"
