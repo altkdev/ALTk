@@ -2,6 +2,7 @@ $(document).ready(function() {
 //#region Variables
 var secretsAreOn = true;
 var keyLog = "";
+var image = 0;
 var hasShownAllSecretsAlert = false;
 var hasDoneRainbowText = false;
 var hasLoaded = false;
@@ -12,10 +13,13 @@ var autoPlay = false;
 var himerflab = 0;
 var vidToPlay = "";
 var noVidOption = false;
+var metaThemeColor = document.querySelector("meta[name=theme-color]");
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = ""; var r = ""
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
 const date = da.getMonth();
+const themeColor = ["#b847c1", "#a0989f", "#032b49", "#7c859c", "#7d6443", "#30272a", "#6d7c26", "#45343e"]
+const themeColorChristmas = ["#414745", "#5b3920", "#957790", "#485dd1", "#dfa437", "#a58158", "#977c63"]
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (happy)", "The duolingo bird is coming for your family", "undefined", "hehehe ha"];
 
 //#region Zalgo Variables
@@ -507,13 +511,16 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 //#endregion
 
 //#region Backstretch
+image = Math.floor(Math.random() * 8) + 1
 if (date.toString() < 11) {
-	$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+	metaThemeColor.setAttribute("content", themeColor[image - 1]);
+	$.backstretch("background/" + String(image) + ".jpeg", {
 		duration: 0,
 		fade: 750
 	});
 }else{
-	$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 7) + 1) + ".jpeg", {
+	metaThemeColor.setAttribute("content", themeColorChristmas[image - 1]);
+	$.backstretch("background/christmas/" + String(image) + ".jpeg", {
 		duration: 0,
 		fade: 750
 	});
@@ -559,14 +566,17 @@ window.addEventListener('keypress', function(_){
 });
 	
 setInterval(() => {
+	image = Math.floor(Math.random() * 8) + 1
 	if(!pageIsDestroyed){
 		if (date.toString() < 11) {
-			$.backstretch("background/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+			metaThemeColor.setAttribute("content", themeColor[image - 1]);
+			$.backstretch("background/" + String(image) + ".jpeg", {
 			duration: 0,
 			fade: 750
 		});
 		}else{
-			$.backstretch("background/christmas/" + String(Math.floor(Math.random() * 8) + 1) + ".jpeg", {
+			metaThemeColor.setAttribute("content", themeColorChristmas[image - 1]);
+			$.backstretch("background/christmas/" + String(image) + ".jpeg", {
 				duration: 0,
 				fade: 750
 			});
@@ -595,15 +605,18 @@ setInterval(() => {
 		p = parseInt(getCookie("p"));
 		q = parseInt(getCookie("q"));
 		himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
-		if (himerflab == 17 && getCookie("secretsFoundShown") == "") {
+		if (himerflab == 17 && getCookie("secretsFoundShown") != "0") {
 		  alert("congrats you have found all the secrets"); 
                   if(confirm("do you want to start over?") == true) {
-                    document.cookie = ""
+                    document.cookie = "";
                     alert("you have started over");
+		    hasShownAllSecretsAlert = false;
+		    setCookie("secretsFoundShown", 1, 10000000000000);
                     keyLog = "secrets"
-                  }
-		  hasShownAllSecretsAlert = true;
-                  setCookie("secretsFoundShown", 0, 10000000000000);
+                  }else{
+		    hasShownAllSecretsAlert = true;
+                    setCookie("secretsFoundShown", 0, 10000000000000);
+		  }
 		}
 	}
 }, 100);
