@@ -45,4 +45,5 @@ jobs:
             echo "ALTk is online"
           else
             echo "something is wrong"
+            exit 1
           fi
