@@ -45,5 +45,5 @@ jobs:
             echo "ALTk is online"
           else
             echo "something is wrong"
-            exit 1
+            core.setFailed('ALTk is not online    THIS IS NOT A DRILL')
           fi
