@@ -44,6 +44,6 @@ jobs:
           if [ "$code" == 200 ]; then
             echo "ALTk is online"
           else
-            echo "something is wrong"
-            core.setFailed('ALTk is not online    THIS IS NOT A DRILL')
+            echo "Either ALTk is offline, or something is wrong with me"
+            exit 1
           fi
