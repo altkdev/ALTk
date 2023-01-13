@@ -11,6 +11,7 @@ var timesVisitedWebsite = 0;
 var isOnApple = false;
 var autoPlay = false;
 var himerflab = 0;
+var slideshow = 30000;
 var vidToPlay = "";
 var noVidOption = false;
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
@@ -79,8 +80,13 @@ if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 	autoPlay = true;
 	noVidOption = true;
 }
+
+if(urlParams.has('slideshow')) {
+	slideshow = parseInt(urlParams.get('slideshow'))
+	$("#all-the-stuff").innerHTML = ""
+}
 	
-if(urlParams.get('loop') == "true" || urlParams.get('loop') == "1") {
+if(urlParams.get('loop') == "true") {
 	document.getElementById("vid").loop = true;
 	document.getElementById("vid").load();
 }
@@ -583,7 +589,7 @@ setInterval(() => {
 		}
 
 	}
-}, 30000);
+}, slideshow);
 
 setInterval(() => {
 	if(!hasShownAllSecretsAlert){
