@@ -67,7 +67,7 @@ body{
     margin: auto;
     visibility: hidden;
     width: 50%;
-    height: 50%;
+    height: auto;
     background: #c9c9c986;
     z-index: 10000000000;
     border: 0px;
