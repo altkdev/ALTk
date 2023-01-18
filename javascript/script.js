@@ -21,7 +21,7 @@ const da = new Date();
 const date = da.getMonth();
 const themeColor = ["#b847c1", "#a0989f", "#032b49", "#7c859c", "#7d6443", "#30272a", "#6d7c26", "#45343e"]
 const themeColorChristmas = ["#414745", "#5b3920", "#957790", "#485dd1", "#dfa437", "#a58158", "#977c63"]
-const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (having or showing a merry, lively mood)", "The duolingo bird is coming for your family", "undefined", "hehehe ha"];
+const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (having or showing a merry, lively mood)", "The duolingo bird is coming for your family", "undefined", "hehehe ha", "Rick astley did consider giving you up once"];
 
 //#region Zalgo Variables
 const zalgo_up = [
