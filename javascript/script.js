@@ -96,6 +96,7 @@ if(urlParams.has('vid') && !noVidOption){
 	    case '69' :
                urlParams.delete('vid')
                urlParams.append('role', 'true')
+	       break;
 	    case '1' :
 	       vidToPlay = "1";
                break;
