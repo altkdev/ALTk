@@ -93,7 +93,7 @@ if(urlParams.get('loop') == "true") {
 
 if(urlParams.has('vid') && !noVidOption){
     switch(urlParams.get('vid')) {
-            case '69' '
+	    case '69' :
                urlParams.delete('vid')
                urlParams.append('role', 'true')
 	    case '1' :
