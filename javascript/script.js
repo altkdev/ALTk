@@ -93,8 +93,12 @@ if(urlParams.get('loop') == "true") {
 
 if(urlParams.has('vid') && !noVidOption){
     switch(urlParams.get('vid')) {
+            case '69' '
+               urlParams.delete('vid')
+               urlParams.append('role', 'true')
 	    case '1' :
 	       vidToPlay = "1";
+               break;
 									break;
 					case '2' :
 									vidToPlay = "2";
@@ -124,8 +128,11 @@ if(urlParams.has('vid') && !noVidOption){
 									vidToPlay = "11";
 									break;
 					case '12' :
-									vidToPlay = "12";
+								        vidToPlay = "12";
 									break;
+                                        case '13' :
+                                                                        vidToPlay = "13";
+                                                                        break;
 					case '420' :
 									vidToPlay = "420";
 									break;
@@ -327,7 +334,7 @@ function secretChecked() {
 	if(document.getElementById("secretCheckbox").checked && secretsAreOn){
 		console.log("checked");
 		alert("YoU haVe fOUnD A sEcrEt");
-		alert("try control+a it goes from control+a to control+g")
+		alert("try control+a it goes from control+a to control+h")
 		play("The_Funeral");
 		setCookie("b", 1, 1000000000000);
 	}
@@ -418,6 +425,11 @@ function playVideoMobile(key, command) {
                         play(12)
                         setCookie("q", 1, 10000000000000);
                 }
+                if (key.toLowerCase() == 'h') {
+                        randAlert();
+                        document.getElementById("vid").style.visibility = "visible";
+                        play(13)
+                }
 	}
 }
 
@@ -487,6 +499,13 @@ function playVideo(key) {
                         play(12);
                         setCookie("q", 1, 100000000000000);
                 }
+                if (key.key == 'h') {
+                        key.preventDefault();
+                        randAlert();
+                        document.getElementById("vid").style.visibility = "visible";
+                        play(13)
+                }
+
 	}
 }
 //#endregion
