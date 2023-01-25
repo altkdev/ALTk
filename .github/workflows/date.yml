@@ -9,6 +9,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    # run on a supposed invoice from ionos to make sure everything is ok there
+    - cron: '1 12 29 9 *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
