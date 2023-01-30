@@ -10,6 +10,7 @@ var pageIsDestroyed = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
 var autoPlay = false;
+var couldBeMobile = false;
 var himerflab = 0;
 var slideshow = 30000;
 var vidToPlay = "";
@@ -21,7 +22,7 @@ const da = new Date();
 const date = da.getMonth();
 const themeColor = ["#b847c1", "#a0989f", "#032b49", "#7c859c", "#7d6443", "#30272a", "#6d7c26", "#45343e"]
 const themeColorChristmas = ["#414745", "#5b3920", "#957790", "#485dd1", "#dfa437", "#a58158", "#977c63"]
-const games = ["https://mashpoe.github.io/1D-Game/", "http://jcw87.github.io/c2-sans-fight/", "https://altk.xyz/pages/lowres.html/?game=2048%20Classic"]
+const games = ["https://mashpoe.github.io/1D-Game/", "http://jcw87.github.io/c2-sans-fight/", "https://altk.xyz/pages/lowres.html?game=2048%20Classic"]
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (having or showing a merry, lively mood)", "The duolingo bird is coming for your family", "undefined", "hehehe ha", "Rick astley did consider giving you up once", "mort is coming to steal your toes"];
 
 //#region Zalgo Variables
@@ -82,7 +83,7 @@ if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 	noVidOption = true;
 }
 
-if(urlParams.has('slideshow')) {
+if(parseInt(urlParams.get('slideshow')) >= 0) {
 	slideshow = parseInt(urlParams.get('slideshow'))
 	$("#all-the-stuff").innerHTML = ""
 }
@@ -446,7 +447,7 @@ function playVideo(key) {
 	if (key.key == 'q' && key.ctrlKey && key.shiftKey) {
 		if (key.key == 'q' && key.ctrlKey && key.shiftKey) {
 			key.preventDefault();
-			if(confirm("do you want to log out?") == false) {
+			if(!confirm("do you want to log out?")) {
 				return false;
 			}else{
 				return true;
@@ -500,6 +501,7 @@ function playVideo(key) {
 			setCookie("n", 1, 100000000000000);
 		}
 		if (key.key == 'g') {
+			key.preventDefualt();
 			alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
 			window.open(games[Math.floor(Math.random() * games.length)])
         }
@@ -520,7 +522,7 @@ function playVideo(key) {
 //#endregion
 
 //#region Platform specific
-if (navigator.userAgent.toLowerCase().match(/mobile/i)){
+if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile){
 	document.getElementById("mobile").style.visibility = "visible";
 	console.log("You are using a mobile browser")
 }else if(navigator.platform.indexOf(("Mac") || ("IPad")) === 0){
@@ -571,6 +573,7 @@ setTimeout(() => {
 
 $("#clickLoader").fadeToggle();
 document.onclick = function(){
+	couldBeMobile = true;
 	if(!hasLoaded){
 		$("#clickLoader").fadeToggle();
 		$("#all-the-stuff").fadeToggle();
