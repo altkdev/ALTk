@@ -420,22 +420,24 @@ function playVideoMobile(key, command) {
 			play(7);
 			setCookie("n", 1, 100000000000000);
 		}
-                if (key.toLowerCase() == 'g') {
-                        alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
+        if (key.toLowerCase() == 'g') {
+            alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
 			window.open(games[Math.floor(Math.random() * games.length)])
-                }
+        }
 		if (key.toLowerCase() == 'h') {
 			randAlert();
-                        document.getElementById("vid").style.visibility = "visible";
-                        play(12)
-                        setCookie("q", 1, 10000000000000);
-                if (key.toLowerCase() == 'i') {
-                        randAlert();
-                        document.getElementById("vid").style.visibility = "visible";
-                        play(13)
-                }
+            document.getElementById("vid").style.visibility = "visible";
+            play(12)
+            setCookie("q", 1, 10000000000000);
+        }
+        if (key.toLowerCase() == 'i') {
+            randAlert();
+            document.getElementById("vid").style.visibility = "visible";
+            play(13)
+        }
 	}
 }
+
 
 function playVideo(key) {
 	if(pageIsDestroyed) {
@@ -500,18 +502,18 @@ function playVideo(key) {
 		if (key.key == 'g') {
 			alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
 			window.open(games[Math.floor(Math.random() * games.length)])
-                if (key.key == 'h') {
-                        key.preventDefault();
-                        randAlert();
-                        play(12);
-                        setCookie("q", 1, 100000000000000);
-                }
-                if (key.key == 'i') {
-                        key.preventDefault();
-                        randAlert();
-                        play(13)
-                }
-
+        }
+        if (key.key == 'h') {
+            key.preventDefault();
+            randAlert();
+            play(12);
+            setCookie("q", 1, 100000000000000);
+        }
+        if (key.key == 'i') {
+            key.preventDefault();
+            randAlert();
+            play(13)
+        }
 	}
 }
 //#endregion
