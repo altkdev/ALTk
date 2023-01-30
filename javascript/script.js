@@ -21,6 +21,7 @@ const da = new Date();
 const date = da.getMonth();
 const themeColor = ["#b847c1", "#a0989f", "#032b49", "#7c859c", "#7d6443", "#30272a", "#6d7c26", "#45343e"]
 const themeColorChristmas = ["#414745", "#5b3920", "#957790", "#485dd1", "#dfa437", "#a58158", "#977c63"]
+const games = ["https://mashpoe.github.io/1D-Game/", "http://jcw87.github.io/c2-sans-fight/", "https://altk.xyz/pages/lowres.html/?game=2048%20Classic"]
 const messages = ["Do you want to delete the world?", "luigi is coming to steal your soul", "Do you want to delete all the beans in the world?", "Its a bird, its a plane, its another video", "What did you just say to me boy?", " Mario is coming to steal your liver", "your gay (having or showing a merry, lively mood)", "The duolingo bird is coming for your family", "undefined", "hehehe ha", "Rick astley did consider giving you up once", "mort is coming to steal your toes"];
 
 //#region Zalgo Variables
@@ -203,7 +204,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  return document.cookie = cname + "=" + cvalue.toString() + ";" + expires + ";path=/";
+  return document.cookie = cname + "=" + cvalue.toString() + ";" + expires + ";path=/" + ";SameSite=Strict";
 }
 
 function getCookie(cname) {
@@ -420,12 +421,15 @@ function playVideoMobile(key, command) {
 			setCookie("n", 1, 100000000000000);
 		}
                 if (key.toLowerCase() == 'g') {
-                        randAlert();
+                        alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
+			window.open(games[Math.floor(Math.random() * games.length)])
+                }
+		if (key.toLowerCase() == 'h') {
+			randAlert();
                         document.getElementById("vid").style.visibility = "visible";
                         play(12)
                         setCookie("q", 1, 10000000000000);
-                }
-                if (key.toLowerCase() == 'h') {
+                if (key.toLowerCase() == 'i') {
                         randAlert();
                         document.getElementById("vid").style.visibility = "visible";
                         play(13)
@@ -493,13 +497,16 @@ function playVideo(key) {
 			play(7);
 			setCookie("n", 1, 100000000000000);
 		}
-                if (key.key == 'g') {
+		if (key.key == 'g') {
+			alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
+			window.open(games[Math.floor(Math.random() * games.length)])
+                if (key.key == 'h') {
                         key.preventDefault();
                         randAlert();
                         play(12);
                         setCookie("q", 1, 100000000000000);
                 }
-                if (key.key == 'h') {
+                if (key.key == 'i') {
                         key.preventDefault();
                         randAlert();
                         play(13)
