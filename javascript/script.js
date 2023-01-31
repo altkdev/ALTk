@@ -454,7 +454,7 @@ function playVideo(key) {
 			}
 		}
 	}
-	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple)) {
+	if (key.key == 'k' && (key.altKey || event.keyCode === 75 && isOnApple) || keyLog == '˚') {
 		key.preventDefault();
 		play(69);
 		timesVisitedWebsite += 1; 
@@ -503,7 +503,7 @@ function playVideo(key) {
 		if (key.key == 'g') {
 			key.preventDefualt();
 			alert("Congrats you found ALTk games all of the games here are open source and you can even find them yourselves (if you look hard enough)")
-			window.open(games[Math.floor(Math.random() * games.length)])
+			window.open(games[Math.floor(Math.random() * games.length) - 1])
         }
         if (key.key == 'h') {
             key.preventDefault();
