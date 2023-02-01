@@ -85,7 +85,7 @@ if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 
 if(parseInt(urlParams.get('slideshow')) >= 0) {
 	slideshow = parseInt(urlParams.get('slideshow'))
-	$("#all-the-stuff").innerHTML = ""
+	$("#all-the-stuff").setAttribute("id", "INVISIBLE");
 }
 	
 if(urlParams.get('loop') == "true") {
