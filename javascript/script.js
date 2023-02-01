@@ -87,6 +87,7 @@ try{
 if(parseInt(urlParams.get('slideshow')) >= 0) {
 	slideshow = parseInt(urlParams.get('slideshow'))
 	document.getElementById("all-the-stuff").setAttribute("id", "INVISIBLE");
+	document.getElementById("clickLoader").setAttribute("id", "INVISIBLE");
 }
 }catch(e){
 	errorElement = document.createElement("p");
