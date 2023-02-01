@@ -1,3 +1,4 @@
+try{
 $(document).ready(function() {
 //#region Variables
 var secretsAreOn = true;
@@ -741,3 +742,8 @@ if(date == 11){
 //#endregion
 
 });
+}catch(Exception e){
+	errorElement = document.createElement("p");
+	errorElement.innerHTML += e;
+	document.getElementById("body").append(errorElement);	
+}
