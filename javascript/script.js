@@ -83,9 +83,15 @@ if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 	noVidOption = true;
 }
 
+try{
 if(parseInt(urlParams.get('slideshow')) >= 0) {
 	slideshow = parseInt(urlParams.get('slideshow'))
-	$("#all-the-stuff").setAttribute("id", "INVISIBLE");
+	document.getElementById("all-the-stuff").setAttribute("id", "INVISIBLE");
+}
+}catch(e){
+	errorElement = document.createElement("p");
+	errorElement.innerHTML += e;
+	document.getElementById("body").append(errorElement);	
 }
 if(urlParams.get('loop') == "true") {
 	document.getElementById("vid").loop = true;
