@@ -1,5 +1,6 @@
 $(document).ready(function() {
 //#region Variables
+let wakeLock = null;
 var secretsAreOn = true;
 var keyLog = "";
 var image = 0;
@@ -83,8 +84,18 @@ if(urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 	noVidOption = true;
 }
 
+try {
+  //prevents device from turning off while on ALTk
+  wakeLock = await navigator.wakeLock.request('screen');
+  console.log('Wake Lock is active!');
+} catch (err) {
+  // The Wake Lock request has failed - usually system related, such as battery.
+  console.log(`${err.name}, ${err.message}`)
+}
+	
 try{
 if(parseInt(urlParams.get('slideshow')) >= 0) {
+	noVidOption = true
 	slideshow = parseInt(urlParams.get('slideshow'))
 	document.getElementById("all-the-stuff").setAttribute("id", "INVISIBLE");
 	document.getElementById("clickLoader").setAttribute("id", "INVISIBLE");
