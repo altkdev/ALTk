@@ -282,7 +282,7 @@ function randAlert() {
 
 function destroyPage(message) {
 	$.backstretch("destroy")
-	//$.backstretch("background/destroy.png");
+	//$.backstretch("assetsdestroy.png");
 	$("#all-the-stuff").hide();
 	document.getElementById("christmasStuff").style.visibility = "hidden";
 	snowStorm.stop();
@@ -304,7 +304,7 @@ function destroyPage(message) {
 //#region Secrets
 function josh() {
 	$.backstretch("destroy")
-	$.backstretch("background/josh.jpeg")
+	$.backstretch("assetsjosh.jpeg")
 }
 function skipNav() {
 	if(secretsAreOn){
@@ -558,13 +558,13 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 image = Math.floor(Math.random() * 8) + 1
 if (date.toString() < 11) {
 	metaThemeColor.setAttribute("content", themeColor[image - 1]);
-	$.backstretch("background/" + String(image) + ".jpeg", {
+	$.backstretch("assets" + String(image) + ".jpeg", {
 		duration: 0,
 		fade: 750
 	});
 }else{
 	metaThemeColor.setAttribute("content", themeColorChristmas[image - 1]);
-	$.backstretch("background/christmas/" + String(image) + ".jpeg", {
+	$.backstretch("assetschristmas/" + String(image) + ".jpeg", {
 		duration: 0,
 		fade: 750
 	});
@@ -614,13 +614,13 @@ setInterval(() => {
 	if(!pageIsDestroyed){
 		if (date.toString() < 11) {
 			metaThemeColor.setAttribute("content", themeColor[image - 1]);
-			$.backstretch("background/" + String(image) + ".jpeg", {
+			$.backstretch("assets" + String(image) + ".jpeg", {
 			duration: 0,
 			fade: 750
 		});
 		}else{
 			metaThemeColor.setAttribute("content", themeColorChristmas[image - 1]);
-			$.backstretch("background/christmas/" + String(image) + ".jpeg", {
+			$.backstretch("assetschristmas/" + String(image) + ".jpeg", {
 				duration: 0,
 				fade: 750
 			});
