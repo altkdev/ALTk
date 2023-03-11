@@ -14,6 +14,13 @@ var himerflab = 0;
 var slideshow = 30000;
 var vidToPlay = "";
 var noVidOption = false;
+var couldBeMobile = navigator.userAgent.match(/Android/i)
+         || navigator.userAgent.match(/webOS/i)
+         || navigator.userAgent.match(/iPhone/i)
+         || navigator.userAgent.match(/iPad/i)
+         || navigator.userAgent.match(/iPod/i)
+         || navigator.userAgent.match(/BlackBerry/i)
+         || navigator.userAgent.match(/Windows Phone/i);
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
 var a = ""; var b = ""; var c = ""; var d = ""; var e = ""; var f = ""; var g = ""; var h = ""; var i = ""; var j = ""; var k = ""; var l = ""; var m = ""; var n = ""; var o = ""; var p = ""; var q = ""; var r = ""
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
