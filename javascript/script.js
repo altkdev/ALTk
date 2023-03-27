@@ -389,7 +389,7 @@ function secretText() {
     		if (event.which === 13) {
 		const headers = new Headers()
 		headers.append("Content-Type", "application/json")
-		headers.append("Authorization", "Bearer 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");
+		headers.append("Authorization", "Bearer APIkey");
 		const body = {
   			"max_tokens": 550,
 			"model": "text-davinci-003",
