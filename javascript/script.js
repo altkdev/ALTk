@@ -3,6 +3,7 @@ $(document).ready(function() {
 var secretsAreOn = true;
 var keyLog = "";
 var image = 0;
+var aiAsk = false;
 var hasShownAllSecretsAlert = false;
 var hasDoneRainbowText = false;
 var hasLoaded = false;
@@ -357,7 +358,7 @@ function secretChecked() {
 }
 
 function secretText() {
-	if (secretsAreOn) {
+	if (secretsAreOn && !aiAsk) {
 		if (document.getElementById("secretText").value == "text") {
 			play(1);
 			setCookie("c", 1, 100000000000000);
@@ -378,16 +379,48 @@ function secretText() {
 			setCookie("h", 1, 100000000000000);
         	}else if (document.getElementById("secretText").value == "GigaChad") {
 			josh()
-			setCookie("r", 1, 100000000000000);
+		}else if (document.getElementById("secretText").value == "ai") {
+			aiAsk = true;
+			alert("The secret text box is now in Ai Ask mode")
+			alert("type something in the secret text box then hit enter")
 		}
+	}else if(secretsAreOn && aiAsk && document.getElementById("secretText").value != "") {
+		$(document).keydown(function(event) {
+    		if (event.which === 13) {
+		const headers = new Headers()
+		headers.append("Content-Type", "application/json")
+		headers.append("Authorization", "Bearer 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");
+		const body = {
+  			"max_tokens": 550,
+			"model": "text-davinci-003",
+			"prompt": document.getElementById("secretText").value,
+			"top_p": 1,
+			"frequency_penalty": 1.23,
+			"presence_penalty": 0,
+			"logprobs": 5
+		}
+
+		const options = {
+  			method: "POST",
+  			headers,
+  			mode: "cors",
+  			body: JSON.stringify(body),
+		}
+
+		fetch("https://api.openai.com/v1/completions", options)
+		  .then((response) => {
+                        return response.text();
+                  })
+                  .then((data) => {
+			alert(data)
+		  });
+		}}
 	}
-}
 
 //#endregion
 //#region Commands for video
 function playVideoMobile(key, command) {
-	if(pageIsDestroyed)
-		return;
+	if(pageIsDestroyed) return;
 	if (key.toLowerCase() == 'k'.toLowerCase() && command.toLowerCase() == "a".toLowerCase()) {
 		document.getElementById("vid").style.visibility = "visible";
 		play(69); 
