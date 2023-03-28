@@ -371,15 +371,8 @@ function secretText() {
             if (event.which === 13) {
                 const headers = new Headers()
                 headers.append("Content-Type", "application/json")
-                headers.append("Authorization", "Bearer APIkey");
                 const body = {
-                    "max_tokens": 550,
-                    "model": "text-davinci-003",
-                    "prompt": document.getElementById("secretText").value,
-                    "top_p": 1,
-                    "frequency_penalty": 1.23,
-                    "presence_penalty": 0,
-                    "logprobs": 5
+                    "prompt": document.getElementById("secretText").
                 }
                 const options = {
                     method: "POST",
@@ -387,7 +380,7 @@ function secretText() {
                     mode: "cors",
                     body: JSON.stringify(body),
                 }
-                fetch("https://api.openai.com/v1/completions", options)
+                fetch("https://eop7v6giucoftii.m.pipedream.net", options)
                     .then((response) => {
                         return response.text();
                     })
