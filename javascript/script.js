@@ -361,7 +361,7 @@ function secretText() {
             setCookie("h", 1, 100000000000000);
         } else if (document.getElementById("secretText").value == "GigaChad") {
             josh()
-        } else if (document.getElementById("secretText").value == "ai") {
+        } else if (document.getElementById("secretText").value == "ai chat") {
             aiAsk = true;
             alert("The secret text box is now in Ai Ask mode")
             alert("type something in the secret text box then hit enter")
