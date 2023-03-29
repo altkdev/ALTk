@@ -361,7 +361,7 @@ function secretText() {
             setCookie("h", 1, 100000000000000);
         } else if (document.getElementById("secretText").value == "GigaChad") {
             josh()
-        } else if (document.getElementById("secretText").value == "ai chat") {
+        } else if (document.getElementById("secretText").value == "ai") {
             aiAsk = true;
             alert("The secret text box is now in Ai Ask mode")
             alert("type something in the secret text box then hit enter")
@@ -382,7 +382,7 @@ function secretText() {
                 }
                 fetch("https://eop7v6giucoftii.m.pipedream.net", options)
                     .then((response) => {
-                        return response.json().response.toString();
+                        return response.text();
                     })
                     .then((data) => {
                         alert(data)
