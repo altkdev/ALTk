@@ -382,7 +382,7 @@ function secretText() {
                 }
                 fetch("https://eop7v6giucoftii.m.pipedream.net", options)
                     .then((response) => {
-                        return response.text();
+                        return response.json().response.toString();
                     })
                     .then((data) => {
                         alert(data)
