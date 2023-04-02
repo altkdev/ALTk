@@ -372,15 +372,14 @@ function secretText() {
                 const headers = new Headers()
                 headers.append("Content-Type", "application/json")
                 const body = {
-                    "prompt": document.getElementById("secretText").
                 }
                 const options = {
-                    method: "POST",
+                    method: "GET",
                     headers,
                     mode: "cors",
                     body: JSON.stringify(body),
                 }
-                fetch("https://eop7v6giucoftii.m.pipedream.net", options)
+                fetch("https://chatgpt.setip.io/chatgpt/v3?prompt="+document.getElementById("secretText").value, options)
                     .then((response) => {
                         return response.text();
                     })
