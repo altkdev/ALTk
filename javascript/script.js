@@ -371,13 +371,11 @@ function secretText() {
             if (event.which === 13) {
                 const headers = new Headers()
                 headers.append("Content-Type", "application/json")
-                const body = {
-                }
                 const options = {
                     method: "GET",
                     headers,
                     mode: "cors",
-                    body: JSON.stringify(body),
+                    body: "{}",
                 }
                 fetch("https://chatgpt.setip.io/chatgpt/v3?prompt="+document.getElementById("secretText").value, options)
                     .then((response) => {
