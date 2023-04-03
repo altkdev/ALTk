@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo start
+      - name: Quote of the day
+        run: curl -XGET 'https://chatgpt.setip.io/chatgpt/v3?prompt=get%20me%20the%20quote%20of%20the%20day'
 
       # Runs a set of commands using the runners shell
       - name: get date
@@ -43,7 +43,7 @@ jobs:
       - name: run
         run: |
           sleep 230
-          code=$(curl -s -o /dev/null -w "%{http_code}" https://altk.xyz)
+          code=$(curl -s -o /dev/null -w "%{http_code}" "https://altk.xyz")
           if [ "$code" == 200 ]; then
             echo "ALTk is online"
           else
