@@ -369,24 +369,20 @@ function secretText() {
     } else if (secretsAreOn && aiAsk && document.getElementById("secretText").value != "") {
         $(document).keydown(function(event) {
             if (event.which === 13) {
-                const headers = new Headers()
-                headers.append("Content-Type", "application/json")
-                const body = {
-                    "prompt": document.getElementById("secretText").innerHTML
-                }
-                const options = {
-                    method: "GET",
-                    headers,
-                    mode: "cors",
-                    body: JSON.stringify(body)
-                }
-                fetch("https://chatgpt.setip.io/chatgpt/v3?prompt="+document.getElementById("secretText").value, options)
-                    .then((response) => {
-                        return response.text();
-                    })
-                    .then((data) => {
-                        alert(data)
-                    });
+                fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
+	                "method": "GET",
+	                "headers": {
+		                "Content-Type": "application/x-www-form-urlencoded"
+	                },
+                })
+                .then(function (response) {
+	                console.log(response.status);
+	                alert(response.text());
+                }).then(function (data) {
+	                console.log(data);
+                }).catch(function (error) {
+	                console.log(error.message);
+                });
             }
         });
     }
