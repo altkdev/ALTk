@@ -1,6 +1,12 @@
-﻿a {
+@font-face {
+    font-family: 'Minecraft';
+    src: url('https://classic.minecraft.net/assets/fonts/minecraftfont.woff') format('woff');
+}
+
+
+a {
  color: #ffffff;
- font-family: 'Marker Felt' fantacy;
+ font-family: inherit;
  text-decoration: none;
  font-size: 3rem;
  mix-blend-mode: difference;
@@ -11,6 +17,7 @@ body{
     height:100%;
     margin:0;
     overflow: hidden;
+	font-family: 'Minecraft', sans-serif;,
 }
 
 #clickLoader{
@@ -58,7 +65,7 @@ body{
 
 #moblie-only-text{
     color: #3d3d3d;
-    font-family: 'Brush Script MT' Cursive;
+    font-family: inherit;
     text-decoration: none;
     font-size: 1.5rem;
 }
