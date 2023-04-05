@@ -104,6 +104,7 @@ if (urlParams.get('role') == "true" || urlParams.get('role') == "1") {
 try {
     if (parseInt(urlParams.get('slideshow')) >= 0) {
         noVidOption = true
+        secretsAreOn = false
         slideshow = parseInt(urlParams.get('slideshow'))
         document.getElementById("all-the-stuff").setAttribute("id", "INVISIBLE");
         document.getElementById("clickLoader").setAttribute("id", "INVISIBLE");
