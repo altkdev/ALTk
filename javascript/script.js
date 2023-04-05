@@ -366,25 +366,6 @@ function secretText() {
             alert("The secret text box is now in Ai Ask mode")
             alert("type something in the secret text box then hit enter")
         }
-    } else if (secretsAreOn && aiAsk && document.getElementById("secretText").value != "") {
-        $(document).keydown(function(event) {
-            if (event.which === 13) {
-                fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
-	                "method": "GET",
-	                "headers": {
-		                "Content-Type": "application/x-www-form-urlencoded"
-	                },
-                })
-                .then(function (response) {
-	                console.log(response.status);
-	                alert(response.text());
-                }).then(function (data) {
-	                console.log(data);
-                }).catch(function (error) {
-	                console.log(error.message);
-                });
-            }
-        });
     }
 }
 //#endregion
@@ -705,6 +686,22 @@ document.onkeydown = function(key) {
         } else {
             document.getElementById("main-text").style.mixBlendMode = "difference";
             document.getElementById("main-text").style.color = "white";
+        }
+        if (aiAsk && document.getElementById("secretText").value != "" && key.code == 13) {
+            fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+            })
+            .then(function (response) {
+                console.log(response.status);
+                alert(response.text());
+            }).then(function (data) {
+                console.log(data);
+            }).catch(function (error) {
+                console.log(error.message);
+            });
         }
     }
     playVideo(key);
