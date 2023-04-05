@@ -687,7 +687,7 @@ document.onkeydown = function(key) {
             document.getElementById("main-text").style.mixBlendMode = "difference";
             document.getElementById("main-text").style.color = "white";
         }
-        if (aiAsk && document.getElementById("secretText").value != "" && key.code == 13) {
+        if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
             fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
                 "method": "GET",
                 "headers": {
