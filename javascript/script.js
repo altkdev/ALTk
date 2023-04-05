@@ -687,25 +687,28 @@ document.onkeydown = function(key) {
             document.getElementById("main-text").style.mixBlendMode = "difference";
             document.getElementById("main-text").style.color = "white";
         }
-        if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
-            fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
-                "method": "GET",
-                "headers": {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-            })
-            .then(function (response) {
-                console.log(response.status);
-                alert(response.text());
-            }).then(function (data) {
-                console.log(data);
-            }).catch(function (error) {
-                console.log(error.message);
-            });
-        }
     }
     playVideo(key);
 };
+
+document.getElementById("secretText").addEventListener("keydown", function(key){
+    if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
+        fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+        })
+        .then(function (response) {
+            console.log(response.status);
+            alert(response.text());
+        }).then(function (data) {
+            console.log(data);
+        }).catch(function (error) {
+            console.log(error.message);
+        });
+    }
+});
 document.getElementById("vid").addEventListener('pause', function() {
     if ($("#vid").is(":visible")) {
         $("#vid").fadeOut("slow", "linear");
