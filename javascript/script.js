@@ -699,6 +699,7 @@ document.getElementById("secretText").addEventListener("keydown", function(key){
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
+            "mode": "no-cors"
         })
         .then(function (response) {
             console.log(response.status);
