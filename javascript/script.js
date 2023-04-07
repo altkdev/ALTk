@@ -10,6 +10,7 @@ var hasLoaded = false;
 var pageIsDestroyed = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
+var isVr = false;
 var autoPlay = false;
 var himerflab = 0;
 var slideshow = 30000;
@@ -517,7 +518,7 @@ function playVideo(key) {
 //#endregion
 //#endregion
 //#region Platform specific
-if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile) {
+if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navigator.userAgent.toLowerCase().includes("xbox") || navigator.userAgent.includes("VR")) {
     document.getElementById("mobile").style.visibility = "visible";
     console.log("You are using a mobile browser")
 } else if (navigator.platform.indexOf(("Mac") || ("IPad")) === 0) {
@@ -525,8 +526,8 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile) {
     console.log("Welcome to CMDk!");
     document.title = "CMDk"
     document.getElementById("main-text").innerHTML = "PRESS COMMAND K !! There are also hidden ester eggs";
-} else if (navigator.userAgent.includes("OculusBrowser") || navigator.userAgent.includes("VR")) {
-    window.location.replace("https://altk.xyz/pages/vr.html")
+} else if (navigator.userAgent.includes("VR")) {
+    isVr = true
 } else {
     console.log("Welcome to ALTk!");
 }
