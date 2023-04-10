@@ -695,7 +695,7 @@ document.onkeydown = function(key) {
 
 document.getElementById("secretText").addEventListener("keydown", function(key){
     if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
-        fetch("https://chatgpt.setip.io/chatgpt/v3?prompt=" + document.getElementById("secretText").value, {
+        fetch("https://eoewy8nusssa36u.m.pipedream.net/?prompt=" + document.getElementById("secretText").value, {
             "method": "GET",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
