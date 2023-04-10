@@ -696,11 +696,11 @@ document.onkeydown = function(key) {
 document.getElementById("secretText").addEventListener("keydown", function(key){
     if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
         fetch("https://eoewy8nusssa36u.m.pipedream.net/?prompt=" + document.getElementById("secretText").value, {
-            "method": "GET",
+            "method": "POST",
             "headers": {
-                "Content-Type": "application/x-www-form-urlencoded"
+                "Content-Type": "data:text"
             },
-            "mode": "no-cors"
+            //"mode": "no-cors"
         })
         .then(function (response) {
             console.log(response.status);
