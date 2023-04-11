@@ -102,6 +102,7 @@ if (urlParams.get('role') == "true" || urlParams.get('role') == "1") {
     autoPlay = true;
     noVidOption = true;
 }
+if (urlParams.get('secretkey') = 1) isVr=true;
 try {
     if (parseInt(urlParams.get('slideshow')) >= 0) {
         noVidOption = true
@@ -262,9 +263,10 @@ if (getCookie("firstTime") == "") {
 //#region Miscellaneous functions
 function motd() {
     if (secretsAreOn) {
-        alert("altk has a discord server at http://discord.altk.xyz");
-        alert("also try to press the tab key");
-        window.location.replace("http://discord.altk.xyz");
+        if (confirm("altk has a discord server at http://discord.altk.xyz"){
+             alert("also try to press the tab key");
+             window.location.replace("http://discord.altk.xyz");
+        }
         setCookie("a", 1, 1000000000)
     }
 }
@@ -600,6 +602,11 @@ setInterval(() => {
                 duration: 0,
                 fade: 750
             });
+        } else if(isVr) {
+            $.backstretch("https://ixb.webxr.tools/u/dr-comeemeememem/altk/assets/" + String(image) + ".png", {
+                duration: 0,
+                fade: 750
+            });
         } else {
             metaThemeColor.setAttribute("content", themeColorChristmas[image - 1]);
             $.backstretch("background/christmas/" + String(image) + ".jpeg", {
@@ -698,7 +705,7 @@ document.getElementById("secretText").addEventListener("keydown", function(key){
         fetch("https://eoewy8nusssa36u.m.pipedream.net/?prompt=" + document.getElementById("secretText").value, {
             "method": "POST",
             "headers": {
-                "Content-Type": "data:text"
+                "Content-Type": "data/text"
             },
             //"mode": "no-cors"
         })
