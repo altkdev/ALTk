@@ -263,7 +263,7 @@ if (getCookie("firstTime") == "") {
 //#region Miscellaneous functions
 function motd() {
     if (secretsAreOn) {
-        if (confirm("altk has a discord server at http://discord.altk.xyz"){
+        if (confirm("altk has a discord server at http://discord.altk.xyz")){
              alert("also try to press the tab key");
              window.location.replace("http://discord.altk.xyz");
         }
