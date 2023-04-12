@@ -102,7 +102,7 @@ if (urlParams.get('role') == "true" || urlParams.get('role') == "1") {
     autoPlay = true;
     noVidOption = true;
 }
-if (urlParams.get('secretkey') = 1) isVr=true;
+if (urlParams.get('secretkey') == 1) isVr=true;
 try {
     if (parseInt(urlParams.get('slideshow')) >= 0) {
         noVidOption = true
