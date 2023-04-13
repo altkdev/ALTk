@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Minecraft';
-    src: url('https://classic.minecraft.net/assets/fonts/minecraftfont.woff') format('woff');
+    src: url(minecraftfont.woff);
 }
 
 
@@ -17,7 +17,7 @@ body{
     height:100%;
     margin:0;
     overflow: hidden;
-	font-family: 'minecraftfont', sans-serif;,
+    font-family: 'Minecraft';
 }
 
 #clickLoader{
