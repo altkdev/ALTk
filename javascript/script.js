@@ -673,7 +673,7 @@ setInterval(() => {
         alert("you now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything");
 		setCookie("s", 1, 100000000000000);
     }
-}
+}, 500);
 //#endregion
 //#region Listeners
 document.onkeydown = function(key) {
