@@ -257,6 +257,7 @@ if (getCookie("firstTime") == "") {
     setCookie("p", "0", 10000000000);
     setCookie("q", "0", 10000000000);
     setCookie("r", "0", 10000000000);
+    setCookie("s", "0", 10000000000);
     setCookie("firstTime", 0, 10000000000)
 }
 //#endregion
@@ -636,7 +637,7 @@ setInterval(() => {
         p = parseInt(getCookie("p"));
         q = parseInt(getCookie("q"));
         himerflab = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
-        if (himerflab == 17 && getCookie("secretsFoundShown") != "0") {
+        if (himerflab == 18 && getCookie("secretsFoundShown") != "0") {
             alert("congrats you have found all the secrets");
             if (confirm("do you want to start over?") == true) {
                 document.cookie = "";
@@ -664,6 +665,15 @@ setInterval(() => {
         document.getElementById("vid").pause();
     }
 }, 100);
+    
+setInterval(() => {
+    const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
+	const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
+	if (!(heightThreshold && widthThreshold) && ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)){
+        alert("you now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything");
+		setCookie("s", 1, 100000000000000);
+    }
+}
 //#endregion
 //#region Listeners
 document.onkeydown = function(key) {
