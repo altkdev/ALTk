@@ -669,7 +669,7 @@ setInterval(() => {
 setInterval(() => {
     const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > 170;
 	const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > 170;
-	if (!(heightThreshold && widthThreshold) && ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)){
+	if (!(heightThreshold && widthThreshold) && (widthThreshold || heightThreshold)){
         alert("you now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything");
 		setCookie("s", 1, 100000000000000);
     }
