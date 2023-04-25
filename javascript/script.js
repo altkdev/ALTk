@@ -16,6 +16,7 @@ var himerflab = 0;
 var slideshow = 30000;
 var vidToPlay = "";
 var noVidOption = false;
+var asodigmapoerigjmvpeor = new Image;
 var couldBeMobile = navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/webOS/i) ||
     navigator.userAgent.match(/iPhone/i) ||
@@ -24,24 +25,8 @@ var couldBeMobile = navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/BlackBerry/i) ||
     navigator.userAgent.match(/Windows Phone/i);
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
-var a = "";
-var b = "";
-var c = "";
-var d = "";
-var e = "";
-var f = "";
-var g = "";
-var h = "";
-var i = "";
-var j = "";
-var k = "";
-var l = "";
-var m = "";
-var n = "";
-var o = "";
-var p = "";
-var q = "";
-var r = ""
+var a = b = c = d = e = f = g = h = i =j = k =l = m = n =o =p =q = r ="";
+var devtoolsOpen = false;
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
 const date = da.getMonth();
@@ -667,11 +652,15 @@ setInterval(() => {
 }, 100);
     
 setInterval(() => {
-    const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > 170;
-	const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > 170;
-	if (!(heightThreshold && widthThreshold) && (widthThreshold || heightThreshold)){
-        alert("you now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything");
-		setCookie("s", 1, 100000000000000);
+	if (devtoolsOpen){
+		devtoolsOpen = false;
+		if(getCookie("s") == 1){
+			console.log("%cyou now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything", "color: red; font-size: 20pt");
+			console.log("%cor do we? you may never know", "color:white; font-size:1pt")
+		}else{
+        	alert("you now now that some websites are open source and that you can find ALTk on GitHub, not like we steal your data or anything");
+			setCookie("s", 1, 100000000000000);
+		}
     }
 }, 500);
 //#endregion
@@ -754,6 +743,10 @@ if (date == 11) {
     snowStorm.start();
     document.getElementById("christmasStuff").style.visibility = "visible";
 }
+	
+asodigmapoerigjmvpeor.__defineGetter__("id", function() {
+                devtoolsOpen = true; // This only executes when devtools is open.
+            });
 //#endregion
 
 });
