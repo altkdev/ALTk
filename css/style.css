@@ -51,9 +51,11 @@ body{
     bottom: 10%;
 }
 
-#if-script{
-	position: none;
-	visibility: hidden;
+#github{
+	position: absolute;
+	bottom: 100%;
+	left: 100%;
+	border: none;
 }
 
 #INVISIBLE{
