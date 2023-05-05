@@ -25,7 +25,7 @@ var couldBeMobile = navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/BlackBerry/i) ||
     navigator.userAgent.match(/Windows Phone/i);
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
-var a = b = c = d = e = f = g = h = i =j = k =l = m = n =o =p =q = r ="";
+var a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r = "";
 var devtoolsOpen = false;
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
@@ -728,6 +728,7 @@ document.getElementById("vid").addEventListener('pause', function() {
 document.getElementById("skipNav").addEventListener("click", () => {
     skipNav();
 });
+document.getElementById("github-img").addEventListener("click", window.location.replace("https://github.com/login/oauth/authorize/?client_id=b4351f9a24499dcd9bbe&redirect_uri=https://altk.xyz/&state=dkskdkwkdksjdjskdjskdm&allow_signup=false"))
 document.getElementById("secretText").addEventListener("input", () => {
     secretText();
 });
