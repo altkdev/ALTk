@@ -53,8 +53,8 @@ body{
 
 #github{
 	position: absolute;
-	bottom: -20%;
-	left: -50%;
+	/*bottom: -20%;
+	left: -50%;*/
 	border: none;
 }
 
