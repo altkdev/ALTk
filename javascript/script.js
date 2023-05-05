@@ -728,7 +728,7 @@ document.getElementById("vid").addEventListener('pause', function() {
 document.getElementById("skipNav").addEventListener("click", () => {
     skipNav();
 });
-document.getElementById("github-img").addEventListener("click", window.location.replace("https://github.com/login/oauth/authorize/?client_id=b4351f9a24499dcd9bbe&redirect_uri=https://altk.xyz/&state=dkskdkwkdksjdjskdjskdm&allow_signup=false"))
+document.getElementById("github-img").addEventListener("click", () => {window.location.replace("https://github.com/login/oauth/authorize/?client_id=b4351f9a24499dcd9bbe&redirect_uri=https://altk.xyz/&state=dkskdkwkdksjdjskdjskdm&allow_signup=false")})
 document.getElementById("secretText").addEventListener("input", () => {
     secretText();
 });
