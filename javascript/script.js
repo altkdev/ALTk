@@ -10,6 +10,7 @@ var hasLoaded = false;
 var pageIsDestroyed = false;
 var timesVisitedWebsite = 0;
 var isOnApple = false;
+var watchesAreSpecial = false;
 var isVr = false;
 var autoPlay = false;
 var himerflab = 0;
@@ -88,6 +89,7 @@ if (urlParams.get('role') == "true" || urlParams.get('role') == "1") {
     noVidOption = true;
 }
 if (urlParams.get('secretkey') == 1) isVr=true;
+if (urlParams.has('code')) uuuid();
 try {
     if (parseInt(urlParams.get('slideshow')) >= 0) {
         noVidOption = true
@@ -247,6 +249,8 @@ if (getCookie("firstTime") == "") {
 }
 //#endregion
 //#region Miscellaneous functions
+function uuuid() {
+}
 function motd() {
     if (secretsAreOn) {
         if (confirm("altk has a discord server at http://discord.altk.xyz")){
@@ -533,6 +537,8 @@ function playVideo(key) {
 if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navigator.userAgent.toLowerCase().includes("xbox") || navigator.userAgent.includes("VR")) {
     document.getElementById("mobile").style.visibility = "visible";
     console.log("You are using a mobile browser")
+} else if (navigator.userAgent.toLowerCase().includes("watch os") {
+    watchesAreSpecial = true
 } else if (navigator.platform.indexOf(("Mac") || ("IPad")) === 0) {
     isOnApple = true;
     console.log("Welcome to CMDk!");
