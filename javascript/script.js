@@ -537,7 +537,7 @@ function playVideo(key) {
 if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navigator.userAgent.toLowerCase().includes("xbox") || navigator.userAgent.includes("VR")) {
     document.getElementById("mobile").style.visibility = "visible";
     console.log("You are using a mobile browser")
-} else if (navigator.userAgent.toLowerCase().includes("watch os") {
+} else if (navigator.userAgent.toLowerCase().includes("watch os")) {
     watchesAreSpecial = true
 } else if (navigator.platform.indexOf(("Mac") || ("IPad")) === 0) {
     isOnApple = true;
