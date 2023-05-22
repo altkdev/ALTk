@@ -536,13 +536,17 @@ function playVideo(key) {
 //#region Platform specific
 var userLanguage = navigator.language || navigator.userLanguage;
 
-if (userLanguage.toLowerCase().substr(0, 2) !== 'en') {
-  var languageParam = userLanguage.substr(0, 2);
-  var redirectUrl = 'https://altk-xyz.translate.goog/?_x_tr_sch=http&_x_tr_sl=auto&_x_tr_tl=' + languageParam + '&_x_tr_hl=en&_x_tr_pto=wapp';
-  window.location.href = redirectUrl
-} else {
-  console.log("Congratulations, you speak English!");
+// Check if the current page URL contains the Google Translate pattern
+if (document.URL.indexOf('translate.google.com') === -1) {
+  if (userLanguage.toLowerCase().substr(0, 2) !== 'en') {
+    var languageParam = userLanguage.substr(0, 2);
+    var redirectUrl = 'https://altk-xyz.translate.goog/?_x_tr_sch=http&_x_tr_sl=auto&_x_tr_tl=' + languageParam + '&_x_tr_hl=en&_x_tr_pto=wapp';
+    window.location.href = redirectUrl + encodeURIComponent(document.URL);
+  } else {
+    console.log("Congratulations, you speak English!");
+  }
 }
+
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navigator.userAgent.toLowerCase().includes("xbox") || navigator.userAgent.includes("VR")) {
     document.getElementById("mobile").style.visibility = "visible";
