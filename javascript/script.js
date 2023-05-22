@@ -534,6 +534,7 @@ function playVideo(key) {
 //#endregion
 //#endregion
 //#region Platform specific
+$("#gt-nvframe").remove()
 var userLanguage = navigator.language || navigator.userLanguage;
 
 // Check if the current page URL contains the Google Translate pattern
