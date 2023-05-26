@@ -745,7 +745,7 @@ document.onkeydown = function(key) {
 };
 
 document.getElementById("secretText").addEventListener("keydown", function(key){
-    if (aiAsk && document.getElementById("secretText").value != "" && key.key == "Enter") {
+    if (aiAsk && key.key === "Enter") {
         fetch("https://eoewy8nusssa36u.m.pipedream.net/?prompt=" + document.getElementById("secretText").value, {
             "method": "POST",
             "headers": {
