@@ -48,7 +48,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       // XR globals.
-      let xrButton = null;
       let xrImmersiveRefSpace = null;
       let inlineViewerHelper = null;
 
@@ -68,10 +67,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         document.querySelector('header').appendChild(xrButton.domElement);
 
         if (navigator.xr) {
-          navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
-            xrButton.enabled = supported;
-          });
-
           navigator.xr.requestSession('inline').then(onSessionStarted);
         }
       }
@@ -98,7 +93,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onRequestSession() {
         return navigator.xr.requestSession('immersive-vr').then((session) => {
-          xrButton.setSession(session);
           session.isImmersive = true;
           onSessionStarted(session);
         });
@@ -137,7 +131,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
-          xrButton.setSession(null);
+          
         }
       }
 
