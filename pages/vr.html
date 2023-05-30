@@ -60,10 +60,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }));
 
       function initXR() {
-        xrButton = new WebXRButton({
-          onRequestSession: onRequestSession,
-          onEndSession: onEndSession
-        });
         if (navigator.xr) {
           navigator.xr.requestSession('inline').then(onSessionStarted);
         }
