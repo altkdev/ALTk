@@ -32,19 +32,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <title>360 Photos</title>
   </head>
   <body>
-    <header>
-      <details open>
-        <summary>360 Photos</summary>
-        <p>
-          This sample demonstrates displaying a 360 degree equirectangular stereo
-          photo. It intentionally suppresses view position to ensure that the user
-          cannot move out of the photo sphere.
-          <a class="back" href="https://immersive-web.github.io/webxr-samples/">Back</a>
-        </p>
-      </details>
-    </header>
     <script type="module">
-      import {WebXRButton} from 'https://immersive-web.github.io/webxr-samples/js/util/webxr-button.js';
       import {Scene, WebXRView} from 'https://immersive-web.github.io/webxr-samples/js/render/scenes/scene.js';
       import {Renderer, createWebGLContext} from 'https://immersive-web.github.io/webxr-samples/js/render/core/renderer.js';
       import {Gltf2Node} from 'https://immersive-web.github.io/webxr-samples/js/render/nodes/gltf2.js';
@@ -69,8 +57,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let renderer = null;
       let scene = new Scene();
       scene.addNode(new SkyboxNode({
-        url: '../background/vr/1.png',
-        displayMode: 'stereoTopBottom'
+        url: '../background/vr/1.png'
       }));
 
       function initXR() {
