@@ -64,8 +64,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           onRequestSession: onRequestSession,
           onEndSession: onEndSession
         });
-        document.querySelector('header').appendChild(xrButton.domElement);
-
         if (navigator.xr) {
           navigator.xr.requestSession('inline').then(onSessionStarted);
         }
