@@ -21,29 +21,29 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
-    <meta name='mobile-web-app-capable' content='yes'>
-    <meta name='apple-mobile-web-app-capable' content='yes'>
-    <link rel='icon' type='image/png' sizes='32x32' href='https://immersive-web.github.io/webxr-samples/favicon-32x32.png'>
-    <link rel='icon' type='image/png' sizes='96x96' href='https://immersive-web.github.io/webxr-samples/favicon-96x96.png'>
-    <link rel='stylesheet' href='https://immersive-web.github.io/webxr-samples/css/common.css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://immersive-web.github.io/webxr-samples/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://immersive-web.github.io/webxr-samples/favicon-96x96.png">
+    <link rel="stylesheet" href="https://immersive-web.github.io/webxr-samples/css/common.css">
 
     <title>360 Photos</title>
   </head>
   <body>
     <script type="module">
-      import {Scene, WebXRView} from 'https://immersive-web.github.io/webxr-samples/js/render/scenes/scene.js';
-      import {Renderer, createWebGLContext} from 'https://immersive-web.github.io/webxr-samples/js/render/core/renderer.js';
-      import {Gltf2Node} from 'https://immersive-web.github.io/webxr-samples/js/render/nodes/gltf2.js';
-      import {SkyboxNode} from 'https://immersive-web.github.io/webxr-samples/js/render/nodes/skybox.js';
-      import {InlineViewerHelper} from 'https://immersive-web.github.io/webxr-samples/js/util/inline-viewer-helper.js';
-      import {QueryArgs} from 'https://immersive-web.github.io/webxr-samples/js/util/query-args.js';
+      import {Scene, WebXRView} from "https://immersive-web.github.io/webxr-samples/js/render/scenes/scene.js";
+      import {Renderer, createWebGLContext} from "https://immersive-web.github.io/webxr-samples/js/render/core/renderer.js";
+      import {Gltf2Node} from "https://immersive-web.github.io/webxr-samples/js/render/nodes/gltf2.js";
+      import {SkyboxNode} from "https://immersive-web.github.io/webxr-samples/js/render/nodes/skybox.js";
+      import {InlineViewerHelper} from "https://immersive-web.github.io/webxr-samples/js/util/inline-viewer-helper.js";
+      import {QueryArgs} from "https://immersive-web.github.io/webxr-samples/js/util/query-args.js";
 
       // If requested, use the polyfill to provide support for mobile devices
       // and devices which only support WebVR.
-      import WebXRPolyfill from 'https://immersive-web.github.io/webxr-samples/js/third-party/webxr-polyfill/build/webxr-polyfill.module.js';
-      if (QueryArgs.getBool('usePolyfill', true)) {
+      import WebXRPolyfill from "https://immersive-web.github.io/webxr-samples/js/third-party/webxr-polyfill/build/webxr-polyfill.module.js";
+      if (QueryArgs.getBool("usePolyfill", true)) {
         let polyfill = new WebXRPolyfill();
       }
 
@@ -56,18 +56,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let renderer = null;
       let scene = new Scene();
       scene.addNode(new SkyboxNode({
-        url: '../background/vr/1.png'
+        url: "../background/vr/1.png"
       }));
 
       function initXR() {
         if (navigator.xr) {
-          navigator.xr.requestSession('inline').then(onSessionStarted);
+          navigator.xr.requestSession("inline").then(onSessionStarted);
         }
       }
 
       function initGL() {
-        if (gl)
+        if (gl) {
           return;
+        }
 
         gl = createWebGLContext({
           xrCompatible: true
@@ -78,7 +79,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           gl.canvas.width = gl.canvas.clientWidth * window.devicePixelRatio;
           gl.canvas.height = gl.canvas.clientHeight * window.devicePixelRatio;
         }
-        window.addEventListener('resize', onResize);
+        window.addEventListener("resize", onResize);
         onResize();
 
         renderer = new Renderer(gl);
@@ -86,14 +87,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onRequestSession() {
-        return navigator.xr.requestSession('immersive-vr').then((session) => {
+        return navigator.xr.requestSession("immersive-vr").then((session) => {
           session.isImmersive = true;
           onSessionStarted(session);
         });
       }
 
       function onSessionStarted(session) {
-        session.addEventListener('end', onSessionEnded);
+        session.addEventListener("end", onSessionEnded);
 
         initGL();
         scene.inputRenderer.useProfileControllerMeshes(session);
@@ -108,7 +109,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         // 'position-disabled' reference space, which suppresses any positional
         // information from the headset. (As an added bonus this mode may be
         // more power efficient on some hardware!)
-        let refSpaceType = session.isImmersive ? 'local' : 'viewer';
+        let refSpaceType = session.isImmersive ? "local" : "viewer";
         session.requestReferenceSpace(refSpaceType).then((refSpace) => {
           if (session.isImmersive) {
             xrImmersiveRefSpace = refSpace;
@@ -152,7 +153,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             // It's important to take into account which eye the view is
             // associated with in cases like this, since it informs which half
             // of the stereo image should be used when rendering the view.
-            renderView.eye = view.eye
+            renderView.eye = view.eye;
             views.push(renderView);
           }
 
