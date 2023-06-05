@@ -69,15 +69,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.enableStats(false);
       scene.addNode(sky);
       
-      function handleVideo(file)
-        scene.removeNode(videoNode)
-        video.src = "videos/" + file.toString() + ".mp4"
+      function handleVideo(file) {
+        scene.removeNode(videoNode);
+        video.src = "videos/" + file.toString() + ".mp4";
         videoNode = new VideoNode({
           video: video
         });
-        scene.addNode(videoNode)
+        scene.addNode(videoNode);
       }
-      
       function skyChange() {
         scene.removeNode(sky)
         sky = new SkyboxNode({
