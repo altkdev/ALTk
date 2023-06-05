@@ -63,7 +63,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function skyChange() {
         scene.removeNode(sky)
         sky = new SkyboxNode({
-          url: "../background/vr/"+ New String(Math.floor(Math.random() * 8) + 1) +".png"
+          url: "../background/vr/"+ new String(Math.floor(Math.random() * 8) + 1) +".png"
         })
         scene.addNode(sky)
       }
