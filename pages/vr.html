@@ -37,6 +37,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       import {Renderer, createWebGLContext} from "https://immersive-web.github.io/webxr-samples/js/render/core/renderer.js";
       import {Gltf2Node} from "https://immersive-web.github.io/webxr-samples/js/render/nodes/gltf2.js";
       import {SkyboxNode} from "https://immersive-web.github.io/webxr-samples/js/render/nodes/skybox.js";
+      import {VideoNode} from './js/render/nodes/video.js';
       import {InlineViewerHelper} from "https://immersive-web.github.io/webxr-samples/js/util/inline-viewer-helper.js";
       import {QueryArgs} from "https://immersive-web.github.io/webxr-samples/js/util/query-args.js";
 
@@ -58,7 +59,24 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       var sky = new SkyboxNode({
         url: "../background/vr/1.png"
       })
+      var video = document.createElement('video');
+      video.src = ""
+      var videoNode = new VideoNode({
+        video: video
+      });
+      scene.addNode(videoNode)
+      
+      scene.enableStats(false);
       scene.addNode(sky);
+      
+      function handleVideo(file)
+        scene.removeNode(videoNode)
+        video.src = "videos/" + file.toString() + ".mp4"
+        videoNode = new VideoNode({
+          video: video
+        });
+        scene.addNode(videoNode)
+      }
       
       function skyChange() {
         scene.removeNode(sky)
@@ -176,7 +194,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       // Start the XR application.
       initXR();
-      
+      handleVideo(1)
       setInterval(skyChange, 30000)
     </script>
   </body>
