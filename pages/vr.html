@@ -71,7 +71,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       
       function handleVideo(file) {
         scene.removeNode(videoNode);
-        video.src = "./videos/" + file.toString() + ".mp4";
+        video.src = "../videos/" + file.toString() + ".mp4";
         videoNode = new VideoNode({
           video: video
         });
