@@ -27,6 +27,7 @@ var couldBeMobile = navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/Windows Phone/i);
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
 var a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r = "";
+var streak = 0;
 var devtoolsOpen = false;
 const urlParams = new URLSearchParams(new URL(window.location.href).search);
 const da = new Date();
@@ -564,6 +565,8 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navig
 } else {
     console.log("Welcome to ALTk!");
 }
+streak = parseInt(getCookie("streak")?parseInt(getCookie("streak"))+1:1
+setCookie("streak", streak,2)
 document.getElementById("mobile-only").addEventListener("input", () => {
     c = document.getElementById("mobile-only");
     if (c.value.includes('c ')) {
@@ -713,6 +716,10 @@ setInterval(() => {
 document.onkeydown = function(key) {
     if (secretsAreOn && !pageIsDestroyed) {
         keyLog += key.key;
+	if (keylog.includes("streak"){
+		alert("you have a streak of " + streak.toString() + " days!")
+		keylog = ""
+	}
         if (keyLog.includes("secrets")) {
             alert("you have found " + himerflab + " secrets. only " + (17 - himerflab).toString() + " left to find");
             keyLog = "";
