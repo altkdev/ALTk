@@ -565,7 +565,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i) || couldBeMobile || navig
 } else {
     console.log("Welcome to ALTk!");
 }
-streak = parseInt(getCookie("streak")?parseInt(getCookie("streak"))+1:1
+streak = parseInt(getCookie("streak"))?parseInt(getCookie("streak"))+1:1
 setCookie("streak", streak,2)
 document.getElementById("mobile-only").addEventListener("input", () => {
     c = document.getElementById("mobile-only");
