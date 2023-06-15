@@ -366,11 +366,15 @@ function secretText() {
 //#endregion
 //#region Commands for video
 if ('mediaSession' in navigator) {
-  navigator.mediaSession.requestPermission().then(permission => {
-    if (permission === 'granted') {
-      setupMediaSession();
-    }
-  });
+  if (typeof navigator.mediaSession.requestPermission === 'function') {
+    navigator.mediaSession.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        setupMediaSession();
+      }
+    });
+  } else {
+    setupMediaSession();
+  }
 }
 
 function setupMediaSession() {
