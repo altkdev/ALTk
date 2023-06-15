@@ -716,7 +716,7 @@ setInterval(() => {
 document.onkeydown = function(key) {
     if (secretsAreOn && !pageIsDestroyed) {
         keyLog += key.key;
-	if (keylog.includes("streak"){
+	if (keylog.includes("streak")){
 		alert("you have a streak of " + streak.toString() + " days!")
 		keylog = ""
 	}
