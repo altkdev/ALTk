@@ -366,29 +366,45 @@ function secretText() {
 //#endregion
 //#region Commands for video
 if ('mediaSession' in navigator) {
+  navigator.mediaSession.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      setupMediaSession();
+    }
+  });
+}
 
+function setupMediaSession() {
   navigator.mediaSession.metadata = new MediaMetadata({
-    title: 'Never Gonna Give You Up',
-    artist: 'Rick Astley',
-    album: 'Whenever You Need Somebody',
-    artwork: [
-      { src: 'https://dummyimage.com/96x96',   sizes: '96x96',   type: 'image/png' },
-      { src: 'https://dummyimage.com/128x128', sizes: '128x128', type: 'image/png' },
-      { src: 'https://dummyimage.com/192x192', sizes: '192x192', type: 'image/png' },
-      { src: 'https://dummyimage.com/256x256', sizes: '256x256', type: 'image/png' },
-      { src: 'https://dummyimage.com/384x384', sizes: '384x384', type: 'image/png' },
-      { src: 'https://dummyimage.com/512x512', sizes: '512x512', type: 'image/png' },
-    ]
+    title: "Never Gonna Give You Up",
+    artist: "Rick Astley",
+    artwork: [{ src: 'album_cover.jpg', sizes: '512x512', type: 'image/jpeg' }]
   });
 
-  navigator.mediaSession.setActionHandler('play', function() {});
-  navigator.mediaSession.setActionHandler('pause', function() {});
-  navigator.mediaSession.setActionHandler('seekbackward', function() {});
-  navigator.mediaSession.setActionHandler('seekforward', function() {});
-  navigator.mediaSession.setActionHandler('previoustrack', function() {});
-  navigator.mediaSession.setActionHandler('nexttrack', function() {});
+  navigator.mediaSession.setActionHandler('play', function() {
+    playAudio();
+  });
 
+  navigator.mediaSession.setActionHandler('pause', function() {
+    pauseAudio();
+  });
+
+  navigator.mediaSession.setActionHandler('stop', function() {
+    stopAudio();
+  });
 }
+
+function playAudio() {
+  console.log("Playing audio: Never Gonna Give You Up");
+}
+
+function pauseAudio() {
+  console.log("Pausing audio: Never Gonna Give You Up");
+}
+
+function stopAudio() {
+  console.log("Stopping audio: Never Gonna Give You Up");
+}
+
 function playVideoMobile(key, command) {
     if (pageIsDestroyed) return;
     if (key.toLowerCase() == 'k'.toLowerCase() && command.toLowerCase() == "a".toLowerCase()) {
