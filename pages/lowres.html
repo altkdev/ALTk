@@ -25,15 +25,14 @@
     </div>
 
     <script type='text/javascript'>
-      const urlParams = new URLSearchParams(new URL(window.location.href).search);
       var Module = {
         canvas: document.getElementById('canvas'),
-        arguments: ["https://owen.altk/random/" + urlParams.get('game') + ".nx"],
+        arguments: ["program.nx"],
         print: function(t) {
           console.log(t);
         },
         printErr: function(t) {
-          console.error(t);
+          console.log(t);
         }
       };
       function onKeyDown_blocker(event) {
@@ -44,6 +43,6 @@
       }
       document.addEventListener('keydown', onKeyDown_blocker, false);
     </script>
-    <script async type="text/javascript" src="https://raw.githubusercontent.com/timoinutilis/lowres-nx/master/platform/web/embed/package/LowResNX120.js"></script>
+    <script async type="text/javascript" src="LowResNX120.js"></script>
   </body>
 </html>
