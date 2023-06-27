@@ -4,11 +4,12 @@ name: Date
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # Triggers the workflow_run:
+  workflow_run:
+    workflows:
+      - "Pages Build and Deployment"
+    types:
+      - completed
   schedule:
     # run on a supposed invoice from ionos to make sure everything is ok there
     - cron: '1 12 29 9 *'
