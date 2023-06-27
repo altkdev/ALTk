@@ -5,11 +5,11 @@ name: Date
 # Controls when the workflow will run
 on:
   # Triggers the workflow_run:
-  workflow_run:
-    workflows:
-      - "Pages Build and Deployment"
+  status:
     types:
       - completed
+    contexts:
+      - "github-pages"
   schedule:
     # run on a supposed invoice from ionos to make sure everything is ok there
     - cron: '1 12 29 9 *'
