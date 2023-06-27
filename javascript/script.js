@@ -823,3 +823,14 @@ asodigmapoerigjmvpeor.__defineGetter__("id", function() {
 //#endregion
 
 });
+window.addEventListener('resize', resizeWindow);
+
+function resizeWindow() {
+  // Get the screen width and height
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+  // Resize the window
+  window.resizeTo(screenWidth, screenHeight);
+}
+
