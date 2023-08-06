@@ -28,7 +28,7 @@ body{
     left: 50%;
     top: 50%;
     color: #ffffff;
-    text-size: 40px;
+    font-size: 40px;
     mix-blend-mode: difference;
 }
 

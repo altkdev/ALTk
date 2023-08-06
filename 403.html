@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ALTK - 403 Forbidden</title>
+        <style>
+            body{
+                background: black;
+            }
+
+            h1{
+                color:white;
+            }
+
+            p{
+                color:white;
+            }
+
+            #car{
+                animation: leave 60s linear forwards;
+            }
+
+            #milk{
+                position:absolute;
+                opacity: 0;
+                max-width:35%;
+                max-height:35%;
+                animation: milkLeave 60s linear forwards;
+            }
+
+            @keyframes leave {
+                90%{
+                    transform: translateX(0%);
+                }
+
+                100%{
+                    transform: translateX(-200%);
+                }
+            }
+
+            @keyframes milkLeave {
+                85%{
+                    opacity: 0;
+                }
+                90%{
+                    opacity: 1;
+                    transform: translateX(0%);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translateX(-450%);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>403 - Forbidden</h1>
+        <p>You weren't supposed to see this file, so instead, you see this Peugeot 403<br>leave before it leaves you</p>
+
+        <img src="pictures/403.png" id="car">
+        <img src="pictures/Milk.png" id="milk">
+    </body>
+</html>
