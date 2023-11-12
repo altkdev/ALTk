@@ -16,9 +16,9 @@
 	  let video = document.getElementById("vid");
       function what() {
         if(wh.value.includes(".mp4")){
-			video.src = wh.value.split(".mp4")[0];
-		}else{
 			video.src = wh.value;
+		}else{
+			video.src = wh.value + ".mp4";
 		}
 		video.play();
       }
