@@ -12,21 +12,15 @@
     </div>
     <script>
       var whater = "";
-      let wh = document.getElementById("A").value.toString();
+      let wh = document.getElementById("A");
+	  let video = document.getElementById("vid");
       function what() {
-        if(!wh.includes(".mp4" && "https://altk.xyz/videos/)) {
-	        whater = "https://altk.xyz/videos/" + wh + ".mp4";
-        }else if(!wh.includes(".mp4")){
-          whater = wh + ".mp4"; 
-        }else if(!wh.includes("https://altk.xyz/videos/")){
-          whater = "https://altk.xyz/videos/" + wh;
-        }
-        if(whater.includes(("https://altk.xyz/videos/1.mp4" || "https://altk.xyz/videos/10.mp4" || "https://altk.xyz/videos/11.mp4" || "https://altk.xyz/videos/2.mp4" || "https://altk.xyz/videos/4.mp4" || "https://altk.xyz/videos/420.mp4" || "https://altk.xyz/videos/5.mp4" || "https://altk.xyz/videos/6.mp4" || "https://altk.xyz/videos/69.mp4" || "https://altk.xyz/videos/7.mp4" || "https://altk.xyz/videos/8.mp4" || "https://altk.xyz/videos/800.mp4" || "https://altk.xyz/videos/9.mp4" || "https://altk.xyz/videos/The_Funeral.mp4")) {
-          document.video.src = whater;
-          document.video.src.play();
-        }else{
-          alert("bucko this video doesnt exist")
-        }
+        if(wh.value.includes(".mp4")){
+			video.src = wh.value.split(".mp4")[0];
+		}else{
+			video.src = wh.value;
+		}
+		video.play();
       }
     </script>
 </html>
