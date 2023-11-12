@@ -1,136 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      canvas{
-        position: fixed;
-        top:0;
-        left:0;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			canvas{
+				position: fixed;
+				top:0;
+				left:0;
+			}
 
-      #v{
-        visibility: hidden;
-        display: none;
-      }
+			#v{
+				visibility: hidden;
+				display: none;
+			}
 
-      #start{
-        padding: 12px 18px;
-        color:white;
-        background:black;
-        border: 1px solid white;
-        cursor: pointer;
-      }
+			#start{
+				padding: 12px 18px;
+				color:white;
+				background:black;
+				border: 1px solid white;
+				cursor: pointer;
+			}
 
-      #error{
-        position:absolute;
-        left: 45vw;
-        font-family: Roboto, sans-serif;
-        font-size: 100px;
-        color:white;
-      }
+			#error{
+				position:absolute;
+				left: 45vw;
+				font-family: Roboto, sans-serif;
+				font-size: 100px;
+				color:white;
+			}
 
-      #s{
-        width: 98vw;
-        height: 98vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+			#s{
+				width: 98vw;
+				height: 98vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-      body{
-        background: black;
-      }
-    </style>
-        <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
-                "FontLoader": "https://unpkg.com/three@0.138.0/examples/jsm/loaders/FontLoader.js"
-            }
+			body{
+				background: black;
+			}
+		</style>
+				<script type="importmap">
+				{
+						"imports": {
+								"three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+								"FontLoader": "https://unpkg.com/three@0.138.0/examples/jsm/loaders/FontLoader.js"
+						}
+				}
+		</script>
+		<title>404</title>
+	</head>
+	<body>
+		<h1 id="error">404</h1>
+		<div id="s">
+			<button id="start">PLAY</button>
+		</div>
+		<video src="videos/no ones around to help.mp4" id="v" loop></video>
+		<script type="module">
+			import * as THREE from 'three';
+			import { FontLoader } from 'FontLoader';
+			//https://threejs.org/examples/#webgl_materials_video
+
+      tryInit();
+			
+
+			function tryInit(){
+        const vid = document.getElementById("v").play();
+        if(vid !== undefined){
+          vid.then(function(){
+            document.getElementById("v").addEventListener("play", function () {
+              this.currentTime = 3;
+            })
+          }).catch(function(error){
+            document.getElementById("start").addEventListener("click", function(){
+              init();
+            })
+            return;
+          })
         }
-    </script>
-    <title>404</title>
-  </head>
-  <body>
-    <h1 id="error">404</h1>
-    <div id="s">
-      <button id="start">PLAY</button>
-    </div>
-    <video src="videos/no ones around to help.mp4" id="v" loop></video>
-    <script type="module">
-      import * as THREE from 'three';
-      import { FontLoader } from 'FontLoader';
-      //https://threejs.org/examples/#webgl_materials_video
-      document.getElementById("start").addEventListener("click", function(){
-        init();
-      })
+				const b = document.createElement("canvas");
+				b.id = "bg";
+				document.body.appendChild(b);
+				const scene = new THREE.Scene();
+				const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, .1, 1000);
+								
+				var clock = new THREE.Clock();
+				clock.autoStart = true;
+				const renderer = new THREE.WebGLRenderer({
+				canvas: document.querySelector("#bg"),
+				});
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize( window.innerWidth, window.innerHeight);
+				camera.position.setZ(30);
+				//https://threejs.org/examples/#webgl_geometry_text_shapes
+				const loader = new FontLoader();
+				loader.load( 'Roboto_Regular.json', function ( font ) {
+				const geometry = new THREE.ShapeGeometry(font.generateShapes("404", 100));
+				geometry.computeBoundingBox();
+				const text = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+					color: "#ffffff"
+				}))
+				text.position.z -= 150;
+				scene.add(text);
+				} );
+				
+				const texture = new THREE.VideoTexture(document.getElementById("v"));
+				const cube = new THREE.Mesh(
+				new THREE.BoxGeometry(10, 10, 10),
+				new THREE.MeshBasicMaterial({map:texture})
+				);
+				scene.add(cube);
+				var delta = clock.getDelta();
+				function animate(){
+					requestAnimationFrame(animate);
+					
+					delta = clock.getDelta();
+					cube.rotation.x += delta;
+					cube.rotation.y += delta;
+					cube.rotation.z += delta;
+					camera.aspect = window.innerWidth / window.innerHeight;
+					camera.updateProjectionMatrix();
+					renderer.setSize(window.innerWidth, window.innerHeight);
+					renderer.render(scene, camera);
+				}
+				animate();
+			}
 
-      function init(){
-        const b = document.createElement("canvas");
-        b.id = "bg";
-        document.body.appendChild(b);
-        const scene = new THREE.Scene();
+			function init(){
+				const b = document.createElement("canvas");
+				b.id = "bg";
+				document.body.appendChild(b);
+				const scene = new THREE.Scene();
 
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, .1, 1000);
-        
-        var clock = new THREE.Clock();
-        clock.autoStart = true;
+				const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, .1, 1000);
+				
+				var clock = new THREE.Clock();
+				clock.autoStart = true;
 
-        const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector("#bg"),
-        });
+				const renderer = new THREE.WebGLRenderer({
+				canvas: document.querySelector("#bg"),
+				});
 
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize( window.innerWidth, window.innerHeight);
-        camera.position.setZ(30);
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize( window.innerWidth, window.innerHeight);
+				camera.position.setZ(30);
 
-        //https://threejs.org/examples/#webgl_geometry_text_shapes
-        const loader = new FontLoader();
+				//https://threejs.org/examples/#webgl_geometry_text_shapes
+				const loader = new FontLoader();
 
-        loader.load( 'Roboto_Regular.json', function ( font ) {
+				loader.load( 'Roboto_Regular.json', function ( font ) {
 
 
-        const geometry = new THREE.ShapeGeometry(font.generateShapes("404", 100));
-        geometry.computeBoundingBox();
-        const text = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
-          color: "#ffffff"
-        }))
-        text.position.z -= 150;
-        scene.add(text);
-        } );
+				const geometry = new THREE.ShapeGeometry(font.generateShapes("404", 100));
+				geometry.computeBoundingBox();
+				const text = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+					color: "#ffffff"
+				}))
+				text.position.z -= 150;
+				scene.add(text);
+				} );
 
-        document.getElementById("v").play();
-        document.getElementById("v").addEventListener("play", function () {
-          this.currentTime = 3;
-        })
-        const texture = new THREE.VideoTexture(document.getElementById("v"));
-        const cube = new THREE.Mesh(
-        new THREE.BoxGeometry(10, 10, 10),
-        new THREE.MeshBasicMaterial({map:texture})
-        );
+				document.getElementById("v").play();
+				document.getElementById("v").addEventListener("play", function () {
+					this.currentTime = 3;
+				})
+				const texture = new THREE.VideoTexture(document.getElementById("v"));
+				const cube = new THREE.Mesh(
+				new THREE.BoxGeometry(10, 10, 10),
+				new THREE.MeshBasicMaterial({map:texture})
+				);
 
-        scene.add(cube);
+				scene.add(cube);
 
-        var delta = clock.getDelta();
+				var delta = clock.getDelta();
 
-        function animate(){
-          requestAnimationFrame(animate);
-          
-          delta = clock.getDelta();
-          cube.rotation.x += delta;
-          cube.rotation.y += delta;
-          cube.rotation.z += delta;
-          camera.aspect =  window.innerWidth / window.innerHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(window.innerWidth, window.innerHeight);
-          renderer.render(scene, camera);
-        }
+				function animate(){
+					requestAnimationFrame(animate);
+					
+					delta = clock.getDelta();
+					cube.rotation.x += delta;
+					cube.rotation.y += delta;
+					cube.rotation.z += delta;
+					camera.aspect =	window.innerWidth / window.innerHeight;
+					camera.updateProjectionMatrix();
+					renderer.setSize(window.innerWidth, window.innerHeight);
+					renderer.render(scene, camera);
+				}
 
-        animate();
-      }
+				animate();
+			}
 
-    </script>
-  </body>
+		</script>
+	</body>
 </html>

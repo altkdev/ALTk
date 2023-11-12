@@ -550,6 +550,11 @@ function playVideo(key) {
             randAlert();
             play(13)
         }
+        if (key.key == 'k'){
+            key.preventDefault();
+            randAlert();
+            play(2023);
+        }
     }
 }
 //#endregion
