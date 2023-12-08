@@ -150,6 +150,9 @@ if (urlParams.has('vid') && !noVidOption) {
         case '13':
             vidToPlay = "13";
             break;
+	case '13':
+	    vidToPlay = "2023"
+	    break;
         case '420':
             vidToPlay = "420";
             break;
@@ -603,7 +606,7 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 //#endregion
 //#region Backstretch
 image = Math.floor(Math.random() * 8) + 1
-if (date.toString() < 11) {
+if (date.toString() < ) {
     metaThemeColor.setAttribute("content", themeColor[image - 1]);
     $.backstretch("background/" + String(image) + ".jpeg", {
         duration: 0,
