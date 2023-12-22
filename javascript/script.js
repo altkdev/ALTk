@@ -606,7 +606,7 @@ document.getElementById("mobile-only").addEventListener("input", () => {
 //#endregion
 //#region Backstretch
 image = Math.floor(Math.random() * 8) + 1
-if (date.toString() < ) {
+if (date.toString() < 11) {
     metaThemeColor.setAttribute("content", themeColor[image - 1]);
     $.backstretch("background/" + String(image) + ".jpeg", {
         duration: 0,
