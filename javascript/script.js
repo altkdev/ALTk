@@ -821,7 +821,7 @@ document.getElementById("secretCheckbox").addEventListener("change", () => {
 //#endregion
 //#region Miscellaneous
 alert(date)
-if (date == 11) {
+if (!date.toString() < 11) {
     snowStorm.start();
     document.getElementById("christmasStuff").style.visibility = "visible";
 }
